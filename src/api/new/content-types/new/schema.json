@@ -57,22 +57,6 @@
       },
       "required": true
     },
-    "category": {
-      "type": "enumeration",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true,
-      "default": "general",
-      "enum": [
-        "research",
-        "general",
-        "notice",
-        "training"
-      ]
-    },
     "publishedDate": {
       "type": "datetime",
       "pluginOptions": {
@@ -117,6 +101,12 @@
         }
       },
       "default": false
+    },
+    "news_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::news-category.news-category",
+      "mappedBy": "news"
     }
   }
 }

@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_categories",
+  "info": {
+    "singularName": "news-category",
+    "pluralName": "news-categories",
+    "displayName": "news-category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 2,
+      "maxLength": 100,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "name",
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "description": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "sortOrder": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "isActive": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "news": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::new.new",
+      "inversedBy": "news_categories"
+    }
+  }
+}
