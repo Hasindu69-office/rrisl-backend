@@ -1,0 +1,7 @@
+/**
+ * stat-record controller
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreController('api::stat-record.stat-record');

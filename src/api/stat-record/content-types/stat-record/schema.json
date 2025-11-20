@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stat_records",
+  "info": {
+    "singularName": "stat-record",
+    "pluralName": "stat-records",
+    "displayName": "stat-record"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {}
+}
