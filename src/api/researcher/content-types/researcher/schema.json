@@ -14,5 +14,140 @@
       "localized": true
     }
   },
-  "attributes": {}
+  "attributes": {
+    "fullName": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "minLength": 2,
+      "maxLength": 100,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "profilePhoto": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "designation": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 2,
+      "maxLength": 100,
+      "required": true
+    },
+    "department": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "shortBio": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 10,
+      "maxLength": 100
+    },
+    "bio": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "expertise": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 2,
+      "maxLength": 100,
+      "required": true
+    },
+    "contactEmail": {
+      "type": "email",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "phone": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "min": 2,
+      "max": 100
+    },
+    "orcid": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "showDirectory": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "default": true
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "default": false
+    }
+  }
 }
