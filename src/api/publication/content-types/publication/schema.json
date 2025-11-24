@@ -151,6 +151,12 @@
         }
       },
       "default": false
+    },
+    "researchers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::researcher.researcher",
+      "inversedBy": "publications"
     }
   }
 }
