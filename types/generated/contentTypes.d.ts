@@ -430,6 +430,38 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDownloadCategoryDownloadCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'download_categories';
+  info: {
+    displayName: 'downloadCategory';
+    pluralName: 'download-categories';
+    singularName: 'download-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::download-category.download-category'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDownloadDownload extends Struct.CollectionTypeSchema {
   collectionName: 'downloads';
   info: {
@@ -1004,6 +1036,10 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    researchers: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::researcher.researcher'
+    >;
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -1182,6 +1218,10 @@ export interface ApiResearcherResearcher extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    publications: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::publication.publication'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     shortBio: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
@@ -1786,6 +1826,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::download-category.download-category': ApiDownloadCategoryDownloadCategory;
       'api::download.download': ApiDownloadDownload;
       'api::event-category.event-category': ApiEventCategoryEventCategory;
       'api::event.event': ApiEventEvent;
