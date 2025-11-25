@@ -1,0 +1,57 @@
+{
+  "collectionName": "components_home_hero_banners",
+  "info": {
+    "displayName": "hero-banner",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "highlightedText": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "primaryCta": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    },
+    "backgroundImageDesktop": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "backgroundImageMobile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "overlayStyle": {
+      "type": "enumeration",
+      "enum": [
+        "dark_gradient",
+        "light_gradient",
+        "none"
+      ]
+    },
+    "badges": {
+      "type": "component",
+      "component": "home.hero-badge",
+      "repeatable": false
+    },
+    "labels": {
+      "type": "component",
+      "component": "home.hero-label",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

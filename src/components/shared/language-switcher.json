@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_language_switchers",
+  "info": {
+    "displayName": "language-switcher",
+    "icon": "stack"
+  },
+  "options": {},
+  "attributes": {
+    "availablesLocales": {
+      "type": "json"
+    }
+  },
+  "config": {}
+}
