@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_home_hero_labels",
+  "info": {
+    "displayName": "hero-label",
+    "icon": "server"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right",
+        "bottom"
+      ]
+    }
+  },
+  "config": {}
+}
