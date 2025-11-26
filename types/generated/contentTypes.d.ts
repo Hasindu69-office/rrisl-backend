@@ -717,6 +717,18 @@ export interface ApiGlobalLayoutGlobalLayout extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    headerLeftMenuSlug: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    headerRightMenuSlug: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     languageSwitcher: Schema.Attribute.Component<
       'shared.language-switcher',
       false
@@ -1648,6 +1660,75 @@ export interface PluginReviewWorkflowsWorkflowStage
   };
 }
 
+export interface PluginTreeMenusMenu extends Struct.CollectionTypeSchema {
+  collectionName: 'menus';
+  info: {
+    description: '';
+    displayName: 'Menu';
+    name: 'Menu';
+    pluralName: 'menus';
+    singularName: 'menu';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: true;
+    };
+    'content-type-builder': {
+      visible: true;
+    };
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    items: Schema.Attribute.JSON &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<
+        'plugin::tree-menus.tree',
+        {
+          schemas: '{\n  "attributes": [\n    {\n      "id": "title",\n      "label": "Title",\n      "placeholder": "Enter item title",\n      "type": "text",\n      "validationType": "string",\n      "value": "New items",\n      "required": true,\n      "validations": [\n        {\n          "type": "required",\n          "params": [\n            "this field is required"\n          ]\n        },\n        {\n          "type": "max",\n          "params": [\n            100,\n            "Title cannot be more than 100 characters"\n          ]\n        },\n        {\n          "type": "default",\n          "params": [\n            "New items"\n          ]\n        }\n      ]\n    },\n    {\n      "id": "url",\n      "label": "Url",\n      "placeholder": "Enter url",\n      "type": "text",\n      "validationType": "string",\n      "value": "/",\n      "required": true,\n      "validations": [\n        {\n          "type": "required",\n          "params": [\n            "this field is required"\n          ]\n        },\n        {\n          "type": "max",\n          "params": [\n            200,\n            "Url cannot be more than 200 characters"\n          ]\n        },\n        {\n          "type": "default",\n          "params": [\n            "/"\n          ]\n        }\n      ]\n    },\n    {\n      "id": "target",\n      "label": "Target",\n      "placeholder": "Enter target",\n      "type": "select",\n      "validationType": "mixed",\n      "value": "_self",\n      "required": true,\n      "validations": [\n        {\n          "type": "oneOf",\n          "params": [\n            [\n              "_blank",\n              "_parent",\n              "_self",\n              "_top"\n            ],\n            "this field needs to be one of the following: _blank, _parent, _self, _top"\n          ]\n        },\n        {\n          "type": "default",\n          "params": [\n            "_self"\n          ]\n        }\n      ],\n      "options": [\n        {\n          "key": "_blank",\n          "value": "_blank",\n          "metadatas": {\n            "intlLabel": {\n              "id": "tree-menus.target.options._blank",\n              "defaultMessage": "New window (_blank)"\n            },\n            "disabled": false,\n            "hidden": false\n          }\n        },\n        {\n          "key": "_parent",\n          "value": "_parent",\n          "metadatas": {\n            "intlLabel": {\n              "id": "tree-menus.target.options._parent",\n              "defaultMessage": "Parent window (_parent)"\n            },\n            "disabled": false,\n            "hidden": false\n          }\n        },\n        {\n          "key": "_self",\n          "value": "_self",\n          "metadatas": {\n            "intlLabel": {\n              "id": "tree-menus.target.options._self",\n              "defaultMessage": "Same window (_self)"\n            },\n            "disabled": false,\n            "hidden": false\n          }\n        },\n        {\n          "key": "_top",\n          "value": "_top",\n          "metadatas": {\n            "intlLabel": {\n              "id": "tree-menus.target.options._top",\n              "defaultMessage": "Top window (_top)"\n            },\n            "disabled": false,\n            "hidden": false\n          }\n        }\n      ]\n    },\n    {\n      "id": "isProtected",\n      "label": "isProtected",\n      "placeholder": "Choose isProtected",\n      "type": "bool",\n      "validationType": "boolean",\n      "value": false,\n      "required": true,\n      "validations": [\n        {\n          "type": "required",\n          "params": [\n            "Need to choose isProtected"\n          ]\n        },\n        {\n          "type": "default",\n          "params": [\n            false\n          ]\n        }\n      ]\n    }\n  ]\n}';
+        }
+      > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'plugin::tree-menus.menu'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Struct.CollectionTypeSchema {
   collectionName: 'files';
   info: {
@@ -1941,6 +2022,7 @@ declare module '@strapi/strapi' {
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::review-workflows.workflow': PluginReviewWorkflowsWorkflow;
       'plugin::review-workflows.workflow-stage': PluginReviewWorkflowsWorkflowStage;
+      'plugin::tree-menus.menu': PluginTreeMenusMenu;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
