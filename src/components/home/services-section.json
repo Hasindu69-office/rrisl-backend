@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_home_services_sections",
+  "info": {
+    "displayName": "services-section",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": false
+    },
+    "backgroundImageBack": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "backgroundImageFront": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "serviceCards": {
+      "type": "component",
+      "component": "home.service-card",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}
