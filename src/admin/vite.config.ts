@@ -8,5 +8,13 @@ export default (config: UserConfig) => {
         '@': '/src',
       },
     },
+    optimizeDeps: {
+      esbuildOptions: {
+        // Node.js global to browser globalThis
+        define: {
+          global: 'globalThis',
+        },
+      },
+    },
   });
 };

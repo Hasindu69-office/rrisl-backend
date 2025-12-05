@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_home_service_cards",
+  "info": {
+    "displayName": "service-card",
+    "icon": "stack"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 100,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 2,
+      "maxLength": 255,
+      "required": true
+    },
+    "cta": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

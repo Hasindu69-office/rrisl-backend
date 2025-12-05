@@ -52,6 +52,22 @@
       },
       "component": "shared.language-switcher",
       "repeatable": false
+    },
+    "headerLeftMenuSlug": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "headerRightMenuSlug": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

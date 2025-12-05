@@ -24,6 +24,26 @@
       },
       "component": "home.hero-banner",
       "repeatable": false
+    },
+    "aboutSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.about-section",
+      "repeatable": false
+    },
+    "serviceSection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.services-section",
+      "repeatable": false
     }
   }
 }

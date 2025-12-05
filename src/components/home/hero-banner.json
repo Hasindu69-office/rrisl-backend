@@ -51,6 +51,32 @@
       "type": "component",
       "component": "home.hero-label",
       "repeatable": false
+    },
+    "showNewsCard": {
+      "type": "boolean",
+      "default": true
+    },
+    "newsCardTitle": {
+      "type": "string",
+      "default": "Latest News"
+    },
+    "showAnnouncementCard": {
+      "type": "boolean",
+      "default": true
+    },
+    "announcementCardTitle": {
+      "type": "string",
+      "default": "Announcement"
+    },
+    "hero_news_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::new.new"
+    },
+    "hero_annoucements_items": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::annoucement.annoucement"
     }
   },
   "config": {}
