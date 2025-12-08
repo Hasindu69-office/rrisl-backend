@@ -22,14 +22,14 @@
     },
     "backgroundImageDesktop": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "allowedTypes": [
         "images"
       ]
     },
     "backgroundImageMobile": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "allowedTypes": [
         "images"
       ]
