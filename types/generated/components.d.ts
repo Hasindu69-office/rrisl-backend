@@ -41,8 +41,8 @@ export interface HomeHeroBanner extends Struct.ComponentSchema {
   attributes: {
     announcementCardTitle: Schema.Attribute.String &
       Schema.Attribute.DefaultTo<'Announcement'>;
-    backgroundImageDesktop: Schema.Attribute.Media<'images'>;
-    backgroundImageMobile: Schema.Attribute.Media<'images'>;
+    backgroundImageDesktop: Schema.Attribute.Media<'images', true>;
+    backgroundImageMobile: Schema.Attribute.Media<'images', true>;
     badges: Schema.Attribute.Component<'home.hero-badge', false>;
     description: Schema.Attribute.Blocks;
     hero_annoucements_items: Schema.Attribute.Relation<
