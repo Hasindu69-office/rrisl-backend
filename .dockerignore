@@ -1,0 +1,73 @@
+# Dependencies
+node_modules
+.npm
+
+# Build outputs (we rebuild in Docker)
+dist
+build
+.cache
+
+# Development files
+.tmp
+.env
+.env.*
+!.env.example
+
+# IDE and editor files
+.idea
+.vscode
+*.swp
+*.swo
+.DS_Store
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Test files
+coverage
+.nyc_output
+*.test.js
+*.spec.js
+__tests__
+
+# Documentation
+*.md
+!README.md
+
+# CapRover specific
+captain-definition
+Dockerfile
+.dockerignore
+
+# Database files (SQLite)
+*.sqlite
+*.sqlite3
+.tmp/
+
+# Uploads (optional - uncomment if you want to include existing uploads)
+# public/uploads/*
+# !public/uploads/.gitkeep
+
+# Strapi
+.strapi
+.strapi-updater.json
+.strapi-cloud.json
+exports
+license.txt
+
+# Misc
+*.7z
+*.gz
+*.rar
+*.tar
+*.zip
+Thumbs.db
+
+
