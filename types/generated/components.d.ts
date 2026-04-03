@@ -153,6 +153,11 @@ export interface SharedSectionHeader extends Struct.ComponentSchema {
   attributes: {
     alignment: Schema.Attribute.Enumeration<['left', 'center']>;
     eyebrow: Schema.Attribute.String;
+    hightlightedtext: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+        minLength: 2;
+      }>;
     title: Schema.Attribute.String;
   };
 }
