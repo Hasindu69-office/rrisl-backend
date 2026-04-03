@@ -15,6 +15,39 @@ export interface HomeAboutSection extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeAnnoucementLabels extends Struct.ComponentSchema {
+  collectionName: 'components_home_annoucement_labels';
+  info: {
+    displayName: 'annoucementLabels';
+    icon: 'book';
+  };
+  attributes: {
+    annoucementlabel: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+        minLength: 2;
+      }>;
+    announcementCardTitle: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+        minLength: 2;
+      }>;
+    hero_annoucements_item: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::annoucement.annoucement'
+    >;
+    hero_news_items: Schema.Attribute.Relation<'oneToMany', 'api::new.new'>;
+    newsCardTitle: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+        minLength: 2;
+      }>;
+    showAnnoucementCard: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
+    showNewsCard: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+  };
+}
+
 export interface HomeHeroBadge extends Struct.ComponentSchema {
   collectionName: 'components_home_hero_badges';
   info: {
@@ -39,28 +72,16 @@ export interface HomeHeroBanner extends Struct.ComponentSchema {
     icon: 'landscape';
   };
   attributes: {
-    announcementCardTitle: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Announcement'>;
     backgroundImageDesktop: Schema.Attribute.Media<'images', true>;
     backgroundImageMobile: Schema.Attribute.Media<'images', true>;
     badges: Schema.Attribute.Component<'home.hero-badge', false>;
     description: Schema.Attribute.Blocks;
-    hero_annoucements_items: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::annoucement.annoucement'
-    >;
-    hero_news_items: Schema.Attribute.Relation<'oneToMany', 'api::new.new'>;
     highlightedText: Schema.Attribute.String;
     labels: Schema.Attribute.Component<'home.hero-label', false>;
-    newsCardTitle: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Latest News'>;
     overlayStyle: Schema.Attribute.Enumeration<
       ['dark_gradient', 'light_gradient', 'none']
     >;
     primaryCta: Schema.Attribute.Component<'shared.button', false>;
-    showAnnouncementCard: Schema.Attribute.Boolean &
-      Schema.Attribute.DefaultTo<true>;
-    showNewsCard: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
     title: Schema.Attribute.String;
   };
 }
@@ -166,6 +187,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'home.about-section': HomeAboutSection;
+      'home.annoucement-labels': HomeAnnoucementLabels;
       'home.hero-badge': HomeHeroBadge;
       'home.hero-banner': HomeHeroBanner;
       'home.hero-label': HomeHeroLabel;
