@@ -23,6 +23,16 @@
         }
       },
       "component": "home.hero-banner",
+      "repeatable": true
+    },
+    "Announcement": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.annoucement-labels",
       "repeatable": false
     },
     "aboutSection": {

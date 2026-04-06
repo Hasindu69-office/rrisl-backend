@@ -915,10 +915,16 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
+    Announcement: Schema.Attribute.Component<'home.annoucement-labels', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    hero: Schema.Attribute.Component<'home.hero-banner', false> &
+    hero: Schema.Attribute.Component<'home.hero-banner', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

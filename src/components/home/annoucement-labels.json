@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_home_annoucement_labels",
+  "info": {
+    "displayName": "annoucementLabels",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "annoucementlabel": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 50
+    },
+    "showNewsCard": {
+      "type": "boolean",
+      "default": true
+    },
+    "newsCardTitle": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 50
+    },
+    "showAnnoucementCard": {
+      "type": "boolean",
+      "default": true
+    },
+    "announcementCardTitle": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 50
+    },
+    "hero_news_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::new.new"
+    },
+    "hero_annoucements_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::annoucement.annoucement"
+    }
+  },
+  "config": {}
+}
