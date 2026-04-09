@@ -1,5 +1,20 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AboutObjectives extends Struct.ComponentSchema {
+  collectionName: 'components_about_objectives';
+  info: {
+    displayName: 'objectives';
+    icon: 'book';
+  };
+  attributes: {
+    objectivecontent: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 2;
+      }>;
+    objectivenumber: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface HomeAboutSection extends Struct.ComponentSchema {
   collectionName: 'components_home_about_sections';
   info: {
@@ -138,6 +153,24 @@ export interface HomeServicesSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBreadcrumbItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_breadcrumb_items';
+  info: {
+    displayName: 'breadcrumb-item';
+  };
+  attributes: {
+    href: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    label: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+        minLength: 2;
+      }>;
+  };
+}
+
 export interface SharedButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_buttons';
   info: {
@@ -165,6 +198,60 @@ export interface SharedLanguageSwitcher extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPageContent extends Struct.ComponentSchema {
+  collectionName: 'components_shared_page_contents';
+  info: {
+    displayName: 'pageContent';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 2;
+      }>;
+    hightlightedtext: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 2;
+      }>;
+    outlinetext: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 2;
+      }>;
+    tag: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 20;
+        minLength: 2;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+        minLength: 2;
+      }>;
+  };
+}
+
+export interface SharedPageHero extends Struct.ComponentSchema {
+  collectionName: 'components_shared_page_heroes';
+  info: {
+    displayName: 'PageHero';
+  };
+  attributes: {
+    backgroundImage: Schema.Attribute.Media<'images'>;
+    backgroundImageAlt: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+        minLength: 2;
+      }>;
+    Breadcrumb: Schema.Attribute.Component<'shared.breadcrumb-item', true>;
+    PageTitle: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+        minLength: 2;
+      }>;
+  };
+}
+
 export interface SharedSectionHeader extends Struct.ComponentSchema {
   collectionName: 'components_shared_section_headers';
   info: {
@@ -186,6 +273,7 @@ export interface SharedSectionHeader extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'about.objectives': AboutObjectives;
       'home.about-section': HomeAboutSection;
       'home.annoucement-labels': HomeAnnoucementLabels;
       'home.hero-badge': HomeHeroBadge;
@@ -193,8 +281,11 @@ declare module '@strapi/strapi' {
       'home.hero-label': HomeHeroLabel;
       'home.service-card': HomeServiceCard;
       'home.services-section': HomeServicesSection;
+      'shared.breadcrumb-item': SharedBreadcrumbItem;
       'shared.button': SharedButton;
       'shared.language-switcher': SharedLanguageSwitcher;
+      'shared.page-content': SharedPageContent;
+      'shared.page-hero': SharedPageHero;
       'shared.section-header': SharedSectionHeader;
     }
   }

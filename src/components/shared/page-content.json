@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_page_contents",
+  "info": {
+    "displayName": "pageContent"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 20
+    },
+    "title": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 50,
+      "required": false
+    },
+    "hightlightedtext": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "text",
+      "minLength": 2
+    },
+    "outlinetext": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 255
+    }
+  },
+  "config": {}
+}
