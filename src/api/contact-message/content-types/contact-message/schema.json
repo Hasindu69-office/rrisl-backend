@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_messages",
+  "info": {
+    "singularName": "contact-message",
+    "pluralName": "contact-messages",
+    "displayName": "contact message"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstname": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 255,
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 255,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "minLength": 2,
+      "maxLength": 255
+    },
+    "phonenumber": {
+      "type": "string",
+      "minLength": 7,
+      "maxLength": 15,
+      "required": true
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 255,
+      "required": true
+    },
+    "message": {
+      "type": "text",
+      "minLength": 10,
+      "required": true
+    },
+    "state": {
+      "type": "enumeration",
+      "default": "new",
+      "enum": [
+        "new",
+        "in_progress",
+        "resolved"
+      ]
+    },
+    "resolvedat": {
+      "type": "datetime",
+      "required": false
+    },
+    "notes": {
+      "type": "text"
+    },
+    "admin_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "admin::user"
+    }
+  }
+}

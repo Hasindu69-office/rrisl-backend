@@ -628,6 +628,74 @@ export interface ApiAnnoucementAnnoucement extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiContactMessageContactMessage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_messages';
+  info: {
+    displayName: 'contact message';
+    pluralName: 'contact-messages';
+    singularName: 'contact-message';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    admin_user: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 2;
+      }>;
+    firstname: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 2;
+      }>;
+    lastname: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 2;
+      }>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-message.contact-message'
+    > &
+      Schema.Attribute.Private;
+    message: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 10;
+      }>;
+    notes: Schema.Attribute.Text;
+    phonenumber: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 15;
+        minLength: 7;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    resolvedat: Schema.Attribute.DateTime;
+    state: Schema.Attribute.Enumeration<['new', 'in_progress', 'resolved']> &
+      Schema.Attribute.DefaultTo<'new'>;
+    subject: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 2;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDownloadCategoryDownloadCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'download_categories';
@@ -2227,6 +2295,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::annoucement.annoucement': ApiAnnoucementAnnoucement;
+      'api::contact-message.contact-message': ApiContactMessageContactMessage;
       'api::download-category.download-category': ApiDownloadCategoryDownloadCategory;
       'api::download.download': ApiDownloadDownload;
       'api::event-category.event-category': ApiEventCategoryEventCategory;
