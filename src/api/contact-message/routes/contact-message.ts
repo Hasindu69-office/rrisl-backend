@@ -4,4 +4,11 @@
 
 import { factories } from '@strapi/strapi';
 
-export default factories.createCoreRouter('api::contact-message.contact-message');
+export default factories.createCoreRouter('api::contact-message.contact-message', {
+  config: {
+    create: {
+      auth: false,
+      middlewares: ['api::contact-message.rate-limit'],
+    },
+  },
+});

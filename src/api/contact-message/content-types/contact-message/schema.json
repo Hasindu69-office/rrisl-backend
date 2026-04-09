@@ -9,45 +9,84 @@
   "options": {
     "draftAndPublish": false
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "firstname": {
       "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "minLength": 2,
       "maxLength": 255,
       "required": true
     },
     "lastname": {
       "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "minLength": 2,
       "maxLength": 255,
       "required": true
     },
     "email": {
       "type": "email",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "required": true,
       "minLength": 2,
       "maxLength": 255
     },
     "phonenumber": {
       "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "minLength": 7,
       "maxLength": 15,
       "required": true
     },
     "subject": {
       "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "minLength": 2,
       "maxLength": 255,
       "required": true
     },
     "message": {
       "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "minLength": 10,
       "required": true
     },
     "state": {
       "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "default": "new",
       "enum": [
         "new",
@@ -57,10 +96,20 @@
     },
     "resolvedat": {
       "type": "datetime",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
       "required": false
     },
     "notes": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "admin_user": {
       "type": "relation",
