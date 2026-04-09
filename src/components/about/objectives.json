@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_about_objectives",
+  "info": {
+    "displayName": "objectives",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "objectivenumber": {
+      "type": "string",
+      "required": true
+    },
+    "objectivecontent": {
+      "type": "text",
+      "minLength": 2
+    }
+  },
+  "config": {}
+}
