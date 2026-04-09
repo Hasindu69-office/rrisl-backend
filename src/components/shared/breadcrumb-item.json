@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_breadcrumb_items",
+  "info": {
+    "displayName": "breadcrumb-item"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 50
+    },
+    "href": {
+      "type": "string",
+      "maxLength": 50
+    }
+  },
+  "config": {}
+}

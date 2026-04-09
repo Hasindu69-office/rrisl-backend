@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_shared_page_heroes",
+  "info": {
+    "displayName": "PageHero"
+  },
+  "options": {},
+  "attributes": {
+    "PageTitle": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 50
+    },
+    "Breadcrumb": {
+      "type": "component",
+      "component": "shared.breadcrumb-item",
+      "repeatable": true
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "backgroundImageAlt": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 50
+    }
+  },
+  "config": {}
+}
