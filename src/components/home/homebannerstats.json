@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_home_homebannerstats",
+  "info": {
+    "displayName": "homebannerstats",
+    "icon": "car"
+  },
+  "options": {},
+  "attributes": {
+    "percentage": {
+      "type": "string",
+      "maxLength": 50,
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 50,
+      "required": true
+    }
+  },
+  "config": {}
+}

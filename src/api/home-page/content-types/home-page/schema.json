@@ -25,6 +25,18 @@
       "component": "home.hero-banner",
       "repeatable": true
     },
+    "stats": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.homebannerstats",
+      "repeatable": true,
+      "required": false,
+      "max": 3
+    },
     "Announcement": {
       "type": "component",
       "pluginOptions": {

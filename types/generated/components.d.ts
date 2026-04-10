@@ -113,6 +113,27 @@ export interface HomeHeroLabel extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeHomebannerstats extends Struct.ComponentSchema {
+  collectionName: 'components_home_homebannerstats';
+  info: {
+    displayName: 'homebannerstats';
+    icon: 'car';
+  };
+  attributes: {
+    label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+        minLength: 2;
+      }>;
+    percentage: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+  };
+}
+
 export interface HomeServiceCard extends Struct.ComponentSchema {
   collectionName: 'components_home_service_cards';
   info: {
@@ -279,6 +300,7 @@ declare module '@strapi/strapi' {
       'home.hero-badge': HomeHeroBadge;
       'home.hero-banner': HomeHeroBanner;
       'home.hero-label': HomeHeroLabel;
+      'home.homebannerstats': HomeHomebannerstats;
       'home.service-card': HomeServiceCard;
       'home.services-section': HomeServicesSection;
       'shared.breadcrumb-item': SharedBreadcrumbItem;
