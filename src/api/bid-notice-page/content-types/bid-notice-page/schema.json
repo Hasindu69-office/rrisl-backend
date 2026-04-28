@@ -1,0 +1,67 @@
+{
+  "kind": "singleType",
+  "collectionName": "bid_notice_pages",
+  "info": {
+    "singularName": "bid-notice-page",
+    "pluralName": "bid-notice-pages",
+    "displayName": "bid notice page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "pagehero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.page-hero",
+      "repeatable": false,
+      "required": true
+    },
+    "rrisllogo": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "LabelClosingDate": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Closing Date",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "LabelReadMore": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Read More",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  }
+}
