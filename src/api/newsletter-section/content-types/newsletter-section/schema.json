@@ -1,0 +1,76 @@
+{
+  "kind": "singleType",
+  "collectionName": "newsletter_sections",
+  "info": {
+    "singularName": "newsletter-section",
+    "pluralName": "newsletter-sections",
+    "displayName": "newsletter-section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Stay Updated With the Latest Research & Insights",
+      "minLength": 3,
+      "maxLength": 255
+    },
+    "EmailPlaceholder": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Enter Your Email",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": false
+    },
+    "ButtonText": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Submit",
+      "minLength": 3,
+      "maxLength": 255
+    },
+    "SuccessMessage": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Thank you for Subscribing",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "ErrorMessage": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    }
+  }
+}
