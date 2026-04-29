@@ -1170,6 +1170,95 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    displayName: 'footer';
+    pluralName: 'footers';
+    singularName: 'footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    AllrightsreserveText: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'\u00A9 2026 Rubber Research Institute of Sri Lanka. All rights reserved.'>;
+    ContactInfo: Schema.Attribute.Component<'footer.contact-info', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FooterBackgroundImage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    FooterLogo: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::footer.footer'>;
+    publishedAt: Schema.Attribute.DateTime;
+    SocialLinks: Schema.Attribute.Component<'shared.sociallinks', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+          min: 2;
+        },
+        number
+      >;
+    TopicandLinks: Schema.Attribute.Component<'footer.link-group', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+          min: 1;
+        },
+        number
+      >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalLayoutGlobalLayout extends Struct.SingleTypeSchema {
   collectionName: 'global_layouts';
   info: {
@@ -2703,6 +2792,7 @@ declare module '@strapi/strapi' {
       'api::downloadpage.downloadpage': ApiDownloadpageDownloadpage;
       'api::event-category.event-category': ApiEventCategoryEventCategory;
       'api::event.event': ApiEventEvent;
+      'api::footer.footer': ApiFooterFooter;
       'api::global-layout.global-layout': ApiGlobalLayoutGlobalLayout;
       'api::helpdesk-ticket.helpdesk-ticket': ApiHelpdeskTicketHelpdeskTicket;
       'api::home-page.home-page': ApiHomePageHomePage;

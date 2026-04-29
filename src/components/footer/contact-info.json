@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_footer_contact_infos",
+  "info": {
+    "displayName": "contact-info",
+    "icon": "collapse"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "default": "Contact us",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "Address": {
+      "type": "text",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "PhoneNumber": {
+      "type": "component",
+      "component": "footer.phone-lines",
+      "repeatable": true,
+      "required": true,
+      "max": 5
+    },
+    "EmailAddress": {
+      "type": "email",
+      "required": true,
+      "minLength": 3,
+      "maxLength": 255
+    }
+  },
+  "config": {}
+}

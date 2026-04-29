@@ -15,6 +15,90 @@ export interface AboutObjectives extends Struct.ComponentSchema {
   };
 }
 
+export interface FooterContactInfo extends Struct.ComponentSchema {
+  collectionName: 'components_footer_contact_infos';
+  info: {
+    displayName: 'contact-info';
+    icon: 'collapse';
+  };
+  attributes: {
+    Address: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    EmailAddress: Schema.Attribute.Email &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    PhoneNumber: Schema.Attribute.Component<'footer.phone-lines', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Contact us'>;
+  };
+}
+
+export interface FooterLinkGroup extends Struct.ComponentSchema {
+  collectionName: 'components_footer_link_groups';
+  info: {
+    displayName: 'link-group';
+    icon: 'arrowDown';
+  };
+  attributes: {
+    GroupTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    Links: Schema.Attribute.Component<'shared.links', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 6;
+          min: 1;
+        },
+        number
+      >;
+  };
+}
+
+export interface FooterPhoneLines extends Struct.ComponentSchema {
+  collectionName: 'components_footer_phone_lines';
+  info: {
+    displayName: 'phone-lines';
+    icon: 'crown';
+  };
+  attributes: {
+    Label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    Number: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 20;
+        minLength: 3;
+      }>;
+  };
+}
+
 export interface HomeAboutSection extends Struct.ComponentSchema {
   collectionName: 'components_home_about_sections';
   info: {
@@ -241,6 +325,31 @@ export interface SharedLanguageSwitcher extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedLinks extends Struct.ComponentSchema {
+  collectionName: 'components_shared_links';
+  info: {
+    displayName: 'links';
+    icon: 'attachment';
+  };
+  attributes: {
+    Label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    openinnewtab: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    URL: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+  };
+}
+
 export interface SharedPageContent extends Struct.ComponentSchema {
   collectionName: 'components_shared_page_contents';
   info: {
@@ -313,10 +422,36 @@ export interface SharedSectionHeader extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSociallinks extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sociallinks';
+  info: {
+    displayName: 'sociallinks';
+    icon: 'attachment';
+  };
+  attributes: {
+    Icon: Schema.Attribute.Media<'images'>;
+    label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    Url: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'about.objectives': AboutObjectives;
+      'footer.contact-info': FooterContactInfo;
+      'footer.link-group': FooterLinkGroup;
+      'footer.phone-lines': FooterPhoneLines;
       'home.about-section': HomeAboutSection;
       'home.annoucement-labels': HomeAnnoucementLabels;
       'home.hero-badge': HomeHeroBadge;
@@ -329,9 +464,11 @@ declare module '@strapi/strapi' {
       'shared.button': SharedButton;
       'shared.error-message': SharedErrorMessage;
       'shared.language-switcher': SharedLanguageSwitcher;
+      'shared.links': SharedLinks;
       'shared.page-content': SharedPageContent;
       'shared.page-hero': SharedPageHero;
       'shared.section-header': SharedSectionHeader;
+      'shared.sociallinks': SharedSociallinks;
     }
   }
 }

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_links",
+  "info": {
+    "displayName": "links",
+    "icon": "attachment"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "URL": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "openinnewtab": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  },
+  "config": {}
+}
