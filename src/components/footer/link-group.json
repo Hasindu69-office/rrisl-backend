@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_footer_link_groups",
+  "info": {
+    "displayName": "link-group",
+    "icon": "arrowDown"
+  },
+  "options": {},
+  "attributes": {
+    "GroupTitle": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "Links": {
+      "type": "component",
+      "component": "shared.links",
+      "repeatable": true,
+      "required": true,
+      "min": 1,
+      "max": 6
+    }
+  },
+  "config": {}
+}

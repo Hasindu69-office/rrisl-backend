@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_footer_phone_lines",
+  "info": {
+    "displayName": "phone-lines",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "Label": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "Number": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 20,
+      "required": true
+    }
+  },
+  "config": {}
+}
