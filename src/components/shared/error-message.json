@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_error_messages",
+  "info": {
+    "displayName": "error-message",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    }
+  },
+  "config": {}
+}

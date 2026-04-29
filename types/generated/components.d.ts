@@ -208,6 +208,28 @@ export interface SharedButton extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedErrorMessage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_error_messages';
+  info: {
+    displayName: 'error-message';
+    icon: 'alien';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+  };
+}
+
 export interface SharedLanguageSwitcher extends Struct.ComponentSchema {
   collectionName: 'components_shared_language_switchers';
   info: {
@@ -305,6 +327,7 @@ declare module '@strapi/strapi' {
       'home.services-section': HomeServicesSection;
       'shared.breadcrumb-item': SharedBreadcrumbItem;
       'shared.button': SharedButton;
+      'shared.error-message': SharedErrorMessage;
       'shared.language-switcher': SharedLanguageSwitcher;
       'shared.page-content': SharedPageContent;
       'shared.page-hero': SharedPageHero;
