@@ -148,12 +148,6 @@
         }
       },
       "default": false
-    },
-    "publications": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::publication.publication",
-      "mappedBy": "researchers"
     }
   }
 }

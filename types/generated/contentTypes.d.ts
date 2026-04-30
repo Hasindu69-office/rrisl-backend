@@ -1076,6 +1076,111 @@ export interface ApiDownloadpageDownloadpage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiEPublicationsPageEPublicationsPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'e_publications_pages';
+  info: {
+    displayName: 'e-publications-page';
+    pluralName: 'e-publications-pages';
+    singularName: 'e-publications-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    ErrorMessage: Schema.Attribute.Component<'shared.error-message', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    LabelFilterLibrary: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Filter Library'>;
+    LabelItems: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    LabelReadMore: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 2;
+      }> &
+      Schema.Attribute.DefaultTo<'Read More'>;
+    LabelResetButton: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 2;
+      }> &
+      Schema.Attribute.DefaultTo<'Reset'>;
+    LabelSearchLibrary: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Search Library'>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::e-publications-page.e-publications-page'
+    >;
+    pagehero: Schema.Attribute.Component<'shared.page-hero', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEventCategoryEventCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'event_categories';
@@ -1986,6 +2091,87 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPublicationCategoryPublicationCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'publication_categories';
+  info: {
+    displayName: 'publication category';
+    pluralName: 'publication-categories';
+    singularName: 'publication-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    CategoryName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    DisplayOrder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+        },
+        number
+      >;
+    IsActive: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<true>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::publication-category.publication-category'
+    >;
+    publication_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::publication-category.publication-category'
+    >;
+    publications: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::publication.publication'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    Slug: Schema.Attribute.UID<'CategoryName'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
   collectionName: 'publications';
   info: {
@@ -2002,30 +2188,35 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    abstract: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    file: Schema.Attribute.Media<'files'> &
+    CoverImage: Schema.Attribute.Media<'images'> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
-    isFeatured: Schema.Attribute.Boolean &
+    CoverImgAltText: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }> &
-      Schema.Attribute.DefaultTo<false>;
-    isPublished: Schema.Attribute.Boolean &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    DisplayOrder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    IsActive: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -2033,28 +2224,16 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.DefaultTo<true>;
-    language: Schema.Attribute.Enumeration<['en', 'si', 'ta']> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::publication.publication'
     >;
-    publicationType: Schema.Attribute.Enumeration<
-      ['journal', 'conference', 'book', 'report', 'thesis', 'other']
-    > &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    publishDate: Schema.Attribute.Date &
+    publication_categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::publication-category.publication-category'
+    >;
+    PublicationDocument: Schema.Attribute.Media<'files'> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -2062,10 +2241,6 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    researchers: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::researcher.researcher'
-    >;
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -2076,22 +2251,6 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 100;
         minLength: 2;
-      }>;
-    source: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-        minLength: 2;
-      }>;
-    supplementaryFiles: Schema.Attribute.Media<'images' | 'files', true> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
       }>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -2107,19 +2266,6 @@ export interface ApiPublicationPublication extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    volume: Schema.Attribute.Integer &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 100;
-          min: 1;
-        },
-        number
-      >;
   };
 }
 
@@ -2244,10 +2390,6 @@ export interface ApiResearcherResearcher extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    publications: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::publication.publication'
-    >;
     publishedAt: Schema.Attribute.DateTime;
     shortBio: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
@@ -2980,6 +3122,7 @@ declare module '@strapi/strapi' {
       'api::download-category.download-category': ApiDownloadCategoryDownloadCategory;
       'api::download.download': ApiDownloadDownload;
       'api::downloadpage.downloadpage': ApiDownloadpageDownloadpage;
+      'api::e-publications-page.e-publications-page': ApiEPublicationsPageEPublicationsPage;
       'api::event-category.event-category': ApiEventCategoryEventCategory;
       'api::event.event': ApiEventEvent;
       'api::footer.footer': ApiFooterFooter;
@@ -2993,6 +3136,7 @@ declare module '@strapi/strapi' {
       'api::newsletter-section.newsletter-section': ApiNewsletterSectionNewsletterSection;
       'api::newsletter-subscriber.newsletter-subscriber': ApiNewsletterSubscriberNewsletterSubscriber;
       'api::page.page': ApiPagePage;
+      'api::publication-category.publication-category': ApiPublicationCategoryPublicationCategory;
       'api::publication.publication': ApiPublicationPublication;
       'api::researcher.researcher': ApiResearcherResearcher;
       'api::stat-record.stat-record': ApiStatRecordStatRecord;
