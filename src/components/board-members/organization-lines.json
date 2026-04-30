@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_board_members_organization_lines",
+  "info": {
+    "displayName": "OrganizationLines",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": false
+    }
+  },
+  "config": {}
+}
