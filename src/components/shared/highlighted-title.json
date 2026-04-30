@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_highlighted_titles",
+  "info": {
+    "displayName": "highlighted title",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "HighlightedText": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    }
+  },
+  "config": {}
+}

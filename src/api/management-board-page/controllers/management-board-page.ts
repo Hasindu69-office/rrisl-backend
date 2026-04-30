@@ -1,0 +1,7 @@
+/**
+ * management-board-page controller
+ */
+
+import { factories } from '@strapi/strapi';
+
+export default factories.createCoreController('api::management-board-page.management-board-page');

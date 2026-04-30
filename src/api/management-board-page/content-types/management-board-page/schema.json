@@ -1,0 +1,65 @@
+{
+  "kind": "singleType",
+  "collectionName": "management_board_pages",
+  "info": {
+    "singularName": "management-board-page",
+    "pluralName": "management-board-pages",
+    "displayName": "management-board-page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "pagehero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.page-hero",
+      "repeatable": false,
+      "required": true
+    },
+    "LabelMemberBoard": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.highlighted-title",
+      "repeatable": false,
+      "required": true,
+      "max": 1
+    },
+    "LabelInAttendance": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.highlighted-title",
+      "repeatable": false,
+      "required": true
+    },
+    "ErrorMessage": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.error-message",
+      "repeatable": false,
+      "required": true,
+      "max": 1
+    }
+  }
+}

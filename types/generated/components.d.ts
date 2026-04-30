@@ -15,6 +15,21 @@ export interface AboutObjectives extends Struct.ComponentSchema {
   };
 }
 
+export interface BoardMembersOrganizationLines extends Struct.ComponentSchema {
+  collectionName: 'components_board_members_organization_lines';
+  info: {
+    displayName: 'OrganizationLines';
+    icon: 'bulletList';
+  };
+  attributes: {
+    Text: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+  };
+}
+
 export interface FooterContactInfo extends Struct.ComponentSchema {
   collectionName: 'components_footer_contact_infos';
   info: {
@@ -314,6 +329,28 @@ export interface SharedErrorMessage extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHighlightedTitle extends Struct.ComponentSchema {
+  collectionName: 'components_shared_highlighted_titles';
+  info: {
+    displayName: 'highlighted title';
+    icon: 'cursor';
+  };
+  attributes: {
+    HighlightedText: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+  };
+}
+
 export interface SharedLanguageSwitcher extends Struct.ComponentSchema {
   collectionName: 'components_shared_language_switchers';
   info: {
@@ -449,6 +486,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'about.objectives': AboutObjectives;
+      'board-members.organization-lines': BoardMembersOrganizationLines;
       'footer.contact-info': FooterContactInfo;
       'footer.link-group': FooterLinkGroup;
       'footer.phone-lines': FooterPhoneLines;
@@ -463,6 +501,7 @@ declare module '@strapi/strapi' {
       'shared.breadcrumb-item': SharedBreadcrumbItem;
       'shared.button': SharedButton;
       'shared.error-message': SharedErrorMessage;
+      'shared.highlighted-title': SharedHighlightedTitle;
       'shared.language-switcher': SharedLanguageSwitcher;
       'shared.links': SharedLinks;
       'shared.page-content': SharedPageContent;
