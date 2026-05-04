@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publication_categories",
+  "info": {
+    "singularName": "publication-category",
+    "pluralName": "publication-categories",
+    "displayName": "publication category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "CategoryName": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "Slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "CategoryName",
+      "maxLength": 255
+    },
+    "publication_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::publication-category.publication-category"
+    },
+    "DisplayOrder": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true,
+      "max": 100
+    },
+    "IsActive": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "publications": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::publication.publication",
+      "inversedBy": "publication_categories"
+    }
+  }
+}

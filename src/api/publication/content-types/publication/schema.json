@@ -38,76 +38,37 @@
       "minLength": 2,
       "maxLength": 100
     },
-    "abstract": {
-      "type": "blocks",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+    "publication_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::publication-category.publication-category",
+      "mappedBy": "publications"
     },
-    "publishDate": {
-      "type": "date",
+    "CoverImage": {
+      "type": "media",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "required": true
-    },
-    "publicationType": {
-      "type": "enumeration",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
+      "multiple": false,
       "required": true,
-      "enum": [
-        "journal",
-        "conference",
-        "book",
-        "report",
-        "thesis",
-        "other"
+      "allowedTypes": [
+        "images"
       ]
     },
-    "language": {
-      "type": "enumeration",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true,
-      "enum": [
-        "en",
-        "si",
-        "ta"
-      ]
-    },
-    "source": {
+    "CoverImgAltText": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
-          "localized": true
-        }
-      },
-      "minLength": 2,
-      "maxLength": 100,
-      "required": false
-    },
-    "volume": {
-      "type": "integer",
-      "pluginOptions": {
-        "i18n": {
           "localized": false
         }
       },
-      "min": 1,
-      "max": 100
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
     },
-    "file": {
+    "PublicationDocument": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
@@ -120,20 +81,16 @@
         "files"
       ]
     },
-    "supplementaryFiles": {
-      "type": "media",
+    "DisplayOrder": {
+      "type": "integer",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files"
-      ]
+      "required": true
     },
-    "isPublished": {
+    "IsActive": {
       "type": "boolean",
       "pluginOptions": {
         "i18n": {
@@ -142,21 +99,6 @@
       },
       "required": true,
       "default": true
-    },
-    "isFeatured": {
-      "type": "boolean",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "default": false
-    },
-    "researchers": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::researcher.researcher",
-      "inversedBy": "publications"
     }
   }
 }
