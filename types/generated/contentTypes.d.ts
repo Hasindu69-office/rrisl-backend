@@ -1609,6 +1609,16 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    datainsightssection: Schema.Attribute.Component<
+      'home.datainsightssection',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     hero: Schema.Attribute.Component<'home.hero-banner', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -1646,6 +1656,56 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomepageStatisticsSectionHomepageStatisticsSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'homepage_statistics_sections';
+  info: {
+    displayName: 'homepage-statistics-section';
+    pluralName: 'homepage-statistics-sections';
+    singularName: 'homepage-statistics-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homepage-statistics-section.homepage-statistics-section'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    value: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
   };
 }
 
@@ -3127,6 +3187,7 @@ declare module '@strapi/strapi' {
       'api::global-layout.global-layout': ApiGlobalLayoutGlobalLayout;
       'api::helpdesk-ticket.helpdesk-ticket': ApiHelpdeskTicketHelpdeskTicket;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::homepage-statistics-section.homepage-statistics-section': ApiHomepageStatisticsSectionHomepageStatisticsSection;
       'api::location.location': ApiLocationLocation;
       'api::management-board-page.management-board-page': ApiManagementBoardPageManagementBoardPage;
       'api::new.new': ApiNewNew;

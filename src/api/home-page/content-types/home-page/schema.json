@@ -57,6 +57,17 @@
       "component": "home.support-the-industry-section",
       "repeatable": false,
       "required": true
+    },
+    "datainsightssection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.datainsightssection",
+      "repeatable": false,
+      "required": true
     }
   }
 }

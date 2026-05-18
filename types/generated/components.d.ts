@@ -160,6 +160,54 @@ export interface HomeAnnoucementLabels extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeDatainsightssection extends Struct.ComponentSchema {
+  collectionName: 'components_home_datainsightssections';
+  info: {
+    displayName: 'datainsightssection';
+  };
+  attributes: {
+    backgroundimage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 10;
+      }> &
+      Schema.Attribute.DefaultTo<'This section presents a detailed year-to-year comparison of growth across major rubber product categories, including Sheet, Sole Crepe, Scrap Crepe, Latex Crepe, T.S.R., and Latex Other. It allows users to analyze annual performance by examining changes in production volumes and identifying patterns of growth, decline, or stability over time. Through clear visualization and structured data presentation, the section supports easy comparison between years and product types, helping users understand both short-term fluctuations and long-term industry trends.  The information is particularly useful for researchers, policymakers, rubber growers, exporters, and industry stakeholders who require reliable insights for planning and evaluation. By observing year-on-year movements, users can assess how market demand, production conditions, and policy or environmental factors may influence different product segments.'>;
+    statisticslabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Statistics'>;
+    statisticsrightheader: Schema.Attribute.Component<
+      'shared.section-header',
+      false
+    > &
+      Schema.Attribute.Required;
+    statisticstitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Rubber Production by Different Types'>;
+    viewdatabutton: Schema.Attribute.Component<'shared.button', false> &
+      Schema.Attribute.Required;
+    year: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<2026>;
+    yearlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Year'>;
+  };
+}
+
 export interface HomeHeroBadge extends Struct.ComponentSchema {
   collectionName: 'components_home_hero_badges';
   info: {
@@ -557,6 +605,7 @@ declare module '@strapi/strapi' {
       'footer.phone-lines': FooterPhoneLines;
       'home.about-section': HomeAboutSection;
       'home.annoucement-labels': HomeAnnoucementLabels;
+      'home.datainsightssection': HomeDatainsightssection;
       'home.hero-badge': HomeHeroBadge;
       'home.hero-banner': HomeHeroBanner;
       'home.hero-label': HomeHeroLabel;
