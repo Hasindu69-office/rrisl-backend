@@ -123,8 +123,6 @@ export interface HomeAboutSection extends Struct.ComponentSchema {
   attributes: {
     body: Schema.Attribute.Blocks;
     header: Schema.Attribute.Component<'shared.section-header', false>;
-    imageBottom: Schema.Attribute.Media<'images'>;
-    imageTop: Schema.Attribute.Media<'images'>;
     primaryCta: Schema.Attribute.Component<'shared.button', false>;
   };
 }
@@ -240,7 +238,6 @@ export interface HomeServiceCard extends Struct.ComponentSchema {
     icon: 'stack';
   };
   attributes: {
-    cta: Schema.Attribute.Component<'shared.button', false>;
     description: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -269,6 +266,41 @@ export interface HomeServicesSection extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     header: Schema.Attribute.Component<'shared.section-header', false>;
     serviceCards: Schema.Attribute.Component<'home.service-card', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface HomeSupportTheIndustrySection extends Struct.ComponentSchema {
+  collectionName: 'components_home_support_the_industry_sections';
+  info: {
+    displayName: 'support-the-industry-section';
+  };
+  attributes: {
+    backgroundImage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    outlinetext: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'What We Do'>;
+    plantimage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    supporttheindustrycard: Schema.Attribute.Component<
+      'shared.titleandname',
+      true
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 6;
+        },
+        number
+      >;
+    supporttheindustrysection: Schema.Attribute.Component<
+      'shared.section-header',
+      false
+    > &
       Schema.Attribute.Required;
   };
 }
@@ -482,6 +514,39 @@ export interface SharedSociallinks extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTitleandname extends Struct.ComponentSchema {
+  collectionName: 'components_shared_titleandnames';
+  info: {
+    displayName: 'titleandname';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+        },
+        number
+      >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    url: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -498,6 +563,7 @@ declare module '@strapi/strapi' {
       'home.homebannerstats': HomeHomebannerstats;
       'home.service-card': HomeServiceCard;
       'home.services-section': HomeServicesSection;
+      'home.support-the-industry-section': HomeSupportTheIndustrySection;
       'shared.breadcrumb-item': SharedBreadcrumbItem;
       'shared.button': SharedButton;
       'shared.error-message': SharedErrorMessage;
@@ -508,6 +574,7 @@ declare module '@strapi/strapi' {
       'shared.page-hero': SharedPageHero;
       'shared.section-header': SharedSectionHeader;
       'shared.sociallinks': SharedSociallinks;
+      'shared.titleandname': SharedTitleandname;
     }
   }
 }

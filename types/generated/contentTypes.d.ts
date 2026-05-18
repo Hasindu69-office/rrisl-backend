@@ -1606,16 +1606,20 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
           localized: true;
         };
       }>;
-    Announcement: Schema.Attribute.Component<'home.annoucement-labels', false> &
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    hero: Schema.Attribute.Component<'home.hero-banner', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    hero: Schema.Attribute.Component<'home.hero-banner', true> &
+    industrysupportsection: Schema.Attribute.Component<
+      'home.support-the-industry-section',
+      false
+    > &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1627,12 +1631,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'api::home-page.home-page'
     >;
     publishedAt: Schema.Attribute.DateTime;
-    serviceSection: Schema.Attribute.Component<'home.services-section', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     stats: Schema.Attribute.Component<'home.homebannerstats', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

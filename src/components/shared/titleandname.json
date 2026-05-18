@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_titleandnames",
+  "info": {
+    "displayName": "titleandname"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "sortorder": {
+      "type": "integer",
+      "max": 100
+    },
+    "url": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255
+    }
+  },
+  "config": {}
+}

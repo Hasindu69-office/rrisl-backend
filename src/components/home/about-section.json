@@ -18,20 +18,6 @@
       "type": "component",
       "component": "shared.button",
       "repeatable": false
-    },
-    "imageTop": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "imageBottom": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images"
-      ]
     }
   },
   "config": {}

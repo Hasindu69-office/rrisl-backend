@@ -37,16 +37,6 @@
       "required": false,
       "max": 3
     },
-    "Announcement": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "home.annoucement-labels",
-      "repeatable": false
-    },
     "aboutSection": {
       "type": "component",
       "pluginOptions": {
@@ -57,15 +47,16 @@
       "component": "home.about-section",
       "repeatable": false
     },
-    "serviceSection": {
+    "industrysupportsection": {
       "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "component": "home.services-section",
-      "repeatable": false
+      "component": "home.support-the-industry-section",
+      "repeatable": false,
+      "required": true
     }
   }
 }

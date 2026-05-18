@@ -17,11 +17,6 @@
       "minLength": 2,
       "maxLength": 255,
       "required": true
-    },
-    "cta": {
-      "type": "component",
-      "component": "shared.button",
-      "repeatable": false
     }
   },
   "config": {}
