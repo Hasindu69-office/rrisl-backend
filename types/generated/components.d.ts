@@ -200,6 +200,54 @@ export interface ContactContactinformation extends Struct.ComponentSchema {
   };
 }
 
+export interface ContactLocationcards extends Struct.ComponentSchema {
+  collectionName: 'components_contact_locationcards';
+  info: {
+    displayName: 'locationcards';
+  };
+  attributes: {
+    address: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Dartonfield, Agalawatta, Sri Lanka, 12200'>;
+    addresslabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Postal Address'>;
+    gmapembedlink: Schema.Attribute.String & Schema.Attribute.Required;
+    hightlightedtext: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    phonenumber: Schema.Attribute.Component<'contact.phonenumber', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    verticaltext: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+  };
+}
+
 export interface ContactPhonenumber extends Struct.ComponentSchema {
   collectionName: 'components_contact_phonenumbers';
   info: {
@@ -249,6 +297,59 @@ export interface ContactSociallinks extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
         minLength: 3;
+      }>;
+  };
+}
+
+export interface ContactSubstationcard extends Struct.ComponentSchema {
+  collectionName: 'components_contact_substationcards';
+  info: {
+    displayName: 'substationcard';
+  };
+  attributes: {
+    emailaddress: Schema.Attribute.Email &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    emaillabel: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    phonenumbers: Schema.Attribute.Component<'contact.phonenumber', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    postaladdress: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    postaladdresslabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Postal Address'>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    substationtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 10;
       }>;
   };
 }
@@ -835,8 +936,10 @@ declare module '@strapi/strapi' {
       'board-members.organization-lines': BoardMembersOrganizationLines;
       'contact.contactformlabels': ContactContactformlabels;
       'contact.contactinformation': ContactContactinformation;
+      'contact.locationcards': ContactLocationcards;
       'contact.phonenumber': ContactPhonenumber;
       'contact.sociallinks': ContactSociallinks;
+      'contact.substationcard': ContactSubstationcard;
       'footer.contact-info': FooterContactInfo;
       'footer.link-group': FooterLinkGroup;
       'footer.phone-lines': FooterPhoneLines;

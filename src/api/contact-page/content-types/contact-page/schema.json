@@ -46,6 +46,53 @@
       },
       "component": "contact.sociallinks",
       "repeatable": true
+    },
+    "headofficeandboardofficedetails": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "contact.locationcards",
+      "repeatable": true,
+      "max": 2
+    },
+    "substationtitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Rubber Research Institute",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "hightlightedtext": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "- Sub-stations",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "substations": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "contact.substationcard",
+      "repeatable": true,
+      "required": true,
+      "max": 5
     }
   }
 }
