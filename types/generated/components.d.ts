@@ -30,6 +30,229 @@ export interface BoardMembersOrganizationLines extends Struct.ComponentSchema {
   };
 }
 
+export interface ContactContactformlabels extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contactformlabels';
+  info: {
+    displayName: 'contactformlabels';
+  };
+  attributes: {
+    buttonlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Send Message'>;
+    emailerrormsg: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Email is required.'>;
+    emaillabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Email'>;
+    firstnameerrormsg: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'First name is required.'>;
+    firstnamelabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'First Name'>;
+    lastnameerrormsg: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Last name is required.'>;
+    lastnamelabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Last Name'>;
+    messageerrormsg: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Message is required.'>;
+    messagelabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Message'>;
+    messageplaceholder: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Write Your Message'>;
+    phonenumbererrormsg: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Phone number is required.'>;
+    phonenumberlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Phone Number'>;
+    selectsubjectlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Select Subject?'>;
+  };
+}
+
+export interface ContactContactinformation extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contactinformations';
+  info: {
+    displayName: 'contactinformation';
+  };
+  attributes: {
+    address: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Dartonfield, Agalawatta, 12200'>;
+    addresslabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Visit Our Location'>;
+    contactformlabels: Schema.Attribute.Component<
+      'contact.contactformlabels',
+      false
+    > &
+      Schema.Attribute.Required;
+    emailaddress: Schema.Attribute.Email &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    emaillabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Email'>;
+    phonenumberlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Looking for Consultation'>;
+    phonenumbers: Schema.Attribute.Component<'contact.phonenumber', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Say something to start a live chat!'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Contact Information'>;
+  };
+}
+
+export interface ContactPhonenumber extends Struct.ComponentSchema {
+  collectionName: 'components_contact_phonenumbers';
+  info: {
+    displayName: 'phonenumber';
+  };
+  attributes: {
+    isprimary: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    label: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    number: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 20;
+        minLength: 7;
+      }>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+  };
+}
+
+export interface ContactSociallinks extends Struct.ComponentSchema {
+  collectionName: 'components_contact_sociallinks';
+  info: {
+    displayName: 'sociallinks';
+  };
+  attributes: {
+    isvisible: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    platform: Schema.Attribute.Enumeration<
+      ['Facebook', 'Instagram', 'LinkedIn', 'X']
+    > &
+      Schema.Attribute.Required;
+    url: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+  };
+}
+
 export interface FooterContactInfo extends Struct.ComponentSchema {
   collectionName: 'components_footer_contact_infos';
   info: {
@@ -276,6 +499,16 @@ export interface HomeHomebannerstats extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50;
       }>;
+  };
+}
+
+export interface HomeNewsandblogsection extends Struct.ComponentSchema {
+  collectionName: 'components_home_newsandblogsections';
+  info: {
+    displayName: 'newsandblogsection';
+  };
+  attributes: {
+    blogsection: Schema.Attribute.Component<'shared.section-header', false>;
   };
 }
 
@@ -600,6 +833,10 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'about.objectives': AboutObjectives;
       'board-members.organization-lines': BoardMembersOrganizationLines;
+      'contact.contactformlabels': ContactContactformlabels;
+      'contact.contactinformation': ContactContactinformation;
+      'contact.phonenumber': ContactPhonenumber;
+      'contact.sociallinks': ContactSociallinks;
       'footer.contact-info': FooterContactInfo;
       'footer.link-group': FooterLinkGroup;
       'footer.phone-lines': FooterPhoneLines;
@@ -610,6 +847,7 @@ declare module '@strapi/strapi' {
       'home.hero-banner': HomeHeroBanner;
       'home.hero-label': HomeHeroLabel;
       'home.homebannerstats': HomeHomebannerstats;
+      'home.newsandblogsection': HomeNewsandblogsection;
       'home.service-card': HomeServiceCard;
       'home.services-section': HomeServicesSection;
       'home.support-the-industry-section': HomeSupportTheIndustrySection;

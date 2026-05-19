@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_contact_phonenumbers",
+  "info": {
+    "displayName": "phonenumber"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": false
+    },
+    "number": {
+      "type": "string",
+      "minLength": 7,
+      "maxLength": 20,
+      "required": true
+    },
+    "isprimary": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "sortorder": {
+      "type": "integer",
+      "required": true,
+      "max": 5
+    }
+  },
+  "config": {}
+}

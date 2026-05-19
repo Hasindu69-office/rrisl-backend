@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_home_newsandblogsections",
+  "info": {
+    "displayName": "newsandblogsection"
+  },
+  "options": {},
+  "attributes": {
+    "blogsection": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,101 @@
+{
+  "collectionName": "components_contact_contactformlabels",
+  "info": {
+    "displayName": "contactformlabels"
+  },
+  "options": {},
+  "attributes": {
+    "firstnamelabel": {
+      "type": "string",
+      "default": "First Name",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "firstnameerrormsg": {
+      "type": "string",
+      "default": "First name is required.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "lastnamelabel": {
+      "type": "string",
+      "default": "Last Name",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "lastnameerrormsg": {
+      "type": "string",
+      "default": "Last name is required.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "emaillabel": {
+      "type": "string",
+      "default": "Email",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "emailerrormsg": {
+      "type": "string",
+      "default": "Email is required.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "phonenumberlabel": {
+      "type": "string",
+      "default": "Phone Number",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "phonenumbererrormsg": {
+      "type": "string",
+      "default": "Phone number is required.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "selectsubjectlabel": {
+      "type": "string",
+      "default": "Select Subject?",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "messagelabel": {
+      "type": "string",
+      "default": "Message",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "messageplaceholder": {
+      "type": "string",
+      "default": "Write Your Message",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "messageerrormsg": {
+      "type": "string",
+      "default": "Message is required.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "buttonlabel": {
+      "type": "string",
+      "default": "Send Message",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  },
+  "config": {}
+}
