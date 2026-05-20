@@ -929,6 +929,36 @@ export interface SharedTitleandname extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedValidationlabels extends Struct.ComponentSchema {
+  collectionName: 'components_shared_validationlabels';
+  info: {
+    displayName: 'validationlabels';
+  };
+  attributes: {
+    maximumcharacterslabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'cannot exceed 255 characters.'>;
+    minimumcharacterlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'must be at least 3 characters.'>;
+    requiredlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'required'>;
+  };
+}
+
 export interface VacancyLists extends Struct.ComponentSchema {
   collectionName: 'components_vacancy_lists';
   info: {
@@ -978,6 +1008,7 @@ declare module '@strapi/strapi' {
       'shared.section-header': SharedSectionHeader;
       'shared.sociallinks': SharedSociallinks;
       'shared.titleandname': SharedTitleandname;
+      'shared.validationlabels': SharedValidationlabels;
       'vacancy.lists': VacancyLists;
     }
   }

@@ -1,0 +1,112 @@
+{
+  "kind": "singleType",
+  "collectionName": "vacancy_details_pages",
+  "info": {
+    "singularName": "vacancy-details-page",
+    "pluralName": "vacancy-details-pages",
+    "displayName": "vacancy details page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "fullnamelabels": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.validationlabels",
+      "repeatable": false,
+      "required": true
+    },
+    "emaillabels": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.validationlabels",
+      "repeatable": false,
+      "required": true
+    },
+    "contactnumberlabels": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.validationlabels",
+      "repeatable": false,
+      "required": true
+    },
+    "cvrequiredvalidationlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "CV file is required.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "cvtypevalidationlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "CV must be a PDF, DOC, or DOCX file.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "cvemptyfilelabels": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "CV file is empty.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "submitsuccessmessage": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Vacancy application submitted successfully.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "applicationerrormessage": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Unable to submit vacancy application.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  }
+}

@@ -2884,6 +2884,125 @@ export interface ApiVacancyApplicationVacancyApplication
   };
 }
 
+export interface ApiVacancyDetailsPageVacancyDetailsPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'vacancy_details_pages';
+  info: {
+    displayName: 'vacancy details page';
+    pluralName: 'vacancy-details-pages';
+    singularName: 'vacancy-details-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    applicationerrormessage: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Unable to submit vacancy application.'>;
+    contactnumberlabels: Schema.Attribute.Component<
+      'shared.validationlabels',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cvemptyfilelabels: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'CV file is empty.'>;
+    cvrequiredvalidationlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'CV file is required.'>;
+    cvtypevalidationlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'CV must be a PDF, DOC, or DOCX file.'>;
+    emaillabels: Schema.Attribute.Component<'shared.validationlabels', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    fullnamelabels: Schema.Attribute.Component<
+      'shared.validationlabels',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::vacancy-details-page.vacancy-details-page'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    submitsuccessmessage: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Vacancy application submitted successfully.'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiVacancyPageVacancyPage extends Struct.SingleTypeSchema {
   collectionName: 'vacancy_pages';
   info: {
@@ -3983,6 +4102,7 @@ declare module '@strapi/strapi' {
       'api::stat-record.stat-record': ApiStatRecordStatRecord;
       'api::tender.tender': ApiTenderTender;
       'api::vacancy-application.vacancy-application': ApiVacancyApplicationVacancyApplication;
+      'api::vacancy-details-page.vacancy-details-page': ApiVacancyDetailsPageVacancyDetailsPage;
       'api::vacancy-page.vacancy-page': ApiVacancyPageVacancyPage;
       'api::vacancy.vacancy': ApiVacancyVacancy;
       'plugin::content-releases.release': PluginContentReleasesRelease;
