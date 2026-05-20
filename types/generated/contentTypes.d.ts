@@ -2412,6 +2412,52 @@ export interface ApiNewsletterSubscriberNewsletterSubscriber
   };
 }
 
+export interface ApiOrganizationStructurePageOrganizationStructurePage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'organization_structure_pages';
+  info: {
+    displayName: 'organization structure page';
+    pluralName: 'organization-structure-pages';
+    singularName: 'organization-structure-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::organization-structure-page.organization-structure-page'
+    >;
+    organizationstructureimg: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    pagehero: Schema.Attribute.Component<'shared.page-hero', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Struct.CollectionTypeSchema {
   collectionName: 'pages';
   info: {
@@ -3391,6 +3437,44 @@ export interface ApiRubberPricePageRubberPricePage
         minLength: 3;
       }> &
       Schema.Attribute.DefaultTo<'Weekly Uploads'>;
+  };
+}
+
+export interface ApiServicesPageServicesPage extends Struct.SingleTypeSchema {
+  collectionName: 'services_pages';
+  info: {
+    displayName: 'services page';
+    pluralName: 'services-pages';
+    singularName: 'services-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::services-page.services-page'
+    >;
+    pagehero: Schema.Attribute.Component<'shared.page-hero', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -4787,6 +4871,7 @@ declare module '@strapi/strapi' {
       'api::news-category.news-category': ApiNewsCategoryNewsCategory;
       'api::newsletter-section.newsletter-section': ApiNewsletterSectionNewsletterSection;
       'api::newsletter-subscriber.newsletter-subscriber': ApiNewsletterSubscriberNewsletterSubscriber;
+      'api::organization-structure-page.organization-structure-page': ApiOrganizationStructurePageOrganizationStructurePage;
       'api::page.page': ApiPagePage;
       'api::publication-category.publication-category': ApiPublicationCategoryPublicationCategory;
       'api::publication.publication': ApiPublicationPublication;
@@ -4795,6 +4880,7 @@ declare module '@strapi/strapi' {
       'api::researcher.researcher': ApiResearcherResearcher;
       'api::rubber-auction-price.rubber-auction-price': ApiRubberAuctionPriceRubberAuctionPrice;
       'api::rubber-price-page.rubber-price-page': ApiRubberPricePageRubberPricePage;
+      'api::services-page.services-page': ApiServicesPageServicesPage;
       'api::stat-record.stat-record': ApiStatRecordStatRecord;
       'api::tender.tender': ApiTenderTender;
       'api::vacancy-application.vacancy-application': ApiVacancyApplicationVacancyApplication;
