@@ -1,0 +1,124 @@
+{
+  "kind": "singleType",
+  "collectionName": "research_managers_pages",
+  "info": {
+    "singularName": "research-managers-page",
+    "pluralName": "research-managers-pages",
+    "displayName": "research managers page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "pagehero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.page-hero",
+      "repeatable": false
+    },
+    "researchleadershipdetails": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Explore the institute's research management team through a cleaner, more readable profile format. Each card surfaces the essentials first, with the full profile available on demand.",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "leadershipprofilelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Leadership Profile",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "viewfullprofilebuttonlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "View Full Profile",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "primarycontactlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Primary Contact",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "directlinelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Direct Line",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "researchmanagementlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Research Management",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "profileoverviewlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Profile Overview",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  }
+}

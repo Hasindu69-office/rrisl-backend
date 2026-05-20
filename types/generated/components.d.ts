@@ -721,6 +721,16 @@ export interface SharedButton extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedEmails extends Struct.ComponentSchema {
+  collectionName: 'components_shared_emails';
+  info: {
+    displayName: 'emails';
+  };
+  attributes: {
+    email: Schema.Attribute.Email;
+  };
+}
+
 export interface SharedErrorMessage extends Struct.ComponentSchema {
   collectionName: 'components_shared_error_messages';
   info: {
@@ -999,6 +1009,7 @@ declare module '@strapi/strapi' {
       'home.support-the-industry-section': HomeSupportTheIndustrySection;
       'shared.breadcrumb-item': SharedBreadcrumbItem;
       'shared.button': SharedButton;
+      'shared.emails': SharedEmails;
       'shared.error-message': SharedErrorMessage;
       'shared.highlighted-title': SharedHighlightedTitle;
       'shared.language-switcher': SharedLanguageSwitcher;
