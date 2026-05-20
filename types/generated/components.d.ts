@@ -687,6 +687,48 @@ export interface HomeSupportTheIndustrySection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedAlbumcard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_albumcards';
+  info: {
+    displayName: 'albumcard';
+    icon: 'book';
+  };
+  attributes: {
+    albumdescription: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    albumimg: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    albumlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    albumtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    url: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    viewalbumlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'View Album'>;
+  };
+}
+
 export interface SharedBreadcrumbItem extends Struct.ComponentSchema {
   collectionName: 'components_shared_breadcrumb_items';
   info: {
@@ -1007,6 +1049,7 @@ declare module '@strapi/strapi' {
       'home.service-card': HomeServiceCard;
       'home.services-section': HomeServicesSection;
       'home.support-the-industry-section': HomeSupportTheIndustrySection;
+      'shared.albumcard': SharedAlbumcard;
       'shared.breadcrumb-item': SharedBreadcrumbItem;
       'shared.button': SharedButton;
       'shared.emails': SharedEmails;
