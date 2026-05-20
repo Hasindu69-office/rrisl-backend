@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_vacancy_lists",
+  "info": {
+    "displayName": "lists"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "minLength": 10
+    }
+  },
+  "config": {}
+}

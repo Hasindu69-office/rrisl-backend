@@ -929,6 +929,19 @@ export interface SharedTitleandname extends Struct.ComponentSchema {
   };
 }
 
+export interface VacancyLists extends Struct.ComponentSchema {
+  collectionName: 'components_vacancy_lists';
+  info: {
+    displayName: 'lists';
+  };
+  attributes: {
+    text: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 10;
+      }>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -965,6 +978,7 @@ declare module '@strapi/strapi' {
       'shared.section-header': SharedSectionHeader;
       'shared.sociallinks': SharedSociallinks;
       'shared.titleandname': SharedTitleandname;
+      'vacancy.lists': VacancyLists;
     }
   }
 }
