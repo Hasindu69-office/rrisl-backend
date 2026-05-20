@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rubber_auction_prices",
+  "info": {
+    "singularName": "rubber-auction-price",
+    "pluralName": "rubber-auction-prices",
+    "displayName": "rubber auction price"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": false
+    }
+  },
+  "attributes": {
+    "price": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    }
+  }
+}

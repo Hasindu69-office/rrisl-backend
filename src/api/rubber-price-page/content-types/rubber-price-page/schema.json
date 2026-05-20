@@ -1,0 +1,304 @@
+{
+  "kind": "singleType",
+  "collectionName": "rubber_price_pages",
+  "info": {
+    "singularName": "rubber-price-page",
+    "pluralName": "rubber-price-pages",
+    "displayName": "rubber price page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "pagehero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.page-hero",
+      "repeatable": false,
+      "required": true
+    },
+    "sectionheader": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "View the latest weekly auction sheet and the archived rubber price list.",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "latestupdatelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Latest Update",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "archivedyearslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Archived Years",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "recentupdatelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Recent Updates",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "recentauctiondatelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Recent Auction Date",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "weeklyuploadslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Weekly Uploads",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "latestweeklyuploadlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Latest Weekly Upload",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "auctionpricelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Auction Prices",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "dateofauctionlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Date of auction:",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "openfullsheetbuttonlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Open full sheet",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "archivedbrowsertitle": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "archiveddescription": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Select an archive year to view the available weekly uploads, then choose a date to open that auction sheet.",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "activearchivedlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Active archive",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "archivedyearlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Archived Year",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "uploadslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Uploads",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "availabledateslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Available Dates",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "newestdatashownlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Newest dates shown first",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "archivelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Archive",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "inthisarchiveyearlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "In this archive year",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "previouslbuttonlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Previous",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "nextbuttonlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Next",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "quickswitchlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Quick Switch",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  }
+}
