@@ -2853,21 +2853,34 @@ export interface ApiVacancyApplicationVacancyApplication
       'api::vacancy-application.vacancy-application'
     > &
       Schema.Attribute.Private;
-    notes: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 255;
-        minLength: 3;
-      }>;
+    notes: Schema.Attribute.Text & Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    reviewedat: Schema.Attribute.DateTime & Schema.Attribute.Private;
+    reviewedby: Schema.Attribute.Relation<'manyToOne', 'admin::user'> &
+      Schema.Attribute.Private;
     state: Schema.Attribute.Enumeration<
       ['submitted', 'reviewing', 'shortlisted', 'rejected', 'accepted']
     > &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'submitted'>;
+    submittedat: Schema.Attribute.DateTime & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    vacancy: Schema.Attribute.Relation<'manyToOne', 'api::vacancy.vacancy'>;
+    vacancy: Schema.Attribute.Relation<'manyToOne', 'api::vacancy.vacancy'> &
+      Schema.Attribute.Required;
+    vacancyslug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    vacancytitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
   };
 }
 

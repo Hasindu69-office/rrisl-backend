@@ -2,6 +2,16 @@
  * vacancy-application router
  */
 
-import { factories } from '@strapi/strapi';
-
-export default factories.createCoreRouter('api::vacancy-application.vacancy-application');
+export default {
+  routes: [
+    {
+      method: 'POST',
+      path: '/vacancies/:slug/apply',
+      handler: 'vacancy-application.submit',
+      config: {
+        auth: false,
+        middlewares: ['api::vacancy-application.rate-limit'],
+      },
+    },
+  ],
+};

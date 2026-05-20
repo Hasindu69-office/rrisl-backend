@@ -51,14 +51,40 @@
     },
     "notes": {
       "type": "text",
+      "private": true
+    },
+    "submittedat": {
+      "type": "datetime",
+      "required": true
+    },
+    "vacancytitle": {
+      "type": "string",
+      "required": true,
       "minLength": 3,
       "maxLength": 255
+    },
+    "vacancyslug": {
+      "type": "string",
+      "required": true,
+      "minLength": 3,
+      "maxLength": 255
+    },
+    "reviewedat": {
+      "type": "datetime",
+      "private": true
+    },
+    "reviewedby": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "admin::user",
+      "private": true
     },
     "vacancy": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::vacancy.vacancy",
-      "inversedBy": "vacancy_applications"
+      "inversedBy": "vacancy_applications",
+      "required": true
     }
   }
 }
