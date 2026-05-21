@@ -817,6 +817,29 @@ export interface SharedHighlightedTitle extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHighlights extends Struct.ComponentSchema {
+  collectionName: 'components_shared_highlights';
+  info: {
+    displayName: 'highlights';
+    icon: 'collapse';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+  };
+}
+
 export interface SharedLanguageSwitcher extends Struct.ComponentSchema {
   collectionName: 'components_shared_language_switchers';
   info: {
@@ -1055,6 +1078,7 @@ declare module '@strapi/strapi' {
       'shared.emails': SharedEmails;
       'shared.error-message': SharedErrorMessage;
       'shared.highlighted-title': SharedHighlightedTitle;
+      'shared.highlights': SharedHighlights;
       'shared.language-switcher': SharedLanguageSwitcher;
       'shared.links': SharedLinks;
       'shared.page-content': SharedPageContent;

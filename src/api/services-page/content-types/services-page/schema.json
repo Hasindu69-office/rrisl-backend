@@ -25,6 +25,145 @@
       "component": "shared.page-hero",
       "repeatable": false,
       "required": true
+    },
+    "sectionheader": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "All research and extension departments of RRISL provide advice on every aspect of rubber agronomy and technology to stakeholders. The Institute also supports academic programs of universities and other higher education institutions by supervising students, and contributes to human resource development programs of other organizations by training teachers and stakeholders. When analytical services are provided, a nominal fee is charged to cover basic costs.",
+      "minLength": 3,
+      "required": true
+    },
+    "samplesubmissionpopupImage": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "servicehighlights": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.highlights",
+      "repeatable": true,
+      "required": true,
+      "max": 3
+    },
+    "testingservicesheader": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "testingdescription": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "numberlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "No",
+      "maxLength": 100,
+      "required": true
+    },
+    "nameofthetestlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Name of the test",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "ctatitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Need more information about a testing service?",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "ctadescription": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Contact RRISL for service availability, sample submission guidance, and fee details.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "ctabuttonlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Contact Us",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "ctaurl": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "default": "/contact",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
     }
   }
 }
