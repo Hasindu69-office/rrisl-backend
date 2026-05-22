@@ -1,0 +1,122 @@
+{
+  "kind": "collectionType",
+  "collectionName": "video_items",
+  "info": {
+    "singularName": "video-item",
+    "pluralName": "video-items",
+    "displayName": "video item"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "videotitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "videodescription": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "thumbnailimage": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "sourcetype": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "enum": [
+        "youtube",
+        "local"
+      ]
+    },
+    "videourl": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "sourcetype"
+            },
+            "youtube"
+          ]
+        }
+      },
+      "required": false
+    },
+    "videofile": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "sourcetype"
+            },
+            "local"
+          ]
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "videos"
+      ]
+    },
+    "duration": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "sortorder": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    }
+  }
+}

@@ -14,5 +14,53 @@
       "localized": true
     }
   },
-  "attributes": {}
+  "attributes": {
+    "pagehero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.page-hero",
+      "repeatable": false,
+      "required": true
+    },
+    "videoslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Videos",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "albumvideoslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Album Videos",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "albumlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Album",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  }
 }

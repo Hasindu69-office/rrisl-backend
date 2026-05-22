@@ -1,0 +1,77 @@
+{
+  "kind": "collectionType",
+  "collectionName": "videoalbums",
+  "info": {
+    "singularName": "videoalbum",
+    "pluralName": "videoalbums",
+    "displayName": "videoalbum"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "videoalbumname": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "videoalbumname",
+      "required": true,
+      "maxLength": 100
+    },
+    "videoalbumtitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "videoalbumsummary": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "featuredimg": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "video_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::video-item.video-item"
+    }
+  }
+}
