@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_shared_albumcards",
+  "info": {
+    "displayName": "albumcard",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "albumlabel": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "albumtitle": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "albumdescription": {
+      "type": "text",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "viewalbumlabel": {
+      "type": "string",
+      "default": "View Album",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "albumimg": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

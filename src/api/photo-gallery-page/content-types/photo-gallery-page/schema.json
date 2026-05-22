@@ -1,0 +1,66 @@
+{
+  "kind": "singleType",
+  "collectionName": "photo_gallery_pages",
+  "info": {
+    "singularName": "photo-gallery-page",
+    "pluralName": "photo-gallery-pages",
+    "displayName": "photo gallery page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "pagehero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.page-hero",
+      "repeatable": false,
+      "required": true
+    },
+    "photoslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Photos",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "albumphotoslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Album Photos",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "albumlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Album",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  }
+}

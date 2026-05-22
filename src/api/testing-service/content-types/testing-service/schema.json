@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testing_services",
+  "info": {
+    "singularName": "testing-service",
+    "pluralName": "testing-services",
+    "displayName": "testing service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "servicename": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "sortorder": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true,
+      "max": 100
+    },
+    "testing_service_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::testing-service-category.testing-service-category",
+      "inversedBy": "testing_services"
+    }
+  }
+}

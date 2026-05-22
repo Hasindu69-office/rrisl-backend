@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_validationlabels",
+  "info": {
+    "displayName": "validationlabels"
+  },
+  "options": {},
+  "attributes": {
+    "requiredlabel": {
+      "type": "string",
+      "default": "required",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "minimumcharacterlabel": {
+      "type": "string",
+      "default": "must be at least 3 characters.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "maximumcharacterslabel": {
+      "type": "string",
+      "default": "cannot exceed 255 characters.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  },
+  "config": {}
+}

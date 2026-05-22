@@ -30,6 +30,330 @@ export interface BoardMembersOrganizationLines extends Struct.ComponentSchema {
   };
 }
 
+export interface ContactContactformlabels extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contactformlabels';
+  info: {
+    displayName: 'contactformlabels';
+  };
+  attributes: {
+    buttonlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Send Message'>;
+    emailerrormsg: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Email is required.'>;
+    emaillabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Email'>;
+    firstnameerrormsg: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'First name is required.'>;
+    firstnamelabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'First Name'>;
+    lastnameerrormsg: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Last name is required.'>;
+    lastnamelabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Last Name'>;
+    messageerrormsg: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Message is required.'>;
+    messagelabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Message'>;
+    messageplaceholder: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Write Your Message'>;
+    phonenumbererrormsg: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Phone number is required.'>;
+    phonenumberlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Phone Number'>;
+    selectsubjectlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Select Subject?'>;
+  };
+}
+
+export interface ContactContactinformation extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contactinformations';
+  info: {
+    displayName: 'contactinformation';
+  };
+  attributes: {
+    address: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Dartonfield, Agalawatta, 12200'>;
+    addresslabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Visit Our Location'>;
+    contactformlabels: Schema.Attribute.Component<
+      'contact.contactformlabels',
+      false
+    > &
+      Schema.Attribute.Required;
+    emailaddress: Schema.Attribute.Email &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    emaillabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Email'>;
+    phonenumberlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Looking for Consultation'>;
+    phonenumbers: Schema.Attribute.Component<'contact.phonenumber', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Say something to start a live chat!'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Contact Information'>;
+  };
+}
+
+export interface ContactLocationcards extends Struct.ComponentSchema {
+  collectionName: 'components_contact_locationcards';
+  info: {
+    displayName: 'locationcards';
+  };
+  attributes: {
+    address: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Dartonfield, Agalawatta, Sri Lanka, 12200'>;
+    addresslabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Postal Address'>;
+    gmapembedlink: Schema.Attribute.String & Schema.Attribute.Required;
+    hightlightedtext: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    phonenumber: Schema.Attribute.Component<'contact.phonenumber', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    verticaltext: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface ContactPhonenumber extends Struct.ComponentSchema {
+  collectionName: 'components_contact_phonenumbers';
+  info: {
+    displayName: 'phonenumber';
+  };
+  attributes: {
+    isprimary: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    label: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    number: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 20;
+        minLength: 7;
+      }>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+  };
+}
+
+export interface ContactSociallinks extends Struct.ComponentSchema {
+  collectionName: 'components_contact_sociallinks';
+  info: {
+    displayName: 'sociallinks';
+  };
+  attributes: {
+    isvisible: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    platform: Schema.Attribute.Enumeration<
+      ['Facebook', 'Instagram', 'LinkedIn', 'X']
+    > &
+      Schema.Attribute.Required;
+    url: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface ContactSubstationcard extends Struct.ComponentSchema {
+  collectionName: 'components_contact_substationcards';
+  info: {
+    displayName: 'substationcard';
+  };
+  attributes: {
+    emailaddress: Schema.Attribute.Email &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    emaillabel: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    phonenumbers: Schema.Attribute.Component<'contact.phonenumber', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    postaladdress: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    postaladdresslabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Postal Address'>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    substationtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 10;
+      }>;
+  };
+}
+
 export interface FooterContactInfo extends Struct.ComponentSchema {
   collectionName: 'components_footer_contact_infos';
   info: {
@@ -123,8 +447,6 @@ export interface HomeAboutSection extends Struct.ComponentSchema {
   attributes: {
     body: Schema.Attribute.Blocks;
     header: Schema.Attribute.Component<'shared.section-header', false>;
-    imageBottom: Schema.Attribute.Media<'images'>;
-    imageTop: Schema.Attribute.Media<'images'>;
     primaryCta: Schema.Attribute.Component<'shared.button', false>;
   };
 }
@@ -159,6 +481,54 @@ export interface HomeAnnoucementLabels extends Struct.ComponentSchema {
     showAnnoucementCard: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<true>;
     showNewsCard: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+  };
+}
+
+export interface HomeDatainsightssection extends Struct.ComponentSchema {
+  collectionName: 'components_home_datainsightssections';
+  info: {
+    displayName: 'datainsightssection';
+  };
+  attributes: {
+    backgroundimage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 10;
+      }> &
+      Schema.Attribute.DefaultTo<'This section presents a detailed year-to-year comparison of growth across major rubber product categories, including Sheet, Sole Crepe, Scrap Crepe, Latex Crepe, T.S.R., and Latex Other. It allows users to analyze annual performance by examining changes in production volumes and identifying patterns of growth, decline, or stability over time. Through clear visualization and structured data presentation, the section supports easy comparison between years and product types, helping users understand both short-term fluctuations and long-term industry trends.  The information is particularly useful for researchers, policymakers, rubber growers, exporters, and industry stakeholders who require reliable insights for planning and evaluation. By observing year-on-year movements, users can assess how market demand, production conditions, and policy or environmental factors may influence different product segments.'>;
+    statisticslabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Statistics'>;
+    statisticsrightheader: Schema.Attribute.Component<
+      'shared.section-header',
+      false
+    > &
+      Schema.Attribute.Required;
+    statisticstitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Rubber Production by Different Types'>;
+    viewdatabutton: Schema.Attribute.Component<'shared.button', false> &
+      Schema.Attribute.Required;
+    year: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<2026>;
+    yearlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Year'>;
   };
 }
 
@@ -233,6 +603,16 @@ export interface HomeHomebannerstats extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeNewsandblogsection extends Struct.ComponentSchema {
+  collectionName: 'components_home_newsandblogsections';
+  info: {
+    displayName: 'newsandblogsection';
+  };
+  attributes: {
+    blogsection: Schema.Attribute.Component<'shared.section-header', false>;
+  };
+}
+
 export interface HomeServiceCard extends Struct.ComponentSchema {
   collectionName: 'components_home_service_cards';
   info: {
@@ -240,7 +620,6 @@ export interface HomeServiceCard extends Struct.ComponentSchema {
     icon: 'stack';
   };
   attributes: {
-    cta: Schema.Attribute.Component<'shared.button', false>;
     description: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -270,6 +649,83 @@ export interface HomeServicesSection extends Struct.ComponentSchema {
     header: Schema.Attribute.Component<'shared.section-header', false>;
     serviceCards: Schema.Attribute.Component<'home.service-card', true> &
       Schema.Attribute.Required;
+  };
+}
+
+export interface HomeSupportTheIndustrySection extends Struct.ComponentSchema {
+  collectionName: 'components_home_support_the_industry_sections';
+  info: {
+    displayName: 'support-the-industry-section';
+  };
+  attributes: {
+    backgroundImage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    outlinetext: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'What We Do'>;
+    plantimage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    supporttheindustrycard: Schema.Attribute.Component<
+      'shared.titleandname',
+      true
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 6;
+        },
+        number
+      >;
+    supporttheindustrysection: Schema.Attribute.Component<
+      'shared.section-header',
+      false
+    > &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface SharedAlbumcard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_albumcards';
+  info: {
+    displayName: 'albumcard';
+    icon: 'book';
+  };
+  attributes: {
+    albumdescription: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    albumimg: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    albumlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    albumtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    url: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    viewalbumlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'View Album'>;
   };
 }
 
@@ -304,6 +760,16 @@ export interface SharedButton extends Struct.ComponentSchema {
     openInNewTab: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     url: Schema.Attribute.String;
     variant: Schema.Attribute.Enumeration<['primary', 'secondary', 'outline']>;
+  };
+}
+
+export interface SharedEmails extends Struct.ComponentSchema {
+  collectionName: 'components_shared_emails';
+  info: {
+    displayName: 'emails';
+  };
+  attributes: {
+    email: Schema.Attribute.Email;
   };
 }
 
@@ -346,6 +812,29 @@ export interface SharedHighlightedTitle extends Struct.ComponentSchema {
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface SharedHighlights extends Struct.ComponentSchema {
+  collectionName: 'components_shared_highlights';
+  info: {
+    displayName: 'highlights';
+    icon: 'collapse';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
         minLength: 3;
       }>;
   };
@@ -482,32 +971,123 @@ export interface SharedSociallinks extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTitleandname extends Struct.ComponentSchema {
+  collectionName: 'components_shared_titleandnames';
+  info: {
+    displayName: 'titleandname';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+        },
+        number
+      >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    url: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface SharedValidationlabels extends Struct.ComponentSchema {
+  collectionName: 'components_shared_validationlabels';
+  info: {
+    displayName: 'validationlabels';
+  };
+  attributes: {
+    maximumcharacterslabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'cannot exceed 255 characters.'>;
+    minimumcharacterlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'must be at least 3 characters.'>;
+    requiredlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'required'>;
+  };
+}
+
+export interface VacancyLists extends Struct.ComponentSchema {
+  collectionName: 'components_vacancy_lists';
+  info: {
+    displayName: 'lists';
+  };
+  attributes: {
+    text: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 10;
+      }>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'about.objectives': AboutObjectives;
       'board-members.organization-lines': BoardMembersOrganizationLines;
+      'contact.contactformlabels': ContactContactformlabels;
+      'contact.contactinformation': ContactContactinformation;
+      'contact.locationcards': ContactLocationcards;
+      'contact.phonenumber': ContactPhonenumber;
+      'contact.sociallinks': ContactSociallinks;
+      'contact.substationcard': ContactSubstationcard;
       'footer.contact-info': FooterContactInfo;
       'footer.link-group': FooterLinkGroup;
       'footer.phone-lines': FooterPhoneLines;
       'home.about-section': HomeAboutSection;
       'home.annoucement-labels': HomeAnnoucementLabels;
+      'home.datainsightssection': HomeDatainsightssection;
       'home.hero-badge': HomeHeroBadge;
       'home.hero-banner': HomeHeroBanner;
       'home.hero-label': HomeHeroLabel;
       'home.homebannerstats': HomeHomebannerstats;
+      'home.newsandblogsection': HomeNewsandblogsection;
       'home.service-card': HomeServiceCard;
       'home.services-section': HomeServicesSection;
+      'home.support-the-industry-section': HomeSupportTheIndustrySection;
+      'shared.albumcard': SharedAlbumcard;
       'shared.breadcrumb-item': SharedBreadcrumbItem;
       'shared.button': SharedButton;
+      'shared.emails': SharedEmails;
       'shared.error-message': SharedErrorMessage;
       'shared.highlighted-title': SharedHighlightedTitle;
+      'shared.highlights': SharedHighlights;
       'shared.language-switcher': SharedLanguageSwitcher;
       'shared.links': SharedLinks;
       'shared.page-content': SharedPageContent;
       'shared.page-hero': SharedPageHero;
       'shared.section-header': SharedSectionHeader;
       'shared.sociallinks': SharedSociallinks;
+      'shared.titleandname': SharedTitleandname;
+      'shared.validationlabels': SharedValidationlabels;
+      'vacancy.lists': VacancyLists;
     }
   }
 }

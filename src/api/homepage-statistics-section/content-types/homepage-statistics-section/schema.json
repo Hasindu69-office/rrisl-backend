@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homepage_statistics_sections",
+  "info": {
+    "singularName": "homepage-statistics-section",
+    "pluralName": "homepage-statistics-sections",
+    "displayName": "homepage-statistics-section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "label": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "value": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    }
+  }
+}

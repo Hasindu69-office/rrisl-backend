@@ -1,0 +1,71 @@
+{
+  "collectionName": "components_contact_contactinformations",
+  "info": {
+    "displayName": "contactinformation"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Contact Information",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "Say something to start a live chat!",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "phonenumberlabel": {
+      "type": "string",
+      "default": "Looking for Consultation",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "phonenumbers": {
+      "type": "component",
+      "component": "contact.phonenumber",
+      "repeatable": true,
+      "required": true,
+      "max": 5
+    },
+    "addresslabel": {
+      "type": "string",
+      "default": "Visit Our Location",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "default": "Dartonfield, Agalawatta, 12200",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "emaillabel": {
+      "type": "string",
+      "default": "Email",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "emailaddress": {
+      "type": "email",
+      "required": true,
+      "minLength": 3,
+      "maxLength": 100
+    },
+    "contactformlabels": {
+      "type": "component",
+      "component": "contact.contactformlabels",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

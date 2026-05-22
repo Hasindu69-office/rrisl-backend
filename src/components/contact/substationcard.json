@@ -1,0 +1,52 @@
+{
+  "collectionName": "components_contact_substationcards",
+  "info": {
+    "displayName": "substationcard"
+  },
+  "options": {},
+  "attributes": {
+    "substationtitle": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 255,
+      "required": true
+    },
+    "postaladdresslabel": {
+      "type": "string",
+      "default": "Postal Address",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "postaladdress": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "emaillabel": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": false
+    },
+    "emailaddress": {
+      "type": "email",
+      "required": false,
+      "maxLength": 100
+    },
+    "phonenumbers": {
+      "type": "component",
+      "component": "contact.phonenumber",
+      "repeatable": true,
+      "required": true,
+      "max": 5
+    },
+    "sortorder": {
+      "type": "integer",
+      "required": true,
+      "max": 5
+    }
+  },
+  "config": {}
+}

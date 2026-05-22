@@ -1,0 +1,62 @@
+{
+  "collectionName": "components_home_datainsightssections",
+  "info": {
+    "displayName": "datainsightssection"
+  },
+  "options": {},
+  "attributes": {
+    "statisticslabel": {
+      "type": "string",
+      "default": "Statistics",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "statisticstitle": {
+      "type": "string",
+      "default": "Rubber Production by Different Types",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "yearlabel": {
+      "type": "string",
+      "default": "Year",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "year": {
+      "type": "integer",
+      "required": true,
+      "default": 2026
+    },
+    "statisticsrightheader": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "default": "This section presents a detailed year-to-year comparison of growth across major rubber product categories, including Sheet, Sole Crepe, Scrap Crepe, Latex Crepe, T.S.R., and Latex Other. It allows users to analyze annual performance by examining changes in production volumes and identifying patterns of growth, decline, or stability over time. Through clear visualization and structured data presentation, the section supports easy comparison between years and product types, helping users understand both short-term fluctuations and long-term industry trends.  The information is particularly useful for researchers, policymakers, rubber growers, exporters, and industry stakeholders who require reliable insights for planning and evaluation. By observing year-on-year movements, users can assess how market demand, production conditions, and policy or environmental factors may influence different product segments.",
+      "minLength": 10,
+      "required": true
+    },
+    "viewdatabutton": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false,
+      "required": true
+    },
+    "backgroundimage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

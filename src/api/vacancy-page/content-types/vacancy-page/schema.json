@@ -1,0 +1,316 @@
+{
+  "kind": "singleType",
+  "collectionName": "vacancy_pages",
+  "info": {
+    "singularName": "vacancy-page",
+    "pluralName": "vacancy-pages",
+    "displayName": "vacancy page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "pagehero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.page-hero",
+      "repeatable": false
+    },
+    "emptystate": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.error-message",
+      "repeatable": false,
+      "required": true
+    },
+    "searchbuttonlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Search Button",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "searchcategorylabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Select Category",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "jobdetailslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Job Details",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "applyjoblabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Apply Job",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "overviewtitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Overview",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "descriptiontitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Description",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "responsibilitiestitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Responsibilities",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "skillstitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Skills",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "downloadnoticetitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Download Vacancy Notice",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "downloadbuttonlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Download PDF",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "applyformtitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Apply For This Role",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "fullnamelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Full Name",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "emaillabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Email",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "contactnumberlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Contact Number",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "cvlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Upload Your CV",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "submitlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Send Application",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "jobtitlelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Job Title",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "jobtypelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Job Type",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "categorylabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Category",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "experiencelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Experience",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "degreelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Education",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "offeredsalarylabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Offered Salary",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "locationlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Location",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  }
+}

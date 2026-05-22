@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_home_support_the_industry_sections",
+  "info": {
+    "displayName": "support-the-industry-section"
+  },
+  "options": {},
+  "attributes": {
+    "supporttheindustrysection": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "supporttheindustrycard": {
+      "type": "component",
+      "component": "shared.titleandname",
+      "repeatable": true,
+      "required": true,
+      "max": 6
+    },
+    "outlinetext": {
+      "type": "string",
+      "default": "What We Do",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "plantimage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}
