@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_estate_substation_yeardata",
+  "info": {
+    "displayName": "yeardata"
+  },
+  "options": {},
+  "attributes": {
+    "year": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "year_2010",
+        "year_2011",
+        "year_2012",
+        "year_2013",
+        "year_2014",
+        "year_2015",
+        "year_2016",
+        "year_2017",
+        "year_2018",
+        "year_2019"
+      ]
+    },
+    "data": {
+      "type": "integer",
+      "required": true,
+      "max": 9999
+    }
+  },
+  "config": {}
+}

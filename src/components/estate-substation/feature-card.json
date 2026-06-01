@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_estate_substation_feature_cards",
+  "info": {
+    "displayName": "feature-card",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 20,
+      "required": true
+    },
+    "badge": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 30,
+      "required": false
+    },
+    "description": {
+      "type": "text",
+      "minLength": 10,
+      "maxLength": 70,
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "imagealt": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100
+    }
+  },
+  "config": {}
+}

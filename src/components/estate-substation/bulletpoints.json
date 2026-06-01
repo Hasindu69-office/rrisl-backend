@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_estate_substation_bulletpoints",
+  "info": {
+    "displayName": "bulletpoints"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100
+    }
+  },
+  "config": {}
+}

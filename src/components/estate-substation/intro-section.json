@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_estate_substation_intro_sections",
+  "info": {
+    "displayName": "intro-section",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheader": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "paragraph": {
+      "type": "component",
+      "component": "estate-substation.paragraph",
+      "repeatable": true,
+      "required": true,
+      "max": 6
+    }
+  },
+  "config": {}
+}

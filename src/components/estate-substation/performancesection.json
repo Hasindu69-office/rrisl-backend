@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_estate_substation_performancesections",
+  "info": {
+    "displayName": "performancesection",
+    "icon": "connector"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheader": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "default": "The sub-station actively supports rubber production studies while maintaining a strong focus on quality processing and efficient tapping systems.",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "footernote": {
+      "type": "text",
+      "default": "These results reflect the dedication of our field teams, innovative research, and the continuous improvement of plantation management practices.",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "productiontrendcard": {
+      "type": "component",
+      "component": "estate-substation.productiontrendcard",
+      "repeatable": false,
+      "required": true
+    },
+    "yieldperformancecard": {
+      "type": "component",
+      "component": "estate-substation.yeildperformancecard",
+      "repeatable": false,
+      "required": true
+    },
+    "qualityguagecard": {
+      "type": "component",
+      "component": "estate-substation.qualityguagecard",
+      "repeatable": false,
+      "required": true
+    },
+    "taperproductioncard": {
+      "type": "component",
+      "component": "estate-substation.tapperproductioncard",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

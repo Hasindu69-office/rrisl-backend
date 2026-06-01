@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "polgahawela_annual_rainfall_values",
+  "info": {
+    "singularName": "polgahawela-annual-rainfall-value",
+    "pluralName": "polgahawela-annual-rainfall-values",
+    "displayName": "polgahawela annual rainfall value"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": false
+    }
+  },
+  "attributes": {
+    "yeardata": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "estate-substation.yeardata",
+      "repeatable": true,
+      "required": true,
+      "max": 10
+    }
+  }
+}

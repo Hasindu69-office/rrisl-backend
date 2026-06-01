@@ -1,0 +1,101 @@
+{
+  "collectionName": "components_estate_substation_annual_rainfall_cards",
+  "info": {
+    "displayName": "annual-rainfall-card",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Total Annual Rainfall",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "default": "from 2010 to 2019",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "highestrainfalllabel": {
+      "type": "string",
+      "default": "Highest Rainfall",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "dataperiodlabel": {
+      "type": "string",
+      "default": "Data Period",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "default": "This chart shows the total annual rainfall recorded at the sub-station for the past 10 years.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "xaxislabel": {
+      "type": "string",
+      "default": "Rainfall (mm)",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "yaxislabel": {
+      "type": "string",
+      "default": "Year",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "yearaveragelabel": {
+      "type": "string",
+      "default": "10-Year Average",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "yearlabel": {
+      "type": "string",
+      "default": "Year",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "lowestrainfalllabel": {
+      "type": "string",
+      "default": "Lowest Rainfall",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "totallabel": {
+      "type": "string",
+      "default": "Total",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "variationrangelabel": {
+      "type": "string",
+      "default": "Variation Range",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "footernote": {
+      "type": "string",
+      "default": "Rainfall data recorded daily at the sub-station and reported to the Biometry Division of RRISL.",
+      "minLength": 3,
+      "required": true
+    }
+  },
+  "config": {}
+}

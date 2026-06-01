@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "polgahawela_rainfall_month_values",
+  "info": {
+    "singularName": "polgahawela-rainfall-month-value",
+    "pluralName": "polgahawela-rainfall-month-values",
+    "displayName": "polgahawela rainfall month value"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "monthdata": {
+      "type": "component",
+      "component": "estate-substation.monthdata",
+      "repeatable": true,
+      "required": true,
+      "max": 12
+    }
+  }
+}
