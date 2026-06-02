@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "statistcs",
+  "info": {
+    "singularName": "statistc",
+    "pluralName": "statistcs",
+    "displayName": "statistc"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "productionstatistic": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "exportandconsumptionstats": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "pricetrendstat": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  }
+}

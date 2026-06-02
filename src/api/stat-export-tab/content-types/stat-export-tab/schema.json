@@ -1,0 +1,65 @@
+{
+  "kind": "singleType",
+  "collectionName": "stat_export_tabs",
+  "info": {
+    "singularName": "stat-export-tab",
+    "pluralName": "stat-export-tabs",
+    "displayName": "stat export tab"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "exportstatlabels": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.statistics-tabs",
+      "repeatable": false,
+      "required": true
+    },
+    "exportdonutchart": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.donutchartlabel",
+      "repeatable": false,
+      "required": true
+    },
+    "exportvolumelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Export volume",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "latestvaluelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Latest value",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  }
+}

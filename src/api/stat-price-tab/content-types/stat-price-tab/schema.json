@@ -1,0 +1,149 @@
+{
+  "kind": "singleType",
+  "collectionName": "stat_price_tabs",
+  "info": {
+    "singularName": "stat-price-tab",
+    "pluralName": "stat-price-tabs",
+    "displayName": "stat price tab"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "pricetrendstatlabel": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.statistics-tabs",
+      "repeatable": false
+    },
+    "exportfoblabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Exports f.o.b",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "colomborsslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Colombo RSS",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "pricesummarylabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Price summary",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "pricesummarydescription": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Latest market snapshot for 2023.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "latestlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Latest",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "pricegaplabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Price gap",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "ishigherlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "is higher",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "higherserieslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Higher series",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "basedonlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Based on",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "priceslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "prices",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  }
+}

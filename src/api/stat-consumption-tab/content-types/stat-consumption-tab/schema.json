@@ -1,0 +1,65 @@
+{
+  "kind": "singleType",
+  "collectionName": "stat_consumption_tabs",
+  "info": {
+    "singularName": "stat-consumption-tab",
+    "pluralName": "stat-consumption-tabs",
+    "displayName": "stat consumption tab"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "consumptionstatlabel": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.statistics-tabs",
+      "repeatable": false,
+      "required": true
+    },
+    "consumptiondonutchart": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.donutchartlabel",
+      "repeatable": false,
+      "required": true
+    },
+    "consumptionvolumelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Consumption volume",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "latestvaluelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Latest value",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  }
+}
