@@ -1558,6 +1558,34 @@ export interface SharedButton extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedDonutchartlabel extends Struct.ComponentSchema {
+  collectionName: 'components_shared_donutchartlabels';
+  info: {
+    displayName: 'donutchartlabel';
+    icon: 'star';
+  };
+  attributes: {
+    description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    middlevalue: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+  };
+}
+
 export interface SharedEmails extends Struct.ComponentSchema {
   collectionName: 'components_shared_emails';
   info: {
@@ -1766,6 +1794,69 @@ export interface SharedSociallinks extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedStatisticsTabs extends Struct.ComponentSchema {
+  collectionName: 'components_shared_statistics_tabs';
+  info: {
+    displayName: 'statistics tabs';
+  };
+  attributes: {
+    statisticcharttitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    statisticdescription: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 10;
+      }>;
+    statisticdownloadbuttonlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    statisticdownloaddescription: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    statisticinsightlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    statisticname: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    statistictitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    xaxislabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    yaxislabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+  };
+}
+
 export interface SharedTitleandname extends Struct.ComponentSchema {
   collectionName: 'components_shared_titleandnames';
   info: {
@@ -1890,6 +1981,7 @@ declare module '@strapi/strapi' {
       'shared.albumcard': SharedAlbumcard;
       'shared.breadcrumb-item': SharedBreadcrumbItem;
       'shared.button': SharedButton;
+      'shared.donutchartlabel': SharedDonutchartlabel;
       'shared.emails': SharedEmails;
       'shared.error-message': SharedErrorMessage;
       'shared.highlighted-title': SharedHighlightedTitle;
@@ -1900,6 +1992,7 @@ declare module '@strapi/strapi' {
       'shared.page-hero': SharedPageHero;
       'shared.section-header': SharedSectionHeader;
       'shared.sociallinks': SharedSociallinks;
+      'shared.statistics-tabs': SharedStatisticsTabs;
       'shared.titleandname': SharedTitleandname;
       'shared.validationlabels': SharedValidationlabels;
       'vacancy.lists': VacancyLists;

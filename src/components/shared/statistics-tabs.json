@@ -1,0 +1,64 @@
+{
+  "collectionName": "components_shared_statistics_tabs",
+  "info": {
+    "displayName": "statistics tabs"
+  },
+  "options": {},
+  "attributes": {
+    "statisticname": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "statisticinsightlabel": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "statistictitle": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "statisticdescription": {
+      "type": "text",
+      "minLength": 10,
+      "maxLength": 255,
+      "required": true
+    },
+    "statisticcharttitle": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "statisticdownloaddescription": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "statisticdownloadbuttonlabel": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "yaxislabel": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "xaxislabel": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  },
+  "config": {}
+}

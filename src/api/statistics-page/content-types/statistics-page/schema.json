@@ -1,0 +1,114 @@
+{
+  "kind": "singleType",
+  "collectionName": "statistics_pages",
+  "info": {
+    "singularName": "statistics-page",
+    "pluralName": "statistics-pages",
+    "displayName": "statistics page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "pagehero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.page-hero",
+      "repeatable": false,
+      "required": true
+    },
+    "statisticslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Rubber Research Institute Statistics",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "allyearslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "All years",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "ataglancelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "At a glance",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "detaileddatalabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Detailed data",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "datapointslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "data points",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "changelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Change",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "periodlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Period",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  }
+}

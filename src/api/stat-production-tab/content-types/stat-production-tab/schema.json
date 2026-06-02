@@ -1,0 +1,182 @@
+{
+  "kind": "singleType",
+  "collectionName": "stat_production_tabs",
+  "info": {
+    "singularName": "stat-production-tab",
+    "pluralName": "stat-production-tabs",
+    "displayName": "stat production tab"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "productionstatslabel": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.statistics-tabs",
+      "repeatable": false
+    },
+    "productiondonutchart": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.donutchartlabel",
+      "repeatable": false,
+      "required": true
+    },
+    "snapshotyearlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Snapshot year",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "latesttotallabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Latest Total",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "latesttotaldescription": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "year values across all categories",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "topcategorylabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Top category",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "inlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "in",
+      "maxLength": 10,
+      "required": true
+    },
+    "lowestcategorylabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Lowest category",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "sheetlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Sheet",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "solecrepelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Sole Crepe",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "scrapecrepelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Scrape Crepe",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "latexcrepelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Latex Crepe",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "tsrlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "T.S.R",
+      "maxLength": 100,
+      "required": true
+    },
+    "latexotherlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Latex other",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  }
+}
