@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_estate_substation_productiontrendcards",
+  "info": {
+    "displayName": "productiontrendcard"
+  },
+  "options": {},
+  "attributes": {
+    "isvisible": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "title": {
+      "type": "string",
+      "default": "Total Production",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "metricunits": {
+      "type": "string",
+      "default": "kg",
+      "maxLength": 10,
+      "required": true
+    },
+    "referenceyear": {
+      "type": "integer",
+      "required": true,
+      "min": 2010,
+      "max": 3000
+    },
+    "description": {
+      "type": "text",
+      "default": "of rubber production recorded",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  },
+  "config": {}
+}

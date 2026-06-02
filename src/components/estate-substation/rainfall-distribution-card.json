@@ -1,0 +1,144 @@
+{
+  "collectionName": "components_estate_substation_rainfall_distribution_cards",
+  "info": {
+    "displayName": "rainfall-distribution-card",
+    "icon": "crown"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "summarybadgelabel": {
+      "type": "string",
+      "default": "Annual Average",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "yaxislabel": {
+      "type": "string",
+      "default": "Rainfall (mm)",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "xaxislabel": {
+      "type": "string",
+      "default": "Months",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "legendbarlabel": {
+      "type": "string",
+      "default": "Monthly Rainfall",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "legendlinelabel": {
+      "type": "string",
+      "default": "Rainfall trend",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "sourcenote": {
+      "type": "string",
+      "default": "Source: Rainfall data recorded daily at the sub-station and reported to RRISL Biometry Division.",
+      "required": true
+    },
+    "dryseasonlabel": {
+      "type": "string",
+      "default": "Dry Period",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "southwestmonsoonlabel": {
+      "type": "string",
+      "default": "South West Monsoon",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "northwestmonsoonlabel": {
+      "type": "string",
+      "default": "Noth West Monsoon",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "peakannotationlabel": {
+      "type": "string",
+      "default": "Highest Rainfall Period",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "highestrainfalllabel": {
+      "type": "string",
+      "default": "Highest Rainfall",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "lowestrainfalllabel": {
+      "type": "string",
+      "default": "Lowest Rainfall",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "annualaveragelabel": {
+      "type": "string",
+      "default": "Annual Average",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "rainfallpatternlabel": {
+      "type": "string",
+      "default": "Rainfall Pattern",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "rainfallpatternnamelabel": {
+      "type": "string",
+      "default": "Bimodal",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "dataperiodlabel": {
+      "type": "string",
+      "default": "Data Period",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "footernote": {
+      "type": "string",
+      "default": "Rainfall pattern shows a bimodal distribution with peaks during the Southwest Monsoon (Apr-May) and Northeast Monsoon (Oct-Nov) periods.",
+      "required": true
+    }
+  },
+  "config": {}
+}

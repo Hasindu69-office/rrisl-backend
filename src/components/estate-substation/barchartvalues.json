@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_estate_substation_barchartvalues",
+  "info": {
+    "displayName": "barchartvalues"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ]
+    },
+    "value": {
+      "type": "decimal",
+      "required": true
+    }
+  },
+  "config": {}
+}

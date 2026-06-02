@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_estate_substation_feature_sections",
+  "info": {
+    "displayName": "feature-section",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheader": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 10,
+      "maxLength": 255,
+      "required": false
+    },
+    "cards": {
+      "type": "component",
+      "component": "estate-substation.feature-card",
+      "repeatable": true,
+      "required": true,
+      "max": 5
+    },
+    "featuresectionbackgroundimage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "featuresectionbackgroundimagealt": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100
+    }
+  },
+  "config": {}
+}

@@ -354,6 +354,801 @@ export interface ContactSubstationcard extends Struct.ComponentSchema {
   };
 }
 
+export interface EstateSubstationActivitiesSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_activities_sections';
+  info: {
+    displayName: 'activities-section';
+  };
+  attributes: {
+    card: Schema.Attribute.Component<'estate-substation.activity-card', true> &
+      Schema.Attribute.Required;
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface EstateSubstationActivityCard extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_activity_cards';
+  info: {
+    displayName: 'activity-card';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    imagealt: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface EstateSubstationAnnualRainfallCard
+  extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_annual_rainfall_cards';
+  info: {
+    displayName: 'annual-rainfall-card';
+    icon: 'bulletList';
+  };
+  attributes: {
+    dataperiodlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Data Period'>;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'This chart shows the total annual rainfall recorded at the sub-station for the past 10 years.'>;
+    footernote: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Rainfall data recorded daily at the sub-station and reported to the Biometry Division of RRISL.'>;
+    highestrainfalllabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Highest Rainfall'>;
+    lowestrainfalllabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Lowest Rainfall'>;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'from 2010 to 2019'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Total Annual Rainfall'>;
+    totallabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Total'>;
+    variationrangelabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Variation Range'>;
+    xaxislabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Rainfall (mm)'>;
+    yaxislabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Year'>;
+    yearaveragelabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'10-Year Average'>;
+    yearlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Year'>;
+  };
+}
+
+export interface EstateSubstationBarchartvalues extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_barchartvalues';
+  info: {
+    displayName: 'barchartvalues';
+  };
+  attributes: {
+    label: Schema.Attribute.Enumeration<['A', 'B', 'C', 'D', 'E']> &
+      Schema.Attribute.Required;
+    value: Schema.Attribute.Decimal & Schema.Attribute.Required;
+  };
+}
+
+export interface EstateSubstationBulletpoints extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_bulletpoints';
+  info: {
+    displayName: 'bulletpoints';
+  };
+  attributes: {
+    label: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface EstateSubstationFacilitiesSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_facilities_sections';
+  info: {
+    displayName: 'facilities-section';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'estate-substation.facility-card', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+        },
+        number
+      >;
+    paragraph: Schema.Attribute.Component<'estate-substation.paragraph', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface EstateSubstationFacilityCard extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_facility_cards';
+  info: {
+    displayName: 'facility-card';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface EstateSubstationFeatureCard extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_feature_cards';
+  info: {
+    displayName: 'feature-card';
+    icon: 'book';
+  };
+  attributes: {
+    badge: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 30;
+        minLength: 3;
+      }>;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 70;
+        minLength: 10;
+      }>;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    imagealt: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 20;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface EstateSubstationFeatureSection extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_feature_sections';
+  info: {
+    displayName: 'feature-section';
+    icon: 'cursor';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'estate-substation.feature-card', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 10;
+      }>;
+    featuresectionbackgroundimage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    featuresectionbackgroundimagealt: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface EstateSubstationIntroSection extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_intro_sections';
+  info: {
+    displayName: 'intro-section';
+    icon: 'check';
+  };
+  attributes: {
+    paragraph: Schema.Attribute.Component<'estate-substation.paragraph', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 6;
+        },
+        number
+      >;
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface EstateSubstationMonitoringSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_monitoring_sections';
+  info: {
+    displayName: 'monitoring-section';
+    icon: 'chartBubble';
+  };
+  attributes: {
+    annualrainfalldistribution: Schema.Attribute.Component<
+      'estate-substation.annual-rainfall-card',
+      false
+    > &
+      Schema.Attribute.Required;
+    monitoringsectionbackgroundimage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    monitoringsectionbackgroundimagealt: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    rainfalldistribution: Schema.Attribute.Component<
+      'estate-substation.rainfall-distribution-card',
+      false
+    > &
+      Schema.Attribute.Required;
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface EstateSubstationMonthdata extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_monthdata';
+  info: {
+    displayName: 'monthdata';
+  };
+  attributes: {
+    data: Schema.Attribute.Integer & Schema.Attribute.Required;
+    month: Schema.Attribute.Enumeration<
+      [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+      ]
+    > &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface EstateSubstationParagraph extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_paragraphs';
+  info: {
+    displayName: 'paragraph';
+    icon: 'cog';
+  };
+  attributes: {
+    paragraph: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface EstateSubstationPerformancesection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_performancesections';
+  info: {
+    displayName: 'performancesection';
+    icon: 'connector';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'The sub-station actively supports rubber production studies while maintaining a strong focus on quality processing and efficient tapping systems.'>;
+    footernote: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'These results reflect the dedication of our field teams, innovative research, and the continuous improvement of plantation management practices.'>;
+    productiontrendcard: Schema.Attribute.Component<
+      'estate-substation.productiontrendcard',
+      false
+    > &
+      Schema.Attribute.Required;
+    qualityguagecard: Schema.Attribute.Component<
+      'estate-substation.qualityguagecard',
+      false
+    > &
+      Schema.Attribute.Required;
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required;
+    taperproductioncard: Schema.Attribute.Component<
+      'estate-substation.tapperproductioncard',
+      false
+    > &
+      Schema.Attribute.Required;
+    yieldperformancecard: Schema.Attribute.Component<
+      'estate-substation.yeildperformancecard',
+      false
+    > &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface EstateSubstationProductiontrendcard
+  extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_productiontrendcards';
+  info: {
+    displayName: 'productiontrendcard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'of rubber production recorded'>;
+    isvisible: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    metricunits: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 10;
+      }> &
+      Schema.Attribute.DefaultTo<'kg'>;
+    referenceyear: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3000;
+          min: 2010;
+        },
+        number
+      >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Total Production'>;
+  };
+}
+
+export interface EstateSubstationQualityguagecard
+  extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_qualityguagecards';
+  info: {
+    displayName: 'qualityguagecard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Approximately 73% of total RSS production was sold as Grade 1 quality.'>;
+    insights: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'These results reflect the dedication of our field teams, innovative research, and the continuous improvement of plantation management practices.'>;
+    isvisible: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    percentagevalue: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    percentagevaluelabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Grade 1'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'RSS Quality'>;
+  };
+}
+
+export interface EstateSubstationRainfallDistributionCard
+  extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_rainfall_distribution_cards';
+  info: {
+    displayName: 'rainfall-distribution-card';
+    icon: 'crown';
+  };
+  attributes: {
+    annualaveragelabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Annual Average'>;
+    dataperiodlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Data Period'>;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    dryseasonlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Dry Period'>;
+    footernote: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Rainfall pattern shows a bimodal distribution with peaks during the Southwest Monsoon (Apr-May) and Northeast Monsoon (Oct-Nov) periods.'>;
+    highestrainfalllabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Highest Rainfall'>;
+    legendbarlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Monthly Rainfall'>;
+    legendlinelabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Rainfall trend'>;
+    lowestrainfalllabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Lowest Rainfall'>;
+    northwestmonsoonlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Noth West Monsoon'>;
+    peakannotationlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Highest Rainfall Period'>;
+    rainfallpatternlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Rainfall Pattern'>;
+    rainfallpatternnamelabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Bimodal'>;
+    sourcenote: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Source: Rainfall data recorded daily at the sub-station and reported to RRISL Biometry Division.'>;
+    southwestmonsoonlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'South West Monsoon'>;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    summarybadgelabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Annual Average'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    xaxislabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Months'>;
+    yaxislabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Rainfall (mm)'>;
+  };
+}
+
+export interface EstateSubstationTapperproductioncard
+  extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_tapperproductioncards';
+  info: {
+    displayName: 'tapperproductioncard';
+  };
+  attributes: {
+    averagevaluelabel: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Average intake per tapper'>;
+    barchartvalues: Schema.Attribute.Component<
+      'estate-substation.barchartvalues',
+      true
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 10;
+      }> &
+      Schema.Attribute.DefaultTo<'Highest productivity recorded from RRIC 121 clone fields under D3 tapping systems.'>;
+    isvisible: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    metatag1: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'RRIC 121 Clone'>;
+    metatag2: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'D3 System'>;
+    metricvalue: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'9.4'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Tapper Productivity'>;
+  };
+}
+
+export interface EstateSubstationYeardata extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_yeardata';
+  info: {
+    displayName: 'yeardata';
+  };
+  attributes: {
+    data: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 9999;
+        },
+        number
+      >;
+    year: Schema.Attribute.Enumeration<
+      [
+        'year_2010',
+        'year_2011',
+        'year_2012',
+        'year_2013',
+        'year_2014',
+        'year_2015',
+        'year_2016',
+        'year_2017',
+        'year_2018',
+        'year_2019',
+      ]
+    > &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface EstateSubstationYeildperformancecard
+  extends Struct.ComponentSchema {
+  collectionName: 'components_estate_substation_yeildperformancecards';
+  info: {
+    displayName: 'yeildperformancecard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Average yield reached per hectare.'>;
+    insight: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Consistent plantation productivity across managed estates.'>;
+    isvisible: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    metricunits: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'kg/ha'>;
+    metricvalueofyear: Schema.Attribute.Integer & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Yield Performance'>;
+    totalmetrivalueofyear: Schema.Attribute.Integer & Schema.Attribute.Required;
+  };
+}
+
 export interface FooterContactInfo extends Struct.ComponentSchema {
   collectionName: 'components_footer_contact_infos';
   info: {
@@ -1058,6 +1853,26 @@ declare module '@strapi/strapi' {
       'contact.phonenumber': ContactPhonenumber;
       'contact.sociallinks': ContactSociallinks;
       'contact.substationcard': ContactSubstationcard;
+      'estate-substation.activities-section': EstateSubstationActivitiesSection;
+      'estate-substation.activity-card': EstateSubstationActivityCard;
+      'estate-substation.annual-rainfall-card': EstateSubstationAnnualRainfallCard;
+      'estate-substation.barchartvalues': EstateSubstationBarchartvalues;
+      'estate-substation.bulletpoints': EstateSubstationBulletpoints;
+      'estate-substation.facilities-section': EstateSubstationFacilitiesSection;
+      'estate-substation.facility-card': EstateSubstationFacilityCard;
+      'estate-substation.feature-card': EstateSubstationFeatureCard;
+      'estate-substation.feature-section': EstateSubstationFeatureSection;
+      'estate-substation.intro-section': EstateSubstationIntroSection;
+      'estate-substation.monitoring-section': EstateSubstationMonitoringSection;
+      'estate-substation.monthdata': EstateSubstationMonthdata;
+      'estate-substation.paragraph': EstateSubstationParagraph;
+      'estate-substation.performancesection': EstateSubstationPerformancesection;
+      'estate-substation.productiontrendcard': EstateSubstationProductiontrendcard;
+      'estate-substation.qualityguagecard': EstateSubstationQualityguagecard;
+      'estate-substation.rainfall-distribution-card': EstateSubstationRainfallDistributionCard;
+      'estate-substation.tapperproductioncard': EstateSubstationTapperproductioncard;
+      'estate-substation.yeardata': EstateSubstationYeardata;
+      'estate-substation.yeildperformancecard': EstateSubstationYeildperformancecard;
       'footer.contact-info': FooterContactInfo;
       'footer.link-group': FooterLinkGroup;
       'footer.phone-lines': FooterPhoneLines;

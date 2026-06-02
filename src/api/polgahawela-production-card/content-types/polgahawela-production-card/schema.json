@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "polgahawela_production_cards",
+  "info": {
+    "singularName": "polgahawela-production-card",
+    "pluralName": "polgahawela-production-cards",
+    "displayName": "polgahawela production card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "trendpoints": {
+      "type": "component",
+      "component": "estate-substation.yeardata",
+      "repeatable": true,
+      "required": true,
+      "max": 10
+    }
+  }
+}

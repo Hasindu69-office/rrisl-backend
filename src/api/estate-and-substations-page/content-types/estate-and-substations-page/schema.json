@@ -1,0 +1,53 @@
+{
+  "kind": "singleType",
+  "collectionName": "estate_and_substations_pages",
+  "info": {
+    "singularName": "estate-and-substations-page",
+    "pluralName": "estate-and-substations-pages",
+    "displayName": "estate and substations page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "pagehero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.page-hero",
+      "repeatable": false,
+      "required": true
+    },
+    "sectionheader": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "readmorebuttonlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Read More",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  }
+}

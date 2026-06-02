@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_estate_substation_monthdata",
+  "info": {
+    "displayName": "monthdata"
+  },
+  "options": {},
+  "attributes": {
+    "month": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ]
+    },
+    "data": {
+      "type": "integer",
+      "required": true
+    }
+  },
+  "config": {}
+}

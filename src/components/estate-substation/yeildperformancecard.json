@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_estate_substation_yeildperformancecards",
+  "info": {
+    "displayName": "yeildperformancecard"
+  },
+  "options": {},
+  "attributes": {
+    "isvisible": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "title": {
+      "type": "string",
+      "default": "Yield Performance",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "metricvalueofyear": {
+      "type": "integer",
+      "required": true
+    },
+    "metricunits": {
+      "type": "string",
+      "default": "kg/ha",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "totalmetrivalueofyear": {
+      "type": "integer",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "default": "Average yield reached per hectare.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "insight": {
+      "type": "text",
+      "default": "Consistent plantation productivity across managed estates.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  },
+  "config": {}
+}

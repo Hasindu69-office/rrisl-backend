@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_estate_substation_facilities_sections",
+  "info": {
+    "displayName": "facilities-section"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheader": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "paragraph": {
+      "type": "component",
+      "component": "estate-substation.paragraph",
+      "repeatable": true,
+      "required": true,
+      "max": 2
+    },
+    "cards": {
+      "type": "component",
+      "component": "estate-substation.facility-card",
+      "repeatable": true,
+      "required": true,
+      "max": 4
+    }
+  },
+  "config": {}
+}

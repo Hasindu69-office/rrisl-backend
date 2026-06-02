@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_estate_substation_paragraphs",
+  "info": {
+    "displayName": "paragraph",
+    "icon": "cog"
+  },
+  "options": {},
+  "attributes": {
+    "paragraph": {
+      "type": "text",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    }
+  },
+  "config": {}
+}

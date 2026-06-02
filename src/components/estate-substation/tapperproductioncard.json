@@ -1,0 +1,64 @@
+{
+  "collectionName": "components_estate_substation_tapperproductioncards",
+  "info": {
+    "displayName": "tapperproductioncard"
+  },
+  "options": {},
+  "attributes": {
+    "isvisible": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "title": {
+      "type": "string",
+      "default": "Tapper Productivity",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "metricvalue": {
+      "type": "string",
+      "default": "9.4",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "averagevaluelabel": {
+      "type": "text",
+      "default": "Average intake per tapper",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "barchartvalues": {
+      "type": "component",
+      "component": "estate-substation.barchartvalues",
+      "repeatable": true,
+      "required": true,
+      "max": 5
+    },
+    "description": {
+      "type": "text",
+      "default": "Highest productivity recorded from RRIC 121 clone fields under D3 tapping systems.",
+      "minLength": 10,
+      "maxLength": 255,
+      "required": true
+    },
+    "metatag1": {
+      "type": "string",
+      "default": "RRIC 121 Clone",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "metatag2": {
+      "type": "string",
+      "default": "D3 System",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  },
+  "config": {}
+}

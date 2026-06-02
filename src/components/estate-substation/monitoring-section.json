@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_estate_substation_monitoring_sections",
+  "info": {
+    "displayName": "monitoring-section",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheader": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "monitoringsectionbackgroundimage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "monitoringsectionbackgroundimagealt": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": false
+    },
+    "rainfalldistribution": {
+      "type": "component",
+      "component": "estate-substation.rainfall-distribution-card",
+      "repeatable": false,
+      "required": true
+    },
+    "annualrainfalldistribution": {
+      "type": "component",
+      "component": "estate-substation.annual-rainfall-card",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

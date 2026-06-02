@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_estate_substation_activities_sections",
+  "info": {
+    "displayName": "activities-section"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheader": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "card": {
+      "type": "component",
+      "component": "estate-substation.activity-card",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

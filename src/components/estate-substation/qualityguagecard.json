@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_estate_substation_qualityguagecards",
+  "info": {
+    "displayName": "qualityguagecard"
+  },
+  "options": {},
+  "attributes": {
+    "isvisible": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "title": {
+      "type": "string",
+      "default": "RSS Quality",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "percentagevalue": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "percentagevaluelabel": {
+      "type": "string",
+      "default": "Grade 1",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "default": "Approximately 73% of total RSS production was sold as Grade 1 quality.",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "insights": {
+      "type": "string",
+      "default": "These results reflect the dedication of our field teams, innovative research, and the continuous improvement of plantation management practices.",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_estate_substation_activity_cards",
+  "info": {
+    "displayName": "activity-card",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "imagealt": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  },
+  "config": {}
+}
