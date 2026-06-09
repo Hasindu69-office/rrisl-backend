@@ -1753,6 +1753,22 @@ export interface SharedPageHero extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPoints extends Struct.ComponentSchema {
+  collectionName: 'components_shared_points';
+  info: {
+    displayName: 'points';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    point: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+  };
+}
+
 export interface SharedSectionHeader extends Struct.ComponentSchema {
   collectionName: 'components_shared_section_headers';
   info: {
@@ -1890,6 +1906,32 @@ export interface SharedTitleandname extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTrProgramcards extends Struct.ComponentSchema {
+  collectionName: 'components_shared_tr_programcards';
+  info: {
+    displayName: 'tr-programcards';
+  };
+  attributes: {
+    imageright: Schema.Attribute.Media<'images'>;
+    points: Schema.Attribute.Component<'shared.points', true>;
+    programtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+  };
+}
+
 export interface SharedValidationlabels extends Struct.ComponentSchema {
   collectionName: 'components_shared_validationlabels';
   info: {
@@ -1990,10 +2032,12 @@ declare module '@strapi/strapi' {
       'shared.links': SharedLinks;
       'shared.page-content': SharedPageContent;
       'shared.page-hero': SharedPageHero;
+      'shared.points': SharedPoints;
       'shared.section-header': SharedSectionHeader;
       'shared.sociallinks': SharedSociallinks;
       'shared.statistics-tabs': SharedStatisticsTabs;
       'shared.titleandname': SharedTitleandname;
+      'shared.tr-programcards': SharedTrProgramcards;
       'shared.validationlabels': SharedValidationlabels;
       'vacancy.lists': VacancyLists;
     }
