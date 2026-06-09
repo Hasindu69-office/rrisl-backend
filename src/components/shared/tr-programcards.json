@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_tr_programcards",
+  "info": {
+    "displayName": "tr-programcards"
+  },
+  "options": {},
+  "attributes": {
+    "programtitle": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "points": {
+      "type": "component",
+      "component": "shared.points",
+      "repeatable": true
+    },
+    "imageright": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "sortorder": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "max": 2
+    }
+  },
+  "config": {}
+}

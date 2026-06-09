@@ -5231,6 +5231,87 @@ export interface ApiTestingServiceTestingService
   };
 }
 
+export interface ApiTrainingProgramPageTrainingProgramPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'training_program_pages';
+  info: {
+    displayName: 'training program page';
+    pluralName: 'training-program-pages';
+    singularName: 'training-program-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    backgroundimage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 10;
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::training-program-page.training-program-page'
+    >;
+    pagehero: Schema.Attribute.Component<'shared.page-hero', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    trainingprogram: Schema.Attribute.Component<
+      'shared.tr-programcards',
+      true
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiVacancyApplicationVacancyApplication
   extends Struct.CollectionTypeSchema {
   collectionName: 'vacancy_applications';
@@ -6782,6 +6863,7 @@ declare module '@strapi/strapi' {
       'api::tender.tender': ApiTenderTender;
       'api::testing-service-category.testing-service-category': ApiTestingServiceCategoryTestingServiceCategory;
       'api::testing-service.testing-service': ApiTestingServiceTestingService;
+      'api::training-program-page.training-program-page': ApiTrainingProgramPageTrainingProgramPage;
       'api::vacancy-application.vacancy-application': ApiVacancyApplicationVacancyApplication;
       'api::vacancy-details-page.vacancy-details-page': ApiVacancyDetailsPageVacancyDetailsPage;
       'api::vacancy-page.vacancy-page': ApiVacancyPageVacancyPage;
