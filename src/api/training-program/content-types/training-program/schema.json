@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "training_programs",
+  "info": {
+    "singularName": "training-program",
+    "pluralName": "training-programs",
+    "displayName": "training program"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "programname": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 10,
+      "maxLength": 255,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 10,
+      "maxLength": 512,
+      "required": true
+    },
+    "sortorder": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true,
+      "unique": false,
+      "max": 10
+    },
+    "image": {
+      "type": "media",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "training_program_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::training-program-category.training-program-category"
+    }
+  }
+}

@@ -542,6 +542,83 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAdvisoryServicePageAdvisoryServicePage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'advisory_service_pages';
+  info: {
+    displayName: 'advisory service page';
+    pluralName: 'advisory-service-pages';
+    singularName: 'advisory-service-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Component<
+      'estate-substation.paragraph',
+      true
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+          min: 1;
+        },
+        number
+      >;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::advisory-service-page.advisory-service-page'
+    >;
+    pagehero: Schema.Attribute.Component<'shared.page-hero', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    sectionimgleft: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    trainingprogrambgimg: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAlbumAlbum extends Struct.CollectionTypeSchema {
   collectionName: 'albums';
   info: {
@@ -5231,6 +5308,62 @@ export interface ApiTestingServiceTestingService
   };
 }
 
+export interface ApiTrainingProgramCategoryTrainingProgramCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'training_program_categories';
+  info: {
+    displayName: 'training program category';
+    pluralName: 'training-program-categories';
+    singularName: 'training-program-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    categorytitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::training-program-category.training-program-category'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTrainingProgramPageTrainingProgramPage
   extends Struct.SingleTypeSchema {
   collectionName: 'training_program_pages';
@@ -5306,6 +5439,83 @@ export interface ApiTrainingProgramPageTrainingProgramPage
         },
         number
       >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTrainingProgramTrainingProgram
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'training_programs';
+  info: {
+    displayName: 'training program';
+    pluralName: 'training-programs';
+    singularName: 'training-program';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 512;
+        minLength: 10;
+      }>;
+    image: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::training-program.training-program'
+    >;
+    programname: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 10;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 10;
+        },
+        number
+      >;
+    training_program_category: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::training-program-category.training-program-category'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -6809,6 +7019,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
+      'api::advisory-service-page.advisory-service-page': ApiAdvisoryServicePageAdvisoryServicePage;
       'api::album.album': ApiAlbumAlbum;
       'api::annoucement.annoucement': ApiAnnoucementAnnoucement;
       'api::bid-notice-page.bid-notice-page': ApiBidNoticePageBidNoticePage;
@@ -6863,7 +7074,9 @@ declare module '@strapi/strapi' {
       'api::tender.tender': ApiTenderTender;
       'api::testing-service-category.testing-service-category': ApiTestingServiceCategoryTestingServiceCategory;
       'api::testing-service.testing-service': ApiTestingServiceTestingService;
+      'api::training-program-category.training-program-category': ApiTrainingProgramCategoryTrainingProgramCategory;
       'api::training-program-page.training-program-page': ApiTrainingProgramPageTrainingProgramPage;
+      'api::training-program.training-program': ApiTrainingProgramTrainingProgram;
       'api::vacancy-application.vacancy-application': ApiVacancyApplicationVacancyApplication;
       'api::vacancy-details-page.vacancy-details-page': ApiVacancyDetailsPageVacancyDetailsPage;
       'api::vacancy-page.vacancy-page': ApiVacancyPageVacancyPage;

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "training_program_categories",
+  "info": {
+    "singularName": "training-program-category",
+    "pluralName": "training-program-categories",
+    "displayName": "training program category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "categorytitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "sortorder": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true,
+      "max": 5
+    }
+  }
+}

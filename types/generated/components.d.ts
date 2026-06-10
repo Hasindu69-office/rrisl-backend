@@ -726,7 +726,6 @@ export interface EstateSubstationParagraph extends Struct.ComponentSchema {
     paragraph: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 255;
         minLength: 3;
       }>;
   };
