@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_home_currentresearchsections",
+  "info": {
+    "displayName": "Currentresearchsection"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheader": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

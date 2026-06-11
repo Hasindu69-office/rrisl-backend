@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_department_awardssections",
+  "info": {
+    "displayName": "awardssection"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheader": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "cards": {
+      "type": "component",
+      "component": "shared.timelinecard",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

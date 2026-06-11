@@ -2381,6 +2381,210 @@ export interface ApiGalleryPageGalleryPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiGeneticsAndPlantBreedingDepartmentGeneticsAndPlantBreedingDepartment
+  extends Struct.SingleTypeSchema {
+  collectionName: 'genetics_and_plant_breeding_departments';
+  info: {
+    displayName: 'Genetics and Plant Breeding Department';
+    pluralName: 'genetics-and-plant-breeding-departments';
+    singularName: 'genetics-and-plant-breeding-department';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    achievementspresent: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<true>;
+    achievementssection: Schema.Attribute.Component<
+      'department.achievementsection',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    awardssection: Schema.Attribute.Component<
+      'department.awardssection',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    awardtimelinepresent: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    currentprojectpresent: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<true>;
+    currentresearchprojectsection: Schema.Attribute.Component<
+      'department.currentresearchprojectsection',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    departmenttitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Genetics and Plant Breeding Department'>;
+    introductionsection: Schema.Attribute.Component<
+      'department.introduction-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::genetics-and-plant-breeding-department.genetics-and-plant-breeding-department'
+    >;
+    pagehero: Schema.Attribute.Component<'shared.page-hero', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publicationspresent: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<true>;
+    publicationssection: Schema.Attribute.Component<
+      'department.publicationsection',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    recommendationsection: Schema.Attribute.Component<
+      'department.recommendationsection',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    recommendationsectionpresent: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<true>;
+    researchhighlightspresent: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<true>;
+    researchhighlightssection: Schema.Attribute.Component<
+      'department.researchhighlight-section',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    researchstaffpresent: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<true>;
+    researchstaffsection: Schema.Attribute.Component<
+      'department.researchstaffsection',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    servicesection: Schema.Attribute.Component<
+      'department.servicesection',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    servicesectionpresent: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<true>;
+    slug: Schema.Attribute.UID<'departmenttitle'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalLayoutGlobalLayout extends Struct.SingleTypeSchema {
   collectionName: 'global_layouts';
   info: {
@@ -2515,6 +2719,16 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    currentresearchsection: Schema.Attribute.Component<
+      'home.currentresearchsection',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     datainsightssection: Schema.Attribute.Component<
       'home.datainsightssection',
       false
@@ -3170,6 +3384,76 @@ export interface ApiPhotoGalleryPagePhotoGalleryPage
       }> &
       Schema.Attribute.DefaultTo<'Photos'>;
     publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPlantScienceDepartmentPlantScienceDepartment
+  extends Struct.SingleTypeSchema {
+  collectionName: 'plant_science_departments';
+  info: {
+    displayName: 'Plant Science Department';
+    pluralName: 'plant-science-departments';
+    singularName: 'plant-science-department';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    departmenttitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    introductionsection: Schema.Attribute.Component<
+      'department.introduction-section',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::plant-science-department.plant-science-department'
+    >;
+    pagehero: Schema.Attribute.Component<'shared.page-hero', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'departmenttitle'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -7040,6 +7324,7 @@ declare module '@strapi/strapi' {
       'api::faq.faq': ApiFaqFaq;
       'api::footer.footer': ApiFooterFooter;
       'api::gallery-page.gallery-page': ApiGalleryPageGalleryPage;
+      'api::genetics-and-plant-breeding-department.genetics-and-plant-breeding-department': ApiGeneticsAndPlantBreedingDepartmentGeneticsAndPlantBreedingDepartment;
       'api::global-layout.global-layout': ApiGlobalLayoutGlobalLayout;
       'api::helpdesk-ticket.helpdesk-ticket': ApiHelpdeskTicketHelpdeskTicket;
       'api::home-page.home-page': ApiHomePageHomePage;
@@ -7053,6 +7338,7 @@ declare module '@strapi/strapi' {
       'api::organization-structure-page.organization-structure-page': ApiOrganizationStructurePageOrganizationStructurePage;
       'api::page.page': ApiPagePage;
       'api::photo-gallery-page.photo-gallery-page': ApiPhotoGalleryPagePhotoGalleryPage;
+      'api::plant-science-department.plant-science-department': ApiPlantScienceDepartmentPlantScienceDepartment;
       'api::polgahawela-annual-rainfall-value.polgahawela-annual-rainfall-value': ApiPolgahawelaAnnualRainfallValuePolgahawelaAnnualRainfallValue;
       'api::polgahawela-production-card.polgahawela-production-card': ApiPolgahawelaProductionCardPolgahawelaProductionCard;
       'api::polgahawela-rainfall-month-value.polgahawela-rainfall-month-value': ApiPolgahawelaRainfallMonthValuePolgahawelaRainfallMonthValue;

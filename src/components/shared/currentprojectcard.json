@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_shared_currentprojectcards",
+  "info": {
+    "displayName": "currentprojectcard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "sortorder": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "max": 20
+    },
+    "includeinhomepage": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  },
+  "config": {}
+}

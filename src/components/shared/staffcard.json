@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_shared_staffcards",
+  "info": {
+    "displayName": "staffcard"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "departmenttitle": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "education": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "email": {
+      "type": "component",
+      "component": "shared.emails",
+      "repeatable": true,
+      "max": 3
+    },
+    "paragraph": {
+      "type": "component",
+      "component": "estate-substation.paragraph",
+      "repeatable": true,
+      "max": 3
+    },
+    "portrait": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

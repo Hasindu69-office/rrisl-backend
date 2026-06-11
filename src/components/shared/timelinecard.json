@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_timelinecards",
+  "info": {
+    "displayName": "timelinecard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 10,
+      "maxLength": 130,
+      "required": true
+    }
+  },
+  "config": {}
+}

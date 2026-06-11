@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_department_servicesections",
+  "info": {
+    "displayName": "servicesection"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheader": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "servicecards": {
+      "type": "component",
+      "component": "shared.servicecard",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

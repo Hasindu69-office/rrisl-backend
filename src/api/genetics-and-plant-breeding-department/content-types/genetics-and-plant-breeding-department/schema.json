@@ -1,0 +1,309 @@
+{
+  "kind": "singleType",
+  "collectionName": "genetics_and_plant_breeding_departments",
+  "info": {
+    "singularName": "genetics-and-plant-breeding-department",
+    "pluralName": "genetics-and-plant-breeding-departments",
+    "displayName": "Genetics and Plant Breeding Department"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "departmenttitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Genetics and Plant Breeding Department",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "departmenttitle",
+      "required": true
+    },
+    "pagehero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.page-hero",
+      "repeatable": false,
+      "required": true
+    },
+    "introductionsection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "department.introduction-section",
+      "repeatable": false,
+      "required": true
+    },
+    "servicesectionpresent": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "servicesection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "servicesectionpresent"
+            },
+            true
+          ]
+        }
+      },
+      "component": "department.servicesection",
+      "repeatable": false,
+      "required": false
+    },
+    "researchstaffpresent": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "researchstaffsection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "researchstaffpresent"
+            },
+            true
+          ]
+        }
+      },
+      "component": "department.researchstaffsection",
+      "repeatable": false,
+      "required": false
+    },
+    "researchhighlightspresent": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "researchhighlightssection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "researchhighlightspresent"
+            },
+            true
+          ]
+        }
+      },
+      "component": "department.researchhighlight-section",
+      "repeatable": false,
+      "required": false
+    },
+    "currentprojectpresent": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "currentresearchprojectsection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "currentprojectpresent"
+            },
+            true
+          ]
+        }
+      },
+      "component": "department.currentresearchprojectsection",
+      "repeatable": false,
+      "required": false
+    },
+    "awardtimelinepresent": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "awardssection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "awardtimelinepresent"
+            },
+            true
+          ]
+        }
+      },
+      "component": "department.awardssection",
+      "repeatable": false,
+      "required": false
+    },
+    "publicationspresent": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "publicationssection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "publicationspresent"
+            },
+            true
+          ]
+        }
+      },
+      "component": "department.publicationsection",
+      "repeatable": false
+    },
+    "achievementspresent": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "achievementssection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "achievementspresent"
+            },
+            true
+          ]
+        }
+      },
+      "component": "department.achievementsection",
+      "repeatable": false,
+      "required": false
+    },
+    "recommendationsectionpresent": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true,
+      "default": true
+    },
+    "recommendationsection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "recommendationsectionpresent"
+            },
+            true
+          ]
+        }
+      },
+      "component": "department.recommendationsection",
+      "repeatable": false
+    }
+  }
+}

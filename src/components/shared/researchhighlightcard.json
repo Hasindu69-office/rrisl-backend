@@ -1,0 +1,56 @@
+{
+  "collectionName": "components_shared_researchhighlightcards",
+  "info": {
+    "displayName": "researchhighlightcard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "subtopicpresent": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "cards": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "subtopicpresent"
+            },
+            true
+          ]
+        }
+      },
+      "component": "shared.highlightsubcard",
+      "repeatable": true,
+      "max": 10
+    },
+    "sortorder": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "max": 30
+    },
+    "description": {
+      "type": "text",
+      "minLength": 10,
+      "maxLength": 255
+    }
+  },
+  "config": {}
+}

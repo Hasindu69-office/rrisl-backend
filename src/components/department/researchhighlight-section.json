@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_department_researchhighlight_sections",
+  "info": {
+    "displayName": "researchhighlightsection"
+  },
+  "options": {},
+  "attributes": {
+    "verticaltext": {
+      "type": "string",
+      "default": "Research Highlights",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "researchhighlightcards": {
+      "type": "component",
+      "component": "shared.researchhighlightcard",
+      "repeatable": true,
+      "max": 30
+    }
+  },
+  "config": {}
+}

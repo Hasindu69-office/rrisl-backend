@@ -354,6 +354,195 @@ export interface ContactSubstationcard extends Struct.ComponentSchema {
   };
 }
 
+export interface DepartmentAchievementsection extends Struct.ComponentSchema {
+  collectionName: 'components_department_achievementsections';
+  info: {
+    displayName: 'achievementsection';
+  };
+  attributes: {
+    achievements: Schema.Attribute.Component<'shared.achivementcard', true> &
+      Schema.Attribute.Required;
+    outlinetext: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Our Achievements'>;
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface DepartmentAwardssection extends Struct.ComponentSchema {
+  collectionName: 'components_department_awardssections';
+  info: {
+    displayName: 'awardssection';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'shared.timelinecard', true> &
+      Schema.Attribute.Required;
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface DepartmentCurrentresearchprojectsection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_department_currentresearchprojectsections';
+  info: {
+    displayName: 'currentresearchprojectsection';
+  };
+  attributes: {
+    researchprojects: Schema.Attribute.Component<
+      'shared.currentprojectcard',
+      true
+    > &
+      Schema.Attribute.Required;
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface DepartmentIntroductionSection extends Struct.ComponentSchema {
+  collectionName: 'components_department_introduction_sections';
+  info: {
+    displayName: 'introductionsection';
+  };
+  attributes: {
+    paragraph: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 10;
+      }>;
+    points: Schema.Attribute.Component<'shared.points', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 4;
+          min: 1;
+        },
+        number
+      >;
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required;
+    url: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    videotitle: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface DepartmentPublicationsection extends Struct.ComponentSchema {
+  collectionName: 'components_department_publicationsections';
+  info: {
+    displayName: 'publicationsection';
+  };
+  attributes: {
+    publications: Schema.Attribute.Component<'shared.publicationcards', true> &
+      Schema.Attribute.Required;
+    rightimage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    sectiontitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Our Publications'>;
+  };
+}
+
+export interface DepartmentRecommendationsection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_department_recommendationsections';
+  info: {
+    displayName: 'recommendationsection';
+  };
+  attributes: {
+    applyimagecard: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    imagecard: Schema.Attribute.Component<
+      'shared.recommendationimagecard',
+      true
+    >;
+    includepoints: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    includetable: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    points: Schema.Attribute.Component<'shared.publicationcards', true>;
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required;
+    tablecards: Schema.Attribute.Component<
+      'shared.recommendationtablecard',
+      true
+    >;
+  };
+}
+
+export interface DepartmentResearchhighlightSection
+  extends Struct.ComponentSchema {
+  collectionName: 'components_department_researchhighlight_sections';
+  info: {
+    displayName: 'researchhighlightsection';
+  };
+  attributes: {
+    researchhighlightcards: Schema.Attribute.Component<
+      'shared.researchhighlightcard',
+      true
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 30;
+        },
+        number
+      >;
+    verticaltext: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Research Highlights'>;
+  };
+}
+
+export interface DepartmentResearchstaffsection extends Struct.ComponentSchema {
+  collectionName: 'components_department_researchstaffsections';
+  info: {
+    displayName: 'researchstaffsection';
+  };
+  attributes: {
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false>;
+    staff: Schema.Attribute.Component<'shared.staffcard', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 10;
+        },
+        number
+      >;
+  };
+}
+
+export interface DepartmentServicesection extends Struct.ComponentSchema {
+  collectionName: 'components_department_servicesections';
+  info: {
+    displayName: 'servicesection';
+  };
+  attributes: {
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required;
+    servicecards: Schema.Attribute.Component<'shared.servicecard', true> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface EstateSubstationActivitiesSection
   extends Struct.ComponentSchema {
   collectionName: 'components_estate_substation_activities_sections';
@@ -518,7 +707,6 @@ export interface EstateSubstationBulletpoints extends Struct.ComponentSchema {
   attributes: {
     label: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
         minLength: 3;
       }>;
   };
@@ -1278,6 +1466,17 @@ export interface HomeAnnoucementLabels extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeCurrentresearchsection extends Struct.ComponentSchema {
+  collectionName: 'components_home_currentresearchsections';
+  info: {
+    displayName: 'Currentresearchsection';
+  };
+  attributes: {
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface HomeDatainsightssection extends Struct.ComponentSchema {
   collectionName: 'components_home_datainsightssections';
   info: {
@@ -1481,6 +1680,29 @@ export interface HomeSupportTheIndustrySection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedAchivementcard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_achivementcards';
+  info: {
+    displayName: 'achivementcard';
+  };
+  attributes: {
+    achievement: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+        },
+        number
+      >;
+  };
+}
+
 export interface SharedAlbumcard extends Struct.ComponentSchema {
   collectionName: 'components_shared_albumcards';
   info: {
@@ -1554,6 +1776,34 @@ export interface SharedButton extends Struct.ComponentSchema {
     openInNewTab: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     url: Schema.Attribute.String;
     variant: Schema.Attribute.Enumeration<['primary', 'secondary', 'outline']>;
+  };
+}
+
+export interface SharedCurrentprojectcard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_currentprojectcards';
+  info: {
+    displayName: 'currentprojectcard';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    includeinhomepage: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 20;
+        },
+        number
+      >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
   };
 }
 
@@ -1657,6 +1907,36 @@ export interface SharedHighlights extends Struct.ComponentSchema {
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 100;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface SharedHighlightsubcard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_highlightsubcards';
+  info: {
+    displayName: 'highlightsubcard';
+  };
+  attributes: {
+    galleryimages: Schema.Attribute.Media<'images', true>;
+    needimages: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    paragraph: Schema.Attribute.Component<'estate-substation.paragraph', true>;
+    points: Schema.Attribute.Component<'estate-substation.bulletpoints', true>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 10;
+        },
+        number
+      >;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
         minLength: 3;
       }>;
   };
@@ -1768,6 +2048,111 @@ export interface SharedPoints extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPublicationcards extends Struct.ComponentSchema {
+  collectionName: 'components_shared_publicationcards';
+  info: {
+    displayName: 'publicationcards';
+  };
+  attributes: {
+    points: Schema.Attribute.Component<'estate-substation.paragraph', true>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 10;
+        },
+        number
+      >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface SharedRecommendationimagecard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_recommendationimagecards';
+  info: {
+    displayName: 'recommendationimagecard';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface SharedRecommendationtablecard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_recommendationtablecards';
+  info: {
+    displayName: 'recommendationtablecard';
+  };
+  attributes: {
+    csvfile: Schema.Attribute.Media<'files'> & Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface SharedResearchhighlightcard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_researchhighlightcards';
+  info: {
+    displayName: 'researchhighlightcard';
+  };
+  attributes: {
+    cards: Schema.Attribute.Component<'shared.highlightsubcard', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 10;
+        },
+        number
+      >;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 10;
+      }>;
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 30;
+        },
+        number
+      >;
+    subtopicpresent: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+  };
+}
+
 export interface SharedSectionHeader extends Struct.ComponentSchema {
   collectionName: 'components_shared_section_headers';
   info: {
@@ -1783,6 +2168,38 @@ export interface SharedSectionHeader extends Struct.ComponentSchema {
         minLength: 2;
       }>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface SharedServicecard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_servicecards';
+  info: {
+    displayName: 'servicecard';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 9;
+        },
+        number
+      >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
   };
 }
 
@@ -1806,6 +2223,48 @@ export interface SharedSociallinks extends Struct.ComponentSchema {
         maxLength: 255;
         minLength: 3;
       }>;
+  };
+}
+
+export interface SharedStaffcard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_staffcards';
+  info: {
+    displayName: 'staffcard';
+  };
+  attributes: {
+    departmenttitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    education: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    email: Schema.Attribute.Component<'shared.emails', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+        },
+        number
+      >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    paragraph: Schema.Attribute.Component<'estate-substation.paragraph', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 3;
+        },
+        number
+      >;
+    portrait: Schema.Attribute.Media<'images'>;
   };
 }
 
@@ -1864,6 +2323,28 @@ export interface SharedStatisticsTabs extends Struct.ComponentSchema {
         minLength: 3;
       }>;
     yaxislabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface SharedTimelinecard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_timelinecards';
+  info: {
+    displayName: 'timelinecard';
+  };
+  attributes: {
+    date: Schema.Attribute.Date & Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 130;
+        minLength: 10;
+      }>;
+    title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 100;
@@ -1985,6 +2466,15 @@ declare module '@strapi/strapi' {
       'contact.phonenumber': ContactPhonenumber;
       'contact.sociallinks': ContactSociallinks;
       'contact.substationcard': ContactSubstationcard;
+      'department.achievementsection': DepartmentAchievementsection;
+      'department.awardssection': DepartmentAwardssection;
+      'department.currentresearchprojectsection': DepartmentCurrentresearchprojectsection;
+      'department.introduction-section': DepartmentIntroductionSection;
+      'department.publicationsection': DepartmentPublicationsection;
+      'department.recommendationsection': DepartmentRecommendationsection;
+      'department.researchhighlight-section': DepartmentResearchhighlightSection;
+      'department.researchstaffsection': DepartmentResearchstaffsection;
+      'department.servicesection': DepartmentServicesection;
       'estate-substation.activities-section': EstateSubstationActivitiesSection;
       'estate-substation.activity-card': EstateSubstationActivityCard;
       'estate-substation.annual-rainfall-card': EstateSubstationAnnualRainfallCard;
@@ -2010,6 +2500,7 @@ declare module '@strapi/strapi' {
       'footer.phone-lines': FooterPhoneLines;
       'home.about-section': HomeAboutSection;
       'home.annoucement-labels': HomeAnnoucementLabels;
+      'home.currentresearchsection': HomeCurrentresearchsection;
       'home.datainsightssection': HomeDatainsightssection;
       'home.hero-badge': HomeHeroBadge;
       'home.hero-banner': HomeHeroBanner;
@@ -2019,22 +2510,32 @@ declare module '@strapi/strapi' {
       'home.service-card': HomeServiceCard;
       'home.services-section': HomeServicesSection;
       'home.support-the-industry-section': HomeSupportTheIndustrySection;
+      'shared.achivementcard': SharedAchivementcard;
       'shared.albumcard': SharedAlbumcard;
       'shared.breadcrumb-item': SharedBreadcrumbItem;
       'shared.button': SharedButton;
+      'shared.currentprojectcard': SharedCurrentprojectcard;
       'shared.donutchartlabel': SharedDonutchartlabel;
       'shared.emails': SharedEmails;
       'shared.error-message': SharedErrorMessage;
       'shared.highlighted-title': SharedHighlightedTitle;
       'shared.highlights': SharedHighlights;
+      'shared.highlightsubcard': SharedHighlightsubcard;
       'shared.language-switcher': SharedLanguageSwitcher;
       'shared.links': SharedLinks;
       'shared.page-content': SharedPageContent;
       'shared.page-hero': SharedPageHero;
       'shared.points': SharedPoints;
+      'shared.publicationcards': SharedPublicationcards;
+      'shared.recommendationimagecard': SharedRecommendationimagecard;
+      'shared.recommendationtablecard': SharedRecommendationtablecard;
+      'shared.researchhighlightcard': SharedResearchhighlightcard;
       'shared.section-header': SharedSectionHeader;
+      'shared.servicecard': SharedServicecard;
       'shared.sociallinks': SharedSociallinks;
+      'shared.staffcard': SharedStaffcard;
       'shared.statistics-tabs': SharedStatisticsTabs;
+      'shared.timelinecard': SharedTimelinecard;
       'shared.titleandname': SharedTitleandname;
       'shared.tr-programcards': SharedTrProgramcards;
       'shared.validationlabels': SharedValidationlabels;
