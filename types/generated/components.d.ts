@@ -415,7 +415,6 @@ export interface DepartmentIntroductionSection extends Struct.ComponentSchema {
     points: Schema.Attribute.Component<'shared.points', true> &
       Schema.Attribute.SetMinMax<
         {
-          max: 4;
           min: 1;
         },
         number
@@ -2197,7 +2196,7 @@ export interface SharedServicecard extends Struct.ComponentSchema {
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
+        maxLength: 255;
         minLength: 3;
       }>;
   };
