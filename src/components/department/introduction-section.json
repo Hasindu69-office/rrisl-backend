@@ -22,8 +22,7 @@
       "component": "shared.points",
       "repeatable": true,
       "required": false,
-      "min": 1,
-      "max": 4
+      "min": 1
     },
     "videotitle": {
       "type": "string",
