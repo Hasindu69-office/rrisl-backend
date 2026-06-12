@@ -58,6 +58,17 @@
       "repeatable": false,
       "required": true
     },
+    "currentresearchsection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.currentresearchsection",
+      "repeatable": false,
+      "required": true
+    },
     "datainsightssection": {
       "type": "component",
       "pluginOptions": {

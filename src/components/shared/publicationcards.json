@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_shared_publicationcards",
+  "info": {
+    "displayName": "publicationcards"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "points": {
+      "type": "component",
+      "component": "estate-substation.paragraph",
+      "repeatable": true
+    },
+    "sortorder": {
+      "type": "integer",
+      "required": true,
+      "max": 10
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_department_researchstaffsections",
+  "info": {
+    "displayName": "researchstaffsection"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheader": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false
+    },
+    "staff": {
+      "type": "component",
+      "component": "shared.staffcard",
+      "repeatable": true,
+      "required": true,
+      "max": 10
+    }
+  },
+  "config": {}
+}

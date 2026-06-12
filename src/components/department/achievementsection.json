@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_department_achievementsections",
+  "info": {
+    "displayName": "achievementsection"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheader": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "outlinetext": {
+      "type": "string",
+      "default": "Our Achievements",
+      "required": true
+    },
+    "achievements": {
+      "type": "component",
+      "component": "shared.achivementcard",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

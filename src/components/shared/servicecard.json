@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_shared_servicecards",
+  "info": {
+    "displayName": "servicecard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "sortorder": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "max": 9
+    }
+  },
+  "config": {}
+}

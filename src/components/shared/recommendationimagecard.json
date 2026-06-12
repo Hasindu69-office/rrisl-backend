@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_recommendationimagecards",
+  "info": {
+    "displayName": "recommendationimagecard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

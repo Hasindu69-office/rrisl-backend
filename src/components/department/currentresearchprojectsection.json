@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_department_currentresearchprojectsections",
+  "info": {
+    "displayName": "currentresearchprojectsection"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheader": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "researchprojects": {
+      "type": "component",
+      "component": "shared.currentprojectcard",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

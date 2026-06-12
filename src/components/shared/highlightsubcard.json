@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_shared_highlightsubcards",
+  "info": {
+    "displayName": "highlightsubcard"
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "paragraph": {
+      "type": "component",
+      "component": "estate-substation.paragraph",
+      "repeatable": true
+    },
+    "points": {
+      "type": "component",
+      "component": "estate-substation.bulletpoints",
+      "repeatable": true
+    },
+    "needimages": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "galleryimages": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "needimages"
+            },
+            true
+          ]
+        }
+      },
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "sortorder": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "max": 10
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,63 @@
+{
+  "kind": "singleType",
+  "collectionName": "plant_science_departments",
+  "info": {
+    "singularName": "plant-science-department",
+    "pluralName": "plant-science-departments",
+    "displayName": "Plant Science Department"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "departmenttitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "targetField": "departmenttitle",
+      "required": true,
+      "maxLength": 100
+    },
+    "pagehero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.page-hero",
+      "repeatable": false,
+      "required": true
+    },
+    "introductionsection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "department.introduction-section",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}

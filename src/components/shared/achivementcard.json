@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_achivementcards",
+  "info": {
+    "displayName": "achivementcard"
+  },
+  "options": {},
+  "attributes": {
+    "achievement": {
+      "type": "text",
+      "maxLength": 255,
+      "required": true
+    },
+    "sortorder": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "max": 100
+    }
+  },
+  "config": {}
+}

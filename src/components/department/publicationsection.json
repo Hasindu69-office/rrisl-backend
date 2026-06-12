@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_department_publicationsections",
+  "info": {
+    "displayName": "publicationsection"
+  },
+  "options": {},
+  "attributes": {
+    "sectiontitle": {
+      "type": "string",
+      "default": "Our Publications",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "rightimage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "publications": {
+      "type": "component",
+      "component": "shared.publicationcards",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

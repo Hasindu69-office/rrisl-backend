@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_department_introduction_sections",
+  "info": {
+    "displayName": "introductionsection"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheader": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "paragraph": {
+      "type": "text",
+      "minLength": 10,
+      "maxLength": 255,
+      "required": true
+    },
+    "points": {
+      "type": "component",
+      "component": "shared.points",
+      "repeatable": true,
+      "required": false,
+      "min": 1,
+      "max": 4
+    },
+    "videotitle": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255
+    },
+    "url": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    }
+  },
+  "config": {}
+}
