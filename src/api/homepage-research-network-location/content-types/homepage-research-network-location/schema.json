@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "homepage_research_network_locations",
+  "info": {
+    "singularName": "homepage-research-network-location",
+    "pluralName": "homepage-research-network-locations",
+    "displayName": "homepage research network location"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "estate_substation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::estate-substation.estate-substation"
+    },
+    "mapmark": {
+      "type": "enumeration",
+      "enum": [
+        "dartonfield-group",
+        "kuruwita-substation",
+        "nivitigalakele-substation",
+        "monaragala-substation",
+        "polgahawela-substation"
+      ]
+    }
+  }
+}

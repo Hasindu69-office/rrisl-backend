@@ -1605,6 +1605,19 @@ export interface HomeNewsandblogsection extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeResearchnetworksection extends Struct.ComponentSchema {
+  collectionName: 'components_home_researchnetworksections';
+  info: {
+    displayName: 'researchnetworksection';
+  };
+  attributes: {
+    backgroundimage: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required;
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface HomeServiceCard extends Struct.ComponentSchema {
   collectionName: 'components_home_service_cards';
   info: {
@@ -2506,6 +2519,7 @@ declare module '@strapi/strapi' {
       'home.hero-label': HomeHeroLabel;
       'home.homebannerstats': HomeHomebannerstats;
       'home.newsandblogsection': HomeNewsandblogsection;
+      'home.researchnetworksection': HomeResearchnetworksection;
       'home.service-card': HomeServiceCard;
       'home.services-section': HomeServicesSection;
       'home.support-the-industry-section': HomeSupportTheIndustrySection;
