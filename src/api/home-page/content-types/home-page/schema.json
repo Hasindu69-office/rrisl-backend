@@ -90,6 +90,17 @@
       "component": "shared.section-header",
       "repeatable": false,
       "required": true
+    },
+    "researchnetworksection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.researchnetworksection",
+      "repeatable": false,
+      "required": true
     }
   }
 }

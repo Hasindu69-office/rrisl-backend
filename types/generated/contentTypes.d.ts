@@ -2771,6 +2771,16 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    researchnetworksection: Schema.Attribute.Component<
+      'home.researchnetworksection',
+      false
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     stats: Schema.Attribute.Component<'home.homebannerstats', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -2783,6 +2793,47 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
         },
         number
       >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomepageResearchNetworkLocationHomepageResearchNetworkLocation
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'homepage_research_network_locations';
+  info: {
+    displayName: 'homepage research network location';
+    pluralName: 'homepage-research-network-locations';
+    singularName: 'homepage-research-network-location';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    estate_substation: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::estate-substation.estate-substation'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homepage-research-network-location.homepage-research-network-location'
+    > &
+      Schema.Attribute.Private;
+    mapmark: Schema.Attribute.Enumeration<
+      [
+        'dartonfield-group',
+        'kuruwita-substation',
+        'nivitigalakele-substation',
+        'monaragala-substation',
+        'polgahawela-substation',
+      ]
+    >;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -7520,6 +7571,7 @@ declare module '@strapi/strapi' {
       'api::global-layout.global-layout': ApiGlobalLayoutGlobalLayout;
       'api::helpdesk-ticket.helpdesk-ticket': ApiHelpdeskTicketHelpdeskTicket;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::homepage-research-network-location.homepage-research-network-location': ApiHomepageResearchNetworkLocationHomepageResearchNetworkLocation;
       'api::homepage-statistics-section.homepage-statistics-section': ApiHomepageStatisticsSectionHomepageStatisticsSection;
       'api::location.location': ApiLocationLocation;
       'api::management-board-page.management-board-page': ApiManagementBoardPageManagementBoardPage;
