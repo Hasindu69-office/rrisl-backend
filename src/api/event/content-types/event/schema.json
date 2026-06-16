@@ -38,8 +38,8 @@
       "minLength": 2,
       "maxLength": 100
     },
-    "shortDescription": {
-      "type": "string",
+    "summary": {
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -49,16 +49,17 @@
       "maxLength": 255,
       "required": false
     },
-    "fullDescription": {
-      "type": "blocks",
+    "paragraph": {
+      "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "required": true
+      "component": "estate-substation.paragraph",
+      "repeatable": true
     },
-    "start_datetime": {
+    "dateandtime": {
       "type": "datetime",
       "pluginOptions": {
         "i18n": {
@@ -67,16 +68,7 @@
       },
       "required": true
     },
-    "end_datetime": {
-      "type": "datetime",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true
-    },
-    "venue": {
+    "location": {
       "type": "string",
       "pluginOptions": {
         "i18n": {
@@ -84,18 +76,8 @@
         }
       },
       "minLength": 2,
-      "maxLength": 100,
+      "maxLength": 255,
       "required": true
-    },
-    "registrationURL": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "minLength": 2,
-      "maxLength": 100
     },
     "featuredImage": {
       "type": "media",
@@ -105,13 +87,12 @@
         }
       },
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
-        "images",
-        "files"
+        "images"
       ]
     },
-    "attachments": {
+    "galleryimages": {
       "type": "media",
       "pluginOptions": {
         "i18n": {
@@ -120,21 +101,8 @@
       },
       "multiple": true,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ]
-    },
-    "isFeatured": {
-      "type": "boolean",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": false,
-      "default": false
     },
     "event_categories": {
       "type": "relation",

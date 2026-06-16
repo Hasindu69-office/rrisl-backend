@@ -101,6 +101,28 @@
       "component": "home.researchnetworksection",
       "repeatable": false,
       "required": true
+    },
+    "eventsandprogramssection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.event-and-program",
+      "repeatable": false,
+      "required": true
+    },
+    "quicklinkssection": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "home.quicklinksection",
+      "repeatable": false,
+      "required": true
     }
   }
 }

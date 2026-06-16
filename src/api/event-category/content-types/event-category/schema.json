@@ -39,14 +39,6 @@
       "minLength": 2,
       "maxLength": 100
     },
-    "description": {
-      "type": "blocks",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "sortOrder": {
       "type": "integer",
       "pluginOptions": {

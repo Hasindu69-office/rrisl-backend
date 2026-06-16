@@ -1524,6 +1524,36 @@ export interface HomeDatainsightssection extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeEventAndProgram extends Struct.ComponentSchema {
+  collectionName: 'components_home_event_and_programs';
+  info: {
+    displayName: 'event and program';
+  };
+  attributes: {
+    noeventslabel: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 10;
+      }> &
+      Schema.Attribute.DefaultTo<'Nothing to revisit this month. Past events and programs will appear here once available.'>;
+    noupcomingeventserrormessage: Schema.Attribute.Component<
+      'shared.error-message',
+      false
+    > &
+      Schema.Attribute.Required;
+    pasteventsandprogramslabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Past Events & Programs'>;
+    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface HomeHeroBadge extends Struct.ComponentSchema {
   collectionName: 'components_home_hero_badges';
   info: {
@@ -1602,6 +1632,17 @@ export interface HomeNewsandblogsection extends Struct.ComponentSchema {
   };
   attributes: {
     blogsection: Schema.Attribute.Component<'shared.section-header', false>;
+  };
+}
+
+export interface HomeQuicklinksection extends Struct.ComponentSchema {
+  collectionName: 'components_home_quicklinksections';
+  info: {
+    displayName: 'quicklinksection';
+  };
+  attributes: {
+    quicklinks: Schema.Attribute.Component<'shared.quicklinks', true> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -2084,6 +2125,37 @@ export interface SharedPublicationcards extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedQuicklinks extends Struct.ComponentSchema {
+  collectionName: 'components_shared_quicklinks';
+  info: {
+    displayName: 'quicklinks';
+  };
+  attributes: {
+    openinnewtab: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+        },
+        number
+      >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    url: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+  };
+}
+
 export interface SharedRecommendationimagecard extends Struct.ComponentSchema {
   collectionName: 'components_shared_recommendationimagecards';
   info: {
@@ -2514,11 +2586,13 @@ declare module '@strapi/strapi' {
       'home.annoucement-labels': HomeAnnoucementLabels;
       'home.currentresearchsection': HomeCurrentresearchsection;
       'home.datainsightssection': HomeDatainsightssection;
+      'home.event-and-program': HomeEventAndProgram;
       'home.hero-badge': HomeHeroBadge;
       'home.hero-banner': HomeHeroBanner;
       'home.hero-label': HomeHeroLabel;
       'home.homebannerstats': HomeHomebannerstats;
       'home.newsandblogsection': HomeNewsandblogsection;
+      'home.quicklinksection': HomeQuicklinksection;
       'home.researchnetworksection': HomeResearchnetworksection;
       'home.service-card': HomeServiceCard;
       'home.services-section': HomeServicesSection;
@@ -2540,6 +2614,7 @@ declare module '@strapi/strapi' {
       'shared.page-hero': SharedPageHero;
       'shared.points': SharedPoints;
       'shared.publicationcards': SharedPublicationcards;
+      'shared.quicklinks': SharedQuicklinks;
       'shared.recommendationimagecard': SharedRecommendationimagecard;
       'shared.recommendationtablecard': SharedRecommendationtablecard;
       'shared.researchhighlightcard': SharedResearchhighlightcard;

@@ -1,0 +1,197 @@
+{
+  "kind": "singleType",
+  "collectionName": "event_pages",
+  "info": {
+    "singularName": "event-page",
+    "pluralName": "event-pages",
+    "displayName": "event page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "pagehero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.page-hero",
+      "repeatable": false,
+      "required": true
+    },
+    "sectionheader": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "locationlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Location",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "readdetailslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Read Details",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "alllabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "All",
+      "minLength": 1,
+      "maxLength": 100,
+      "required": true
+    },
+    "pastlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Past",
+      "minLength": 1,
+      "maxLength": 100,
+      "required": true
+    },
+    "upcominglabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Upcoming",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "viewdetailslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "View Details",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "nextbuttonlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Next",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "previousbuttonlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Previous",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "backtoalleventslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Back to all events",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "detailslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Details",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "datelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Date",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "timelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Time",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "statuslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Status",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    }
+  }
+}

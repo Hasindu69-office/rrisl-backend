@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_home_event_and_programs",
+  "info": {
+    "displayName": "event and program"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheader": {
+      "type": "component",
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
+    },
+    "noupcomingeventserrormessage": {
+      "type": "component",
+      "component": "shared.error-message",
+      "repeatable": false,
+      "required": true
+    },
+    "pasteventsandprogramslabel": {
+      "type": "string",
+      "default": "Past Events & Programs",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "noeventslabel": {
+      "type": "text",
+      "default": "Nothing to revisit this month. Past events and programs will appear here once available.",
+      "minLength": 10,
+      "maxLength": 255,
+      "required": true
+    }
+  },
+  "config": {}
+}
