@@ -4,7 +4,7 @@
   "info": {
     "singularName": "news-category",
     "pluralName": "news-categories",
-    "displayName": "news-category"
+    "displayName": "news-and-blog-category"
   },
   "options": {
     "draftAndPublish": true
@@ -37,21 +37,17 @@
       "minLength": 2,
       "maxLength": 100
     },
-    "description": {
-      "type": "blocks",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "sortOrder": {
       "type": "integer",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "required": true,
+      "unique": true,
+      "min": 1,
+      "max": 10
     },
     "isActive": {
       "type": "boolean",
