@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_home_quicklinksections",
+  "info": {
+    "displayName": "quicklinksection"
+  },
+  "options": {},
+  "attributes": {
+    "quicklinks": {
+      "type": "component",
+      "component": "shared.quicklinks",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}
