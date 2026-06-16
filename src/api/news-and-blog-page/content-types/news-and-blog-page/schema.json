@@ -1,0 +1,173 @@
+{
+  "kind": "singleType",
+  "collectionName": "news_and_blog_pages",
+  "info": {
+    "singularName": "news-and-blog-page",
+    "pluralName": "news-and-blog-pages",
+    "displayName": "news and blog page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "pagehero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.page-hero",
+      "repeatable": false,
+      "required": true
+    },
+    "topic": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Research updates, field stories, and industry insights.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "latestfromrrisllabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Latest from RRISL",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "featuredlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Featured",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "readfeaturedarticlebuttonlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Read Featured Article",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "readarticlelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Read Article",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "Backtoallarticleslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Back to all articles",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "relatedarticleslabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Related Articles",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "readlabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Read",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "articlelabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Article",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "alllabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "All",
+      "minLength": 1,
+      "maxLength": 100,
+      "required": true
+    },
+    "articlegallerylabel": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "Article Gallery",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
+    },
+    "ErrorMessage": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.error-message",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}

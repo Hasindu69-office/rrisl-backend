@@ -4,7 +4,7 @@
   "info": {
     "singularName": "new",
     "pluralName": "news",
-    "displayName": "news"
+    "displayName": "news-and-blogs"
   },
   "options": {
     "draftAndPublish": true
@@ -46,25 +46,20 @@
         }
       },
       "minLength": 10,
-      "maxLength": 100
+      "maxLength": 255,
+      "required": true
     },
-    "content": {
-      "type": "blocks",
+    "paragraph": {
+      "type": "component",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "required": true
-    },
-    "publishedDate": {
-      "type": "datetime",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true
+      "component": "estate-substation.paragraph",
+      "repeatable": true,
+      "required": true,
+      "min": 1
     },
     "featuredImage": {
       "type": "media",
@@ -76,8 +71,7 @@
       "multiple": false,
       "required": true,
       "allowedTypes": [
-        "images",
-        "files"
+        "images"
       ]
     },
     "gallelryImages": {
@@ -89,17 +83,17 @@
       },
       "multiple": true,
       "allowedTypes": [
-        "images",
-        "files"
+        "images"
       ]
     },
     "isFeatured": {
       "type": "boolean",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
+      "required": true,
       "default": false
     },
     "news_categories": {

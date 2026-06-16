@@ -79,6 +79,17 @@
       "component": "home.datainsightssection",
       "repeatable": false,
       "required": true
+    },
+    "newssectionheader": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.section-header",
+      "repeatable": false,
+      "required": true
     }
   }
 }
