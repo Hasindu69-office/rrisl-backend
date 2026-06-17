@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "plant_science_departments",
+  "collectionName": "adaptive_research_departments",
   "info": {
-    "singularName": "plant-science-department",
-    "pluralName": "plant-science-departments",
-    "displayName": "Plant Science Department"
+    "singularName": "adaptive-research-department",
+    "pluralName": "adaptive-research-departments",
+    "displayName": "Adaptive Research Department"
   },
   "options": {
     "draftAndPublish": true
@@ -22,7 +22,7 @@
           "localized": true
         }
       },
-      "default": "Plant Science Department",
+      "default": "Adaptive Research Department",
       "minLength": 3,
       "maxLength": 100,
       "required": true

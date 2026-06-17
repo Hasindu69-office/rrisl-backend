@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "plant_science_departments",
+  "collectionName": "raw_rubber_and_chemical_analysis_departments",
   "info": {
-    "singularName": "plant-science-department",
-    "pluralName": "plant-science-departments",
-    "displayName": "Plant Science Department"
+    "singularName": "raw-rubber-and-chemical-analysis-department",
+    "pluralName": "raw-rubber-and-chemical-analysis-departments",
+    "displayName": "Raw Rubber and Chemical Analysis Department"
   },
   "options": {
     "draftAndPublish": true
@@ -22,7 +22,7 @@
           "localized": true
         }
       },
-      "default": "Plant Science Department",
+      "default": "Raw Rubber and Chemical Analysis Department",
       "minLength": 3,
       "maxLength": 100,
       "required": true

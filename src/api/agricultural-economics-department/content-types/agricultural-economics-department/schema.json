@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "plant_science_departments",
+  "collectionName": "agricultural_economics_departments",
   "info": {
-    "singularName": "plant-science-department",
-    "pluralName": "plant-science-departments",
-    "displayName": "Plant Science Department"
+    "singularName": "agricultural-economics-department",
+    "pluralName": "agricultural-economics-departments",
+    "displayName": "Agricultural Economics Department"
   },
   "options": {
     "draftAndPublish": true
@@ -22,7 +22,7 @@
           "localized": true
         }
       },
-      "default": "Plant Science Department",
+      "default": "Agricultural Economics Department",
       "minLength": 3,
       "maxLength": 100,
       "required": true

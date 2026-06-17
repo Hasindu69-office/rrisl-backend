@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "plant_science_departments",
+  "collectionName": "biochemistry_and_physiology_departments",
   "info": {
-    "singularName": "plant-science-department",
-    "pluralName": "plant-science-departments",
-    "displayName": "Plant Science Department"
+    "singularName": "biochemistry-and-physiology-department",
+    "pluralName": "biochemistry-and-physiology-departments",
+    "displayName": "Biochemistry and Physiology Department"
   },
   "options": {
     "draftAndPublish": true
@@ -22,7 +22,7 @@
           "localized": true
         }
       },
-      "default": "Plant Science Department",
+      "default": "Biochemistry and Physiology Department",
       "minLength": 3,
       "maxLength": 100,
       "required": true
