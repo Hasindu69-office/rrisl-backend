@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "plant_science_departments",
+  "collectionName": "raw_rubber_process_development_and_chemical_engineering_departments",
   "info": {
-    "singularName": "plant-science-department",
-    "pluralName": "plant-science-departments",
-    "displayName": "Plant Science Department"
+    "singularName": "raw-rubber-process-development-and-chemical-engineering-department",
+    "pluralName": "raw-rubber-process-development-and-chemical-engineering-departments",
+    "displayName": "Raw Rubber Process Development & Chemical Engineering Department"
   },
   "options": {
     "draftAndPublish": true
@@ -22,7 +22,7 @@
           "localized": true
         }
       },
-      "default": "Plant Science Department",
+      "default": "Raw Rubber Process Development & Chemical Engineering Department",
       "minLength": 3,
       "maxLength": 100,
       "required": true

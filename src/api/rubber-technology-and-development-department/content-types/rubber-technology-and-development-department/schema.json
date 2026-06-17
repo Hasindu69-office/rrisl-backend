@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "plant_science_departments",
+  "collectionName": "rubber_technology_and_development_departments",
   "info": {
-    "singularName": "plant-science-department",
-    "pluralName": "plant-science-departments",
-    "displayName": "Plant Science Department"
+    "singularName": "rubber-technology-and-development-department",
+    "pluralName": "rubber-technology-and-development-departments",
+    "displayName": "Rubber Technology & Development Department"
   },
   "options": {
     "draftAndPublish": true
@@ -22,7 +22,7 @@
           "localized": true
         }
       },
-      "default": "Plant Science Department",
+      "default": "Rubber Technology & Development Department",
       "minLength": 3,
       "maxLength": 100,
       "required": true

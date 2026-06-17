@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "plant_science_departments",
+  "collectionName": "biometry_section_departments",
   "info": {
-    "singularName": "plant-science-department",
-    "pluralName": "plant-science-departments",
-    "displayName": "Plant Science Department"
+    "singularName": "biometry-section-department",
+    "pluralName": "biometry-section-departments",
+    "displayName": "Biometry Section Department"
   },
   "options": {
     "draftAndPublish": true
@@ -22,7 +22,7 @@
           "localized": true
         }
       },
-      "default": "Plant Science Department",
+      "default": "Biometry Section Department",
       "minLength": 3,
       "maxLength": 100,
       "required": true

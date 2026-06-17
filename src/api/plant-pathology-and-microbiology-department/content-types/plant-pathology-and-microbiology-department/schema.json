@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "plant_science_departments",
+  "collectionName": "plant_pathology_and_microbiology_departments",
   "info": {
-    "singularName": "plant-science-department",
-    "pluralName": "plant-science-departments",
-    "displayName": "Plant Science Department"
+    "singularName": "plant-pathology-and-microbiology-department",
+    "pluralName": "plant-pathology-and-microbiology-departments",
+    "displayName": "Plant Pathology & Microbiology Department"
   },
   "options": {
     "draftAndPublish": true
@@ -22,7 +22,7 @@
           "localized": true
         }
       },
-      "default": "Plant Science Department",
+      "default": "Plant Pathology & Microbiology Department",
       "minLength": 3,
       "maxLength": 100,
       "required": true

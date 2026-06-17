@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "plant_science_departments",
+  "collectionName": "polymer_chemistry_departments",
   "info": {
-    "singularName": "plant-science-department",
-    "pluralName": "plant-science-departments",
-    "displayName": "Plant Science Department"
+    "singularName": "polymer-chemistry-department",
+    "pluralName": "polymer-chemistry-departments",
+    "displayName": "Polymer Chemistry Department"
   },
   "options": {
     "draftAndPublish": true
@@ -22,7 +22,7 @@
           "localized": true
         }
       },
-      "default": "Plant Science Department",
+      "default": "Polymer Chemistry Department",
       "minLength": 3,
       "maxLength": 100,
       "required": true
