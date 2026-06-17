@@ -409,7 +409,6 @@ export interface DepartmentIntroductionSection extends Struct.ComponentSchema {
     paragraph: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 255;
         minLength: 10;
       }>;
     points: Schema.Attribute.Component<'shared.points', true> &
@@ -2112,7 +2111,7 @@ export interface SharedPublicationcards extends Struct.ComponentSchema {
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMax<
         {
-          max: 10;
+          max: 20;
         },
         number
       >;

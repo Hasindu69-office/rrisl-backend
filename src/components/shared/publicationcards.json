@@ -19,7 +19,7 @@
     "sortorder": {
       "type": "integer",
       "required": true,
-      "max": 10
+      "max": 20
     }
   },
   "config": {}

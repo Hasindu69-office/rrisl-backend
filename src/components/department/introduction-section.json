@@ -14,7 +14,6 @@
     "paragraph": {
       "type": "text",
       "minLength": 10,
-      "maxLength": 255,
       "required": true
     },
     "points": {
