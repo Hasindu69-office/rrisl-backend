@@ -7138,6 +7138,141 @@ export interface ApiRubberTechnologyAndDevelopmentDepartmentRubberTechnologyAndD
   };
 }
 
+export interface ApiSeniorManagementPageSeniorManagementPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'senior_management_pages';
+  info: {
+    displayName: 'senior management page';
+    pluralName: 'senior-management-pages';
+    singularName: 'senior-management-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::senior-management-page.senior-management-page'
+    >;
+    pagehero: Schema.Attribute.Component<'shared.page-hero', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSeniorManagementSeniorManagement
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'senior_managements';
+  info: {
+    displayName: 'senior management';
+    pluralName: 'senior-managements';
+    singularName: 'senior-management';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+        minLength: 3;
+      }>;
+    image: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    imagealt: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::senior-management.senior-management'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    position: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 10;
+        },
+        number
+      >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiServicesPageServicesPage extends Struct.SingleTypeSchema {
   collectionName: 'services_pages';
   info: {
@@ -10169,6 +10304,8 @@ declare module '@strapi/strapi' {
       'api::rubber-auction-price.rubber-auction-price': ApiRubberAuctionPriceRubberAuctionPrice;
       'api::rubber-price-page.rubber-price-page': ApiRubberPricePageRubberPricePage;
       'api::rubber-technology-and-development-department.rubber-technology-and-development-department': ApiRubberTechnologyAndDevelopmentDepartmentRubberTechnologyAndDevelopmentDepartment;
+      'api::senior-management-page.senior-management-page': ApiSeniorManagementPageSeniorManagementPage;
+      'api::senior-management.senior-management': ApiSeniorManagementSeniorManagement;
       'api::services-page.services-page': ApiServicesPageServicesPage;
       'api::soils-and-plant-nutrition-department.soils-and-plant-nutrition-department': ApiSoilsAndPlantNutritionDepartmentSoilsAndPlantNutritionDepartment;
       'api::stat-consumption-tab.stat-consumption-tab': ApiStatConsumptionTabStatConsumptionTab;
