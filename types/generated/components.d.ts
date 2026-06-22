@@ -1425,6 +1425,13 @@ export interface HomeAboutSection extends Struct.ComponentSchema {
     icon: 'layout';
   };
   attributes: {
+    annoucementlabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Research & Institute Updates'>;
     body: Schema.Attribute.Blocks;
     header: Schema.Attribute.Component<'shared.section-header', false>;
     primaryCta: Schema.Attribute.Component<'shared.button', false>;

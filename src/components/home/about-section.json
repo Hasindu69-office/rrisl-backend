@@ -18,6 +18,13 @@
       "type": "component",
       "component": "shared.button",
       "repeatable": false
+    },
+    "annoucementlabel": {
+      "type": "string",
+      "default": "Research & Institute Updates",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
     }
   },
   "config": {}
