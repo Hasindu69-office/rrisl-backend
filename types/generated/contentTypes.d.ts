@@ -9929,6 +9929,12 @@ export interface PluginTreeMenusMenu extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    estateandsubstationbackgroundimg: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     items: Schema.Attribute.JSON &
       Schema.Attribute.Required &
       Schema.Attribute.CustomField<
@@ -9948,6 +9954,12 @@ export interface PluginTreeMenusMenu extends Struct.CollectionTypeSchema {
       'plugin::tree-menus.menu'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    researchdepartmentbackgroundimg: Schema.Attribute.Media<'images'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     slug: Schema.Attribute.UID<'title'> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
