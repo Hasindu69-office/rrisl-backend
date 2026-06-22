@@ -2137,6 +2137,7 @@ export interface SharedQuicklinks extends Struct.ComponentSchema {
     displayName: 'quicklinks';
   };
   attributes: {
+    icon: Schema.Attribute.Media<'images'>;
     openinnewtab: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;

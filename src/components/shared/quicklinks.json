@@ -11,6 +11,13 @@
       "maxLength": 100,
       "required": true
     },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "url": {
       "type": "string",
       "minLength": 3,
