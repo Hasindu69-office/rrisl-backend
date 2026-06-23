@@ -4,6 +4,11 @@
 
 import { errors } from '@strapi/utils';
 import type { Core } from '@strapi/strapi';
+import {
+  buildAdminApplicationEmail,
+  buildApplicantApplicationEmail,
+  type VacancyApplicationEmailDetails,
+} from './vacancy-application-emails';
 
 const { ApplicationError, ValidationError } = errors;
 
@@ -97,46 +102,84 @@ function assertValidCvFile(file: any) {
 }
 
 async function sendNotificationEmails({
-  applicantEmail,
-  applicantName,
-  vacancyTitle,
+  cvFile,
+  details,
 }: {
-  applicantEmail: string;
-  applicantName: string;
-  vacancyTitle: string;
+  cvFile: any;
+  details: VacancyApplicationEmailDetails;
 }) {
-  const adminRecipient = process.env.VACANCY_APPLICATION_NOTIFY_TO;
-  const fromAddress =
-    process.env.SMTP_DEFAULT_FROM || process.env.SMTP_DEFAULT_REPLY_TO || undefined;
+  const adminRecipients = (process.env.VACANCY_APPLICATION_NOTIFY_TO || '')
+    .split(',')
+    .map((recipient) => recipient.trim())
+    .filter(Boolean);
+  const fromAddress = process.env.SMTP_DEFAULT_FROM || undefined;
+  const adminEmail = buildAdminApplicationEmail(details);
+  const applicantEmail = buildApplicantApplicationEmail(details);
+  const deliveryTasks: Array<{ recipientType: 'admin' | 'applicant'; send: Promise<unknown> }> = [];
 
-  try {
-    if (adminRecipient) {
-      await strapi.plugin('email').service('email').send({
-        to: adminRecipient,
+  if (adminRecipients.length > 0) {
+    deliveryTasks.push({
+      recipientType: 'admin',
+      send: strapi.plugin('email').service('email').send({
+        to: adminRecipients.join(', '),
         from: fromAddress,
-        subject: `New vacancy application: ${vacancyTitle}`,
-        text: [
-          `A new application was submitted for "${vacancyTitle}".`,
-          '',
-          `Applicant: ${applicantName}`,
-          `Email: ${applicantEmail}`,
-        ].join('\n'),
-      });
-    }
-
-    await strapi.plugin('email').service('email').send({
-      to: applicantEmail,
-      from: fromAddress,
-      subject: `Application received: ${vacancyTitle}`,
-      text: [
-        `Dear ${applicantName},`,
-        '',
-        `Your application for "${vacancyTitle}" has been received successfully.`,
-        'Our team will review it and contact you if shortlisted.',
-      ].join('\n'),
+        replyTo: details.applicantEmail,
+        subject: adminEmail.subject,
+        text: adminEmail.text,
+        html: adminEmail.html,
+        attachments: [
+          {
+            filename: details.cvFilename,
+            path: cvFile.filepath,
+            contentType: cvFile.mimetype,
+          },
+        ],
+      }),
     });
-  } catch (error) {
-    strapi.log.error('Failed to send vacancy application email notifications', error);
+  } else {
+    strapi.log.error(
+      `[Vacancy application ${details.applicationReference}] Admin notification skipped: VACANCY_APPLICATION_NOTIFY_TO is not configured.`
+    );
+  }
+
+  deliveryTasks.push({
+    recipientType: 'applicant',
+    send: strapi.plugin('email').service('email').send({
+      to: details.applicantEmail,
+      from: fromAddress,
+      subject: applicantEmail.subject,
+      text: applicantEmail.text,
+      html: applicantEmail.html,
+    }),
+  });
+
+  const results = await Promise.allSettled(deliveryTasks.map(({ send }) => send));
+
+  results.forEach((result, index) => {
+    if (result.status === 'rejected') {
+      const recipientType = deliveryTasks[index].recipientType;
+      strapi.log.error(
+        `[Vacancy application ${details.applicationReference}] Failed to send ${recipientType} notification.`,
+        result.reason
+      );
+    }
+  });
+}
+
+function getCvFilename(file: any): string {
+  const filename = normalizeString(file?.originalFilename || file?.name);
+  const normalizedPath = filename.replace(/\\/g, '/');
+  return normalizedPath.slice(normalizedPath.lastIndexOf('/') + 1);
+}
+
+function getApplicationReference(applicationId: unknown): string {
+  const normalizedId = String(applicationId ?? '').trim();
+  return `RRISL-VA-${normalizedId || 'UNKNOWN'}`;
+}
+
+function assertCvAttachmentIsAvailable(file: any) {
+  if (!normalizeString(file?.filepath)) {
+    throw new ValidationError('CV temporary file path is unavailable.');
   }
 }
 
@@ -146,6 +189,7 @@ export default ({ strapi }: { strapi: Core.Strapi }) => ({
     const { fullname, email, contactnumber } = assertValidPayload(payload);
 
     assertValidCvFile(cvFile);
+    assertCvAttachmentIsAvailable(cvFile);
 
     const vacancy = (await strapi.db.query(VACANCY_UID).findOne({
       where: { slug: normalizedSlug },
@@ -203,11 +247,27 @@ export default ({ strapi }: { strapi: Core.Strapi }) => ({
       throw new ApplicationError('Failed to create vacancy application.');
     }
 
-    await sendNotificationEmails({
-      applicantEmail: email,
-      applicantName: fullname,
-      vacancyTitle,
-    });
+    const applicationReference = getApplicationReference(application.id);
+
+    try {
+      await sendNotificationEmails({
+        cvFile,
+        details: {
+          applicantEmail: email,
+          applicantName: fullname,
+          applicationReference,
+          contactNumber: contactnumber,
+          cvFilename: getCvFilename(cvFile),
+          submittedAt,
+          vacancyTitle,
+        },
+      });
+    } catch (error) {
+      strapi.log.error(
+        `[Vacancy application ${applicationReference}] Unexpected notification failure.`,
+        error
+      );
+    }
 
     return {
       applicationId: application.id,
