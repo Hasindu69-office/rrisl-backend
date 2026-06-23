@@ -71,6 +71,18 @@
       "minLength": 3,
       "maxLength": 255,
       "required": true
+    },
+    "Alreadysubscribedmessage": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": "This email is already subscribed.",
+      "minLength": 3,
+      "maxLength": 100,
+      "required": true
     }
   }
 }
