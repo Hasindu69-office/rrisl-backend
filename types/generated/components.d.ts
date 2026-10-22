@@ -539,16 +539,139 @@ export interface DepartmentResearchstaffsection extends Struct.ComponentSchema {
   };
 }
 
+export interface DepartmentServiceCategoryLink extends Struct.ComponentSchema {
+  collectionName: 'components_department_service_category_links';
+  info: {
+    displayName: 'service category link';
+  };
+  attributes: {
+    servicekey: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    url: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
+      }>;
+  };
+}
+
+export interface DepartmentServiceDetail extends Struct.ComponentSchema {
+  collectionName: 'components_department_service_details';
+  info: {
+    displayName: 'service detail';
+  };
+  attributes: {
+    label: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    value: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
+export interface DepartmentServiceGroup extends Struct.ComponentSchema {
+  collectionName: 'components_department_service_groups';
+  info: {
+    displayName: 'service group';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    images: Schema.Attribute.Media<'images', true>;
+    items: Schema.Attribute.Component<'department.service-item', true>;
+    servicekey: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+  };
+}
+
+export interface DepartmentServiceItem extends Struct.ComponentSchema {
+  collectionName: 'components_department_service_items';
+  info: {
+    displayName: 'service item';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    details: Schema.Attribute.Component<'department.service-detail', true>;
+    images: Schema.Attribute.Media<'images', true>;
+    servicekey: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    sortorder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    url: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
+      }>;
+  };
+}
+
 export interface DepartmentServicesection extends Struct.ComponentSchema {
   collectionName: 'components_department_servicesections';
   info: {
     displayName: 'servicesection';
   };
   attributes: {
+    categorylinks: Schema.Attribute.Component<
+      'department.service-category-link',
+      true
+    >;
     sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
       Schema.Attribute.Required;
-    servicecards: Schema.Attribute.Component<'shared.servicecard', true> &
-      Schema.Attribute.Required;
+    servicecards: Schema.Attribute.Component<'shared.servicecard', true>;
+    servicegroups: Schema.Attribute.Component<'department.service-group', true>;
   };
 }
 
@@ -2622,6 +2745,10 @@ declare module '@strapi/strapi' {
       'department.recommendationsection': DepartmentRecommendationsection;
       'department.researchhighlight-section': DepartmentResearchhighlightSection;
       'department.researchstaffsection': DepartmentResearchstaffsection;
+      'department.service-category-link': DepartmentServiceCategoryLink;
+      'department.service-detail': DepartmentServiceDetail;
+      'department.service-group': DepartmentServiceGroup;
+      'department.service-item': DepartmentServiceItem;
       'department.servicesection': DepartmentServicesection;
       'department.technical-staff-group': DepartmentTechnicalStaffGroup;
       'department.technical-staff-member': DepartmentTechnicalStaffMember;

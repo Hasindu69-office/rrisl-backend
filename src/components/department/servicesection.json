@@ -15,7 +15,19 @@
       "type": "component",
       "component": "shared.servicecard",
       "repeatable": true,
-      "required": true
+      "required": false
+    },
+    "categorylinks": {
+      "type": "component",
+      "component": "department.service-category-link",
+      "repeatable": true,
+      "required": false
+    },
+    "servicegroups": {
+      "type": "component",
+      "component": "department.service-group",
+      "repeatable": true,
+      "required": false
     }
   },
   "config": {}
