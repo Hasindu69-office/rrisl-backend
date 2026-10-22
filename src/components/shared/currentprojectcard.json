@@ -8,13 +8,44 @@
     "title": {
       "type": "string",
       "minLength": 3,
-      "maxLength": 100,
+      "maxLength": 255,
       "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "objectives": {
+      "type": "text"
+    },
+    "site": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "startdate": {
+      "type": "date"
+    },
+    "enddate": {
+      "type": "date"
+    },
+    "principalinvestigator": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "coinvestigators": {
+      "type": "text"
     },
     "image": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "galleryimages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]

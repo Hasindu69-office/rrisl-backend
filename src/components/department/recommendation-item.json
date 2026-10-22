@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_department_recommendation_items",
+  "info": {
+    "displayName": "recommendation item"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "sortorder": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    }
+  },
+  "config": {}
+}

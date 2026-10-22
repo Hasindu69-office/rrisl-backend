@@ -16,6 +16,13 @@
       "repeatable": true,
       "required": true,
       "max": 10
+    },
+    "technicalstaffgroups": {
+      "type": "component",
+      "component": "department.technical-staff-group",
+      "repeatable": true,
+      "required": false,
+      "max": 10
     }
   },
   "config": {}

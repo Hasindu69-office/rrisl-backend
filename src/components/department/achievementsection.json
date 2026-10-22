@@ -13,8 +13,16 @@
     },
     "outlinetext": {
       "type": "string",
-      "default": "Our Achievements",
+      "default": "Achievements",
       "required": true
+    },
+    "sectionicon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "achievements": {
       "type": "component",

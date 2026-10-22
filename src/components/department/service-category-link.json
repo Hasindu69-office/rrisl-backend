@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_department_service_category_links",
+  "info": {
+    "displayName": "service category link"
+  },
+  "options": {},
+  "attributes": {
+    "servicekey": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "url": {
+      "type": "string",
+      "required": true,
+      "maxLength": 500
+    },
+    "sortorder": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    }
+  },
+  "config": {}
+}

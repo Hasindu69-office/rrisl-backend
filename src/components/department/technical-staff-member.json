@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_department_technical_staff_members",
+  "info": {
+    "displayName": "technical-staff-member"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 120,
+      "required": true
+    },
+    "qualifications": {
+      "type": "string",
+      "maxLength": 255
+    }
+  },
+  "config": {}
+}

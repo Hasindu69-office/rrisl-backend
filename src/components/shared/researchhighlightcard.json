@@ -11,45 +11,28 @@
       "maxLength": 255,
       "required": true
     },
-    "icon": {
+    "description": {
+      "type": "text",
+      "minLength": 10,
+      "required": true
+    },
+    "researchteam": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "image": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
-    },
-    "subtopicpresent": {
-      "type": "boolean",
-      "required": true,
-      "default": true
-    },
-    "cards": {
-      "type": "component",
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "subtopicpresent"
-            },
-            true
-          ]
-        }
-      },
-      "component": "shared.highlightsubcard",
-      "repeatable": true,
-      "max": 10
     },
     "sortorder": {
       "type": "integer",
       "required": true,
       "unique": true,
       "max": 30
-    },
-    "description": {
-      "type": "text",
-      "minLength": 10,
-      "maxLength": 255
     }
   },
   "config": {}

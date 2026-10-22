@@ -11,6 +11,17 @@
       "repeatable": false,
       "required": true
     },
+    "includegroups": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "recommendationgroups": {
+      "type": "component",
+      "component": "department.recommendation-group",
+      "repeatable": true,
+      "required": false
+    },
     "applyimagecard": {
       "type": "boolean",
       "required": true,

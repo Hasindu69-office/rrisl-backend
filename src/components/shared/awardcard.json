@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_shared_awardcards",
+  "info": {
+    "displayName": "awardcard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "officers": {
+      "type": "text"
+    },
+    "details": {
+      "type": "text",
+      "minLength": 10,
+      "required": true
+    },
+    "year": {
+      "type": "integer",
+      "required": true,
+      "min": 1900,
+      "max": 2100
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "sortorder": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "max": 50
+    }
+  },
+  "config": {}
+}

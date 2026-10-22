@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_department_service_groups",
+  "info": {
+    "displayName": "service group"
+  },
+  "options": {},
+  "attributes": {
+    "servicekey": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "description": {
+      "type": "text"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "items": {
+      "type": "component",
+      "component": "department.service-item",
+      "repeatable": true,
+      "required": false
+    },
+    "sortorder": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    }
+  },
+  "config": {}
+}

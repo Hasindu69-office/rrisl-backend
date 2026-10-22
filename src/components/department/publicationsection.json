@@ -7,7 +7,7 @@
   "attributes": {
     "sectiontitle": {
       "type": "string",
-      "default": "Our Publications",
+      "default": "Publications",
       "minLength": 3,
       "maxLength": 100,
       "required": true
@@ -15,7 +15,7 @@
     "rightimage": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]

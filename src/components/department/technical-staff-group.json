@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_department_technical_staff_groups",
+  "info": {
+    "displayName": "technical-staff-group"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 120,
+      "required": true
+    },
+    "members": {
+      "type": "component",
+      "component": "department.technical-staff-member",
+      "repeatable": true,
+      "required": true,
+      "min": 1,
+      "max": 30
+    }
+  },
+  "config": {}
+}
