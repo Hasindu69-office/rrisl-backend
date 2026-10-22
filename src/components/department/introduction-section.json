@@ -16,6 +16,9 @@
       "minLength": 10,
       "required": true
     },
+    "closingparagraph": {
+      "type": "text"
+    },
     "points": {
       "type": "component",
       "component": "shared.points",

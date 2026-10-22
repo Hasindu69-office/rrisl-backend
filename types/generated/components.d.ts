@@ -406,6 +406,7 @@ export interface DepartmentIntroductionSection extends Struct.ComponentSchema {
     displayName: 'introductionsection';
   };
   attributes: {
+    closingparagraph: Schema.Attribute.Text;
     paragraph: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -525,6 +526,16 @@ export interface DepartmentResearchstaffsection extends Struct.ComponentSchema {
         },
         number
       >;
+    technicalstaffgroups: Schema.Attribute.Component<
+      'department.technical-staff-group',
+      true
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 10;
+        },
+        number
+      >;
   };
 }
 
@@ -538,6 +549,52 @@ export interface DepartmentServicesection extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     servicecards: Schema.Attribute.Component<'shared.servicecard', true> &
       Schema.Attribute.Required;
+  };
+}
+
+export interface DepartmentTechnicalStaffGroup extends Struct.ComponentSchema {
+  collectionName: 'components_department_technical_staff_groups';
+  info: {
+    displayName: 'technical-staff-group';
+  };
+  attributes: {
+    members: Schema.Attribute.Component<
+      'department.technical-staff-member',
+      true
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 30;
+          min: 1;
+        },
+        number
+      >;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
+        minLength: 3;
+      }>;
+  };
+}
+
+export interface DepartmentTechnicalStaffMember extends Struct.ComponentSchema {
+  collectionName: 'components_department_technical_staff_members';
+  info: {
+    displayName: 'technical-staff-member';
+  };
+  attributes: {
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
+        minLength: 3;
+      }>;
+    qualifications: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
   };
 }
 
@@ -2566,6 +2623,8 @@ declare module '@strapi/strapi' {
       'department.researchhighlight-section': DepartmentResearchhighlightSection;
       'department.researchstaffsection': DepartmentResearchstaffsection;
       'department.servicesection': DepartmentServicesection;
+      'department.technical-staff-group': DepartmentTechnicalStaffGroup;
+      'department.technical-staff-member': DepartmentTechnicalStaffMember;
       'estate-substation.activities-section': EstateSubstationActivitiesSection;
       'estate-substation.activity-card': EstateSubstationActivityCard;
       'estate-substation.annual-rainfall-card': EstateSubstationAnnualRainfallCard;
