@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_department_recommendation_groups",
+  "info": {
+    "displayName": "recommendation group"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 255,
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "component": "department.recommendation-item",
+      "repeatable": true,
+      "required": true
+    },
+    "sortorder": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    }
+  },
+  "config": {}
+}

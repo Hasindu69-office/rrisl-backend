@@ -5,9 +5,12 @@
   },
   "options": {},
   "attributes": {
+    "category": {
+      "type": "string",
+      "maxLength": 255
+    },
     "achievement": {
       "type": "text",
-      "maxLength": 255,
       "required": true
     },
     "sortorder": {
