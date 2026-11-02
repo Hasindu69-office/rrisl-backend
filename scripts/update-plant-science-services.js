@@ -4,111 +4,98 @@ const { compileStrapi, createStrapi } = require('@strapi/strapi');
 
 const CONTENT_TYPE_UID = 'api::plant-science-department.plant-science-department';
 const LOCALE = 'en';
-const SERVICES_URL = '/services';
 
-const CATEGORY_LINKS = [
-  { servicekey: 'land-evaluation', title: 'Land evaluation', url: SERVICES_URL, sortorder: 1 },
-  { servicekey: 'laboratory-testing', title: 'Laboratory testing', url: SERVICES_URL, sortorder: 2 },
-  { servicekey: 'efficacy-testing', title: 'Efficacy testing', url: SERVICES_URL, sortorder: 3 },
-  { servicekey: 'e-testing-services', title: 'E-testing services', url: SERVICES_URL, sortorder: 4 },
-  {
-    servicekey: 'plant-certification-quality-assurance',
-    title: 'Plant Certification and Quality Assurance',
-    url: SERVICES_URL,
-    sortorder: 5,
-  },
-  {
-    servicekey: 'advisory-training-programs',
-    title: 'Advisory and Training programs',
-    url: SERVICES_URL,
-    sortorder: 6,
-  },
-];
+const CONTACT =
+  'Head, Plant Science department, Rubber Research Institute, Dartonfield, Agalawatta. +94 34 2247383 (Ext. 216)';
 
+/**
+ * Single source of topics for Plant Science services.
+ * Data (description / details / nested items) lives on each group.
+ * Images: existing CMS relations are preserved. Optional `imageHints` reattach
+ * files already in the Media Library by filename when an item has no images yet.
+ * Brand-new image files still need a one-time Media Library upload.
+ */
 const SERVICE_GROUPS = [
+  {
+    servicekey: 'land-evaluation',
+    title: 'Land evaluation',
+    sortorder: 1,
+    items: [],
+  },
   {
     servicekey: 'laboratory-testing',
     title: 'Laboratory testing',
-    sortorder: 1,
+    sortorder: 2,
+    items: [],
+  },
+  {
+    servicekey: 'efficacy-testing',
+    title: 'Efficacy testing',
+    sortorder: 3,
     items: [
       {
         servicekey: 'tapping-knife-technical-specifications',
         title: 'Testing technical specifications for tapping knives',
-        url: SERVICES_URL,
         sortorder: 1,
         details: [
-          {
-            label: 'Method',
-            value:
-              'The testing will assess parameters such as blade dimensions, cutting angle, blade thickness, handle design, weight, cutting depth control, material quality, and service life.\n\nLaboratory/bench testing for hardness of the material and Field testing',
-            sortorder: 1,
-          },
-          {
-            label: 'Department contact details:',
-            value:
-              'Head, Plant Science Department, Rubber Research Institute, Dartonfield, Agalawatta. +94 34 2247383 (Ext. 216)',
-            sortorder: 2,
-          },
-          {
-            label: 'Issue Certifications',
-            value: 'Report will be issued',
-            sortorder: 3,
-          },
+          { label: 'Test', value: 'Testing technical specifications for tapping knives', sortorder: 1 },
+          { label: 'Department', value: 'Plant Science', sortorder: 2 },
+          { label: 'Method', value: 'Physical and Hardness test', sortorder: 3 },
+          { label: 'Contact details', value: CONTACT, sortorder: 4 },
         ],
       },
       {
         servicekey: 'tapping-panel-marking-stencils',
         title: 'Provide technical specifications for stencils for tapping panel marking',
-        url: SERVICES_URL,
         sortorder: 2,
         details: [
-          {
-            label: 'Standards',
-            value: 'S/2 d2 Stencil : 20 cm (8”)\nS/2 d3 Stencie : 15 cm (6”)',
-            sortorder: 1,
-          },
-          {
-            label: 'Price, payment mode',
-            value: 'to be decided',
-            sortorder: 2,
-          },
-          {
-            label: 'Department, contact details',
-            value:
-              'Head, Plant Science Department, Rubber Research Institute, Dartonfield, Agalawatta. +94 34 2247383 (Ext. 216)',
-            sortorder: 3,
-          },
+          { label: 'Test', value: 'Testing technical specifications for marking stencils', sortorder: 1 },
+          { label: 'Department', value: 'Plant Science', sortorder: 2 },
+          { label: 'Method', value: 'Physical test with checking dimension', sortorder: 3 },
+          { label: 'Contact details', value: CONTACT, sortorder: 4 },
         ],
       },
       {
         servicekey: 'rain-guard-material-quality',
         title: 'Testing the quality of rain guard materials',
-        url: SERVICES_URL,
         sortorder: 3,
-        details: [],
+        details: [
+          { label: 'Test', value: 'Testing the quality of rain guard materials', sortorder: 1 },
+          { label: 'Department', value: 'Plant Science', sortorder: 2 },
+          { label: 'Method', value: 'Physical test with field application', sortorder: 3 },
+          { label: 'Contact details', value: CONTACT, sortorder: 4 },
+        ],
       },
     ],
+  },
+  {
+    servicekey: 'e-testing-services',
+    title: 'E-testing services',
+    sortorder: 4,
+    items: [],
   },
   {
     servicekey: 'plant-certification-quality-assurance',
     title: 'Plant Certification and Quality Assurance',
     description:
-      'Government, RPC, and private nurseries are continuously inspected, and inspection reports will be issued to maintain the quality of planting material to be released for upcoming planting seasons annually.\n\nAll bud-wood nurseries belonging to the Rubber Development Department,\n\nDiscarding weak young budded plants and unsuccessful plants in RDD nurseries is done in the presence of officials from both RRISL and RDD to avoid issuing poor-quality plants to the field.',
-    sortorder: 2,
+      'Government, RPC, and private nurseries are continuously inspected, and inspection reports will be issued to maintain the quality of planting material to be released for upcoming planting seasons annually.\n\nAll bud-wood nurseries belonging to the Rubber Development Department, Discarding weak young budded plants and unsuccessful plants in RDD nurseries is done in the presence of officials from both RRISL and RDD to avoid issuing poor-quality plants to the field.',
+    sortorder: 5,
     items: [],
   },
   {
     servicekey: 'advisory-training-programs',
     title: 'Advisory and Training programs',
-    sortorder: 3,
+    sortorder: 6,
     items: [
       {
-        servicekey: 'dissaminating-latex-harvesting-technologies',
-        title: 'Dissaminating Latex Harvesting Technologies',
+        servicekey: 'disseminating-latex-harvesting-technologies',
+        title: 'Disseminating Latex Harvesting Technologies',
         description:
           'Conducting latex harvesting and bark auditing technologies for improve quality of harvesting for sustainable latex production',
         sortorder: 1,
         details: [],
+        matchKeys: ['dissaminating-latex-harvesting-technologies'],
+        imageHints: ['Trainingimg1'],
       },
       {
         servicekey: 'bud-grafting-training-programmes',
@@ -117,11 +104,52 @@ const SERVICE_GROUPS = [
           'Conduct bud grafting training programmes for RDD and RPC nursery workers to improve the efficiency and technical skills of existing bud grafters, while also training new entrants who wish to become qualified bud grafters.',
         sortorder: 2,
         details: [],
+        imageHints: ['Trainingimg2'],
       },
       {
         servicekey: 'field-establishment-immature-upkeep',
         title: 'Training on Field Establishment and immature upkeep',
         sortorder: 3,
+        details: [],
+        imageHints: ['Trainingimg3', 'Trainingimg4'],
+      },
+    ],
+  },
+  {
+    servicekey: 'academic-support',
+    title: 'Academic support',
+    description:
+      'Provides academic supervision as external supervisors under the main research disciplines of the Department and facilitates the conduct of:',
+    sortorder: 7,
+    items: [
+      {
+        servicekey: 'final-year-research',
+        title: 'Final year research for undergraduates, MSc and PhD students',
+        sortorder: 1,
+        details: [],
+      },
+      {
+        servicekey: 'internships',
+        title: 'Internships',
+        sortorder: 2,
+        details: [],
+      },
+      {
+        servicekey: 'industrial-trainings',
+        title: 'Industrial trainings',
+        sortorder: 3,
+        details: [],
+      },
+      {
+        servicekey: 'university-lectures-visiting',
+        title: 'University lectures – visiting',
+        sortorder: 4,
+        details: [],
+      },
+      {
+        servicekey: 'training-the-trainers',
+        title: 'Training the Trainers',
+        sortorder: 5,
         details: [],
       },
     ],
@@ -133,7 +161,6 @@ function getPopulate() {
     servicesection: {
       populate: {
         sectionheader: true,
-        categorylinks: true,
         servicegroups: {
           populate: {
             images: true,
@@ -158,8 +185,33 @@ async function findDepartment(repository) {
   );
 }
 
+function toMediaId(asset) {
+  if (Number.isInteger(asset)) {
+    return asset;
+  }
+
+  if (typeof asset === 'string' && /^\d+$/.test(asset)) {
+    return Number(asset);
+  }
+
+  const id = asset?.id;
+
+  if (Number.isInteger(id)) {
+    return id;
+  }
+
+  if (typeof id === 'string' && /^\d+$/.test(id)) {
+    return Number(id);
+  }
+
+  return null;
+}
+
 function mediaIds(media) {
-  return (media || []).map((asset) => asset?.id).filter(Number.isInteger);
+  return (media || [])
+    .map(toMediaId)
+    .filter((id) => id != null)
+    .sort((left, right) => left - right);
 }
 
 function imageSnapshot(groups) {
@@ -176,56 +228,149 @@ function imageSnapshot(groups) {
   );
 }
 
-function buildServiceGroups(existingGroups) {
-  return SERVICE_GROUPS.map((group) => {
-    const existingGroup = (existingGroups || []).find(
-      (candidate) => candidate?.servicekey === group.servicekey
-    );
+function findExistingGroup(existingGroups, servicekey) {
+  return (existingGroups || []).find((candidate) => candidate?.servicekey === servicekey) || null;
+}
 
-    return {
-      ...group,
-      images: mediaIds(existingGroup?.images),
-      items: group.items.map((item) => {
-        const existingItem = (existingGroup?.items || []).find(
-          (candidate) => candidate?.servicekey === item.servicekey
-        );
+function findExistingItem(existingGroups, item) {
+  const keys = new Set([item.servicekey, ...(item.matchKeys || [])]);
 
-        return {
-          ...item,
-          images: mediaIds(existingItem?.images),
-        };
-      }),
-    };
-  });
+  for (const group of existingGroups || []) {
+    const match = (group.items || []).find((candidate) => keys.has(candidate?.servicekey));
+    if (match) return match;
+  }
+
+  return null;
+}
+
+async function findMediaIdsByHints(strapi, hints) {
+  if (!hints?.length) {
+    return [];
+  }
+
+  const ids = new Set();
+
+  for (const hint of hints) {
+    const files = await strapi.db.query('plugin::upload.file').findMany({
+      where: {
+        $or: [
+          { name: { $containsi: hint } },
+          { hash: { $containsi: hint } },
+        ],
+      },
+    });
+
+    for (const file of files || []) {
+      const name = `${file?.name || ''} ${file?.hash || ''}`.toLowerCase();
+      if (
+        name.includes('thumbnail_') ||
+        name.includes('small_') ||
+        name.includes('medium_') ||
+        name.includes('large_')
+      ) {
+        continue;
+      }
+
+      const id = toMediaId(file);
+      if (id != null) {
+        ids.add(id);
+      }
+    }
+  }
+
+  return [...ids].sort((left, right) => left - right);
+}
+
+async function buildServiceGroups(strapi, existingGroups) {
+  const groups = [];
+
+  for (const group of SERVICE_GROUPS) {
+    const existingGroup = findExistingGroup(existingGroups, group.servicekey);
+    const groupImages = mediaIds(existingGroup?.images);
+    const items = [];
+
+    for (const item of group.items || []) {
+      const existingItem = findExistingItem(existingGroups, item);
+      let itemImages = mediaIds(existingItem?.images);
+
+      if (itemImages.length === 0) {
+        itemImages = await findMediaIdsByHints(strapi, item.imageHints);
+      }
+
+      items.push({
+        servicekey: item.servicekey,
+        title: item.title,
+        description: item.description || null,
+        sortorder: item.sortorder,
+        details: item.details || [],
+        ...(itemImages.length > 0 ? { images: itemImages } : {}),
+      });
+    }
+
+    groups.push({
+      servicekey: group.servicekey,
+      title: group.title,
+      description: group.description || null,
+      sortorder: group.sortorder,
+      ...(groupImages.length > 0 ? { images: groupImages } : {}),
+      items,
+    });
+  }
+
+  return groups;
 }
 
 function assertPublishedResult(department, expectedImages) {
   const section = department?.servicesection;
-  const categories = section?.categorylinks || [];
   const groups = section?.servicegroups || [];
-  const laboratory = groups.find((group) => group?.servicekey === 'laboratory-testing');
-  const training = groups.find((group) => group?.servicekey === 'advisory-training-programs');
 
   if (department?.servicesectionpresent !== true) {
     throw new Error('Services verification failed: the visibility flag is not enabled.');
   }
-  if (categories.length !== 6 || categories.some((category) => category?.url !== SERVICES_URL)) {
-    throw new Error('Services verification failed: expected six category links to /services.');
+
+  if (groups.length !== SERVICE_GROUPS.length) {
+    throw new Error(
+      `Services verification failed: expected ${SERVICE_GROUPS.length} groups, found ${groups.length}.`
+    );
   }
-  if (groups.length !== 3 || laboratory?.items?.length !== 3 || training?.items?.length !== 3) {
-    throw new Error('Services verification failed: expected three groups with three laboratory tests and three training items.');
+
+  for (const expected of SERVICE_GROUPS) {
+    const actual = groups.find((group) => group?.servicekey === expected.servicekey);
+
+    if (!actual) {
+      throw new Error(
+        `Services verification failed: missing group "${expected.servicekey}".`
+      );
+    }
+
+    if (actual.title?.trim() !== expected.title) {
+      throw new Error(
+        `Services verification failed: unexpected title for "${expected.servicekey}".`
+      );
+    }
+
+    if ((actual.items || []).length !== (expected.items || []).length) {
+      throw new Error(
+        `Services verification failed: unexpected item count for "${expected.servicekey}".`
+      );
+    }
   }
 
   const emptyDetail = groups
     .flatMap((group) => group?.items || [])
     .flatMap((item) => item?.details || [])
     .find((detail) => !detail?.label?.trim() || !detail?.value?.trim());
+
   if (emptyDetail) {
     throw new Error('Services verification failed: an empty service detail was written.');
   }
 
-  if (JSON.stringify(imageSnapshot(groups)) !== JSON.stringify(expectedImages)) {
-    throw new Error('Services verification failed: one or more image relationships changed.');
+  const actualImages = imageSnapshot(groups);
+
+  if (JSON.stringify(actualImages) !== JSON.stringify(expectedImages)) {
+    throw new Error(
+      `Services verification failed: one or more image relationships changed.\nExpected: ${JSON.stringify(expectedImages)}\nActual: ${JSON.stringify(actualImages)}`
+    );
   }
 }
 
@@ -242,8 +387,16 @@ async function main() {
       throw new Error(`English Plant Science Department document was not found (${CONTENT_TYPE_UID}).`);
     }
 
-    const serviceGroups = buildServiceGroups(department.servicesection?.servicegroups || []);
+    const serviceGroups = await buildServiceGroups(
+      app,
+      department.servicesection?.servicegroups || []
+    );
     const expectedImages = imageSnapshot(serviceGroups);
+    const preservedCount = serviceGroups.filter(
+      (group) =>
+        (group.images && group.images.length > 0) ||
+        group.items.some((item) => item.images && item.images.length > 0)
+    ).length;
 
     await repository.update({
       documentId: department.documentId,
@@ -258,7 +411,6 @@ async function main() {
             alignment: 'center',
           },
           servicecards: [],
-          categorylinks: CATEGORY_LINKS,
           servicegroups: serviceGroups,
         },
       },
@@ -274,7 +426,9 @@ async function main() {
     });
 
     assertPublishedResult(updatedDepartment, expectedImages);
-    console.log('Updated and published the en Plant Science services section with 6 categories, 3 laboratory tests, and 3 training services.');
+    console.log(
+      `Updated and published the ${LOCALE} Plant Science services section with ${SERVICE_GROUPS.length} topics only (media linked on ${preservedCount} topics/items). Images already in Media Library are preserved or reattached by filename hint; new image files still need a one-time CMS upload.`
+    );
   } finally {
     if (app.isLoaded) await app.destroy();
   }

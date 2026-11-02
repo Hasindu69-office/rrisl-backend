@@ -136,8 +136,67 @@ const PUBLICATIONS = [
   },
 ];
 
+/**
+ * Prefer "Published in YYYY", else first (YYYY), else highest standalone year.
+ */
+function extractPublicationYear(text) {
+  if (!text) {
+    return null;
+  }
+
+  const publishedInMatch = text.match(/Published\s+in\s+(19|20)\d{2}/i);
+  if (publishedInMatch) {
+    const year = Number(publishedInMatch[0].match(/(19|20)\d{2}/)?.[0]);
+    if (Number.isFinite(year)) {
+      return year;
+    }
+  }
+
+  const parentheticalMatch = text.match(/\((19|20)\d{2}\)/);
+  if (parentheticalMatch) {
+    const year = Number(parentheticalMatch[0].replace(/[()]/g, ''));
+    if (Number.isFinite(year)) {
+      return year;
+    }
+  }
+
+  const standaloneYears = [...text.matchAll(/\b((?:19|20)\d{2})\b/g)].map((match) =>
+    Number(match[1])
+  );
+  if (standaloneYears.length === 0) {
+    return null;
+  }
+
+  return Math.max(...standaloneYears);
+}
+
+function sortEntriesByYearDescending(entries) {
+  return [...entries]
+    .map((entry, index) => ({ entry, index, year: extractPublicationYear(entry) }))
+    .sort((left, right) => {
+      if (left.year == null && right.year == null) {
+        return left.index - right.index;
+      }
+
+      if (left.year == null) {
+        return 1;
+      }
+
+      if (right.year == null) {
+        return -1;
+      }
+
+      if (right.year !== left.year) {
+        return right.year - left.year;
+      }
+
+      return left.index - right.index;
+    })
+    .map((item) => item.entry);
+}
+
 function toPoints(entries) {
-  return entries.map((paragraph) => ({ paragraph }));
+  return sortEntriesByYearDescending(entries).map((paragraph) => ({ paragraph }));
 }
 
 function getPopulate() {
@@ -197,11 +256,34 @@ function assertPublishedResult(department) {
     }
 
     const pointCount = actual.points?.length || 0;
+    const expectedSorted = sortEntriesByYearDescending(expected.points);
 
-    if (pointCount !== expected.points.length) {
+    if (pointCount !== expectedSorted.length) {
       throw new Error(
-        `Publications verification failed: expected ${expected.points.length} entries for "${expected.title}", found ${pointCount}.`
+        `Publications verification failed: expected ${expectedSorted.length} entries for "${expected.title}", found ${pointCount}.`
       );
+    }
+
+    const actualParagraphs = (actual.points || []).map((point) => point?.paragraph?.trim() || '');
+
+    for (let index = 0; index < expectedSorted.length; index += 1) {
+      if (actualParagraphs[index] !== expectedSorted[index]) {
+        throw new Error(
+          `Publications verification failed: entry order mismatch for "${expected.title}" at index ${index}.`
+        );
+      }
+    }
+
+    const years = actualParagraphs
+      .map((paragraph) => extractPublicationYear(paragraph))
+      .filter((year) => year != null);
+
+    for (let index = 1; index < years.length; index += 1) {
+      if (years[index] > years[index - 1]) {
+        throw new Error(
+          `Publications verification failed: years are not descending for "${expected.title}".`
+        );
+      }
     }
   }
 }

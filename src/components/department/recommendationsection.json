@@ -11,76 +11,11 @@
       "repeatable": false,
       "required": true
     },
-    "includegroups": {
-      "type": "boolean",
-      "required": true,
-      "default": false
-    },
     "recommendationgroups": {
       "type": "component",
       "component": "department.recommendation-group",
       "repeatable": true,
       "required": false
-    },
-    "applyimagecard": {
-      "type": "boolean",
-      "required": true,
-      "default": false
-    },
-    "imagecard": {
-      "type": "component",
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "applyimagecard"
-            },
-            true
-          ]
-        }
-      },
-      "component": "shared.recommendationimagecard",
-      "repeatable": true
-    },
-    "includepoints": {
-      "type": "boolean",
-      "required": true,
-      "default": false
-    },
-    "points": {
-      "type": "component",
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "includepoints"
-            },
-            true
-          ]
-        }
-      },
-      "component": "shared.publicationcards",
-      "repeatable": true
-    },
-    "includetable": {
-      "type": "boolean",
-      "required": true,
-      "default": false
-    },
-    "tablecards": {
-      "type": "component",
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "includetable"
-            },
-            true
-          ]
-        }
-      },
-      "component": "shared.recommendationtablecard",
-      "repeatable": true
     }
   },
   "config": {}

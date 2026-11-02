@@ -360,27 +360,16 @@ export interface DepartmentAchievementsection extends Struct.ComponentSchema {
     displayName: 'achievementsection';
   };
   attributes: {
-    achievements: Schema.Attribute.Component<'shared.achivementcard', true> &
+    categories: Schema.Attribute.Component<'shared.publicationcards', true> &
       Schema.Attribute.Required;
-    outlinetext: Schema.Attribute.String &
+    rightimage: Schema.Attribute.Media<'images'>;
+    sectiontitle: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'Achievements'>;
-    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
-      Schema.Attribute.Required;
-    sectionicon: Schema.Attribute.Media<'images'>;
-  };
-}
-
-export interface DepartmentAwardssection extends Struct.ComponentSchema {
-  collectionName: 'components_department_awardssections';
-  info: {
-    displayName: 'awardssection';
-  };
-  attributes: {
-    cards: Schema.Attribute.Component<'shared.awardcard', true> &
-      Schema.Attribute.Required;
-    sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
-      Schema.Attribute.Required;
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<'Our Achievements'>;
   };
 }
 
@@ -511,33 +500,12 @@ export interface DepartmentRecommendationsection
     displayName: 'recommendationsection';
   };
   attributes: {
-    applyimagecard: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<false>;
-    imagecard: Schema.Attribute.Component<
-      'shared.recommendationimagecard',
-      true
-    >;
-    includegroups: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<false>;
-    includepoints: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<false>;
-    includetable: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<false>;
-    points: Schema.Attribute.Component<'shared.publicationcards', true>;
     recommendationgroups: Schema.Attribute.Component<
       'department.recommendation-group',
       true
     >;
     sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
       Schema.Attribute.Required;
-    tablecards: Schema.Attribute.Component<
-      'shared.recommendationtablecard',
-      true
-    >;
   };
 }
 
@@ -593,38 +561,6 @@ export interface DepartmentResearchstaffsection extends Struct.ComponentSchema {
         },
         number
       >;
-  };
-}
-
-export interface DepartmentServiceCategoryLink extends Struct.ComponentSchema {
-  collectionName: 'components_department_service_category_links';
-  info: {
-    displayName: 'service category link';
-  };
-  attributes: {
-    servicekey: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
-    sortorder: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMax<
-        {
-          min: 1;
-        },
-        number
-      >;
-    title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 255;
-      }>;
-    url: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 500;
-      }>;
   };
 }
 
@@ -708,10 +644,6 @@ export interface DepartmentServiceItem extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
       }>;
-    url: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 500;
-      }>;
   };
 }
 
@@ -721,10 +653,6 @@ export interface DepartmentServicesection extends Struct.ComponentSchema {
     displayName: 'servicesection';
   };
   attributes: {
-    categorylinks: Schema.Attribute.Component<
-      'department.service-category-link',
-      true
-    >;
     sectionheader: Schema.Attribute.Component<'shared.section-header', false> &
       Schema.Attribute.Required;
     servicecards: Schema.Attribute.Component<'shared.servicecard', true>;
@@ -1976,29 +1904,6 @@ export interface HomeSupportTheIndustrySection extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedAchivementcard extends Struct.ComponentSchema {
-  collectionName: 'components_shared_achivementcards';
-  info: {
-    displayName: 'achivementcard';
-  };
-  attributes: {
-    achievement: Schema.Attribute.Text & Schema.Attribute.Required;
-    category: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 255;
-      }>;
-    sortorder: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 100;
-        },
-        number
-      >;
-  };
-}
-
 export interface SharedAlbumcard extends Struct.ComponentSchema {
   collectionName: 'components_shared_albumcards';
   info: {
@@ -2038,46 +1943,6 @@ export interface SharedAlbumcard extends Struct.ComponentSchema {
         minLength: 3;
       }> &
       Schema.Attribute.DefaultTo<'View Album'>;
-  };
-}
-
-export interface SharedAwardcard extends Struct.ComponentSchema {
-  collectionName: 'components_shared_awardcards';
-  info: {
-    displayName: 'awardcard';
-  };
-  attributes: {
-    details: Schema.Attribute.Text &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        minLength: 10;
-      }>;
-    image: Schema.Attribute.Media<'images'>;
-    officers: Schema.Attribute.Text;
-    sortorder: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 50;
-        },
-        number
-      >;
-    title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 255;
-        minLength: 3;
-      }>;
-    year: Schema.Attribute.Integer &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 2100;
-          min: 1900;
-        },
-        number
-      >;
   };
 }
 
@@ -2121,22 +1986,15 @@ export interface SharedCurrentprojectcard extends Struct.ComponentSchema {
     displayName: 'currentprojectcard';
   };
   attributes: {
-    coinvestigators: Schema.Attribute.Text;
     description: Schema.Attribute.Text;
-    enddate: Schema.Attribute.Date;
     galleryimages: Schema.Attribute.Media<'images', true>;
     image: Schema.Attribute.Media<'images'>;
     includeinhomepage: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
-    objectives: Schema.Attribute.Text;
-    principalinvestigator: Schema.Attribute.String &
+    researchteam: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 255;
-      }>;
-    site: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 255;
+        maxLength: 500;
       }>;
     sortorder: Schema.Attribute.Integer &
       Schema.Attribute.Required &
@@ -2147,7 +2005,6 @@ export interface SharedCurrentprojectcard extends Struct.ComponentSchema {
         },
         number
       >;
-    startdate: Schema.Attribute.Date;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -2449,47 +2306,6 @@ export interface SharedQuicklinks extends Struct.ComponentSchema {
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
-        minLength: 3;
-      }>;
-  };
-}
-
-export interface SharedRecommendationimagecard extends Struct.ComponentSchema {
-  collectionName: 'components_shared_recommendationimagecards';
-  info: {
-    displayName: 'recommendationimagecard';
-  };
-  attributes: {
-    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    subtitle: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 255;
-        minLength: 3;
-      }>;
-    title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-        minLength: 3;
-      }>;
-  };
-}
-
-export interface SharedRecommendationtablecard extends Struct.ComponentSchema {
-  collectionName: 'components_shared_recommendationtablecards';
-  info: {
-    displayName: 'recommendationtablecard';
-  };
-  attributes: {
-    csvfile: Schema.Attribute.Media<'files'> & Schema.Attribute.Required;
-    description: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 255;
-      }>;
-    title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
         minLength: 3;
       }>;
   };
@@ -2843,7 +2659,6 @@ declare module '@strapi/strapi' {
       'contact.sociallinks': ContactSociallinks;
       'contact.substationcard': ContactSubstationcard;
       'department.achievementsection': DepartmentAchievementsection;
-      'department.awardssection': DepartmentAwardssection;
       'department.currentresearchprojectsection': DepartmentCurrentresearchprojectsection;
       'department.introduction-section': DepartmentIntroductionSection;
       'department.publicationsection': DepartmentPublicationsection;
@@ -2852,7 +2667,6 @@ declare module '@strapi/strapi' {
       'department.recommendationsection': DepartmentRecommendationsection;
       'department.researchhighlight-section': DepartmentResearchhighlightSection;
       'department.researchstaffsection': DepartmentResearchstaffsection;
-      'department.service-category-link': DepartmentServiceCategoryLink;
       'department.service-detail': DepartmentServiceDetail;
       'department.service-group': DepartmentServiceGroup;
       'department.service-item': DepartmentServiceItem;
@@ -2897,9 +2711,7 @@ declare module '@strapi/strapi' {
       'home.service-card': HomeServiceCard;
       'home.services-section': HomeServicesSection;
       'home.support-the-industry-section': HomeSupportTheIndustrySection;
-      'shared.achivementcard': SharedAchivementcard;
       'shared.albumcard': SharedAlbumcard;
-      'shared.awardcard': SharedAwardcard;
       'shared.breadcrumb-item': SharedBreadcrumbItem;
       'shared.button': SharedButton;
       'shared.currentprojectcard': SharedCurrentprojectcard;
@@ -2916,8 +2728,6 @@ declare module '@strapi/strapi' {
       'shared.points': SharedPoints;
       'shared.publicationcards': SharedPublicationcards;
       'shared.quicklinks': SharedQuicklinks;
-      'shared.recommendationimagecard': SharedRecommendationimagecard;
-      'shared.recommendationtablecard': SharedRecommendationtablecard;
       'shared.researchhighlightcard': SharedResearchhighlightcard;
       'shared.section-header': SharedSectionHeader;
       'shared.servicecard': SharedServicecard;

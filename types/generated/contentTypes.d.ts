@@ -576,23 +576,6 @@ export interface ApiAdaptiveResearchDepartmentAdaptiveResearchDepartment
           localized: true;
         };
       }>;
-    awardssection: Schema.Attribute.Component<
-      'department.awardssection',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    awardtimelinepresent: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -857,23 +840,6 @@ export interface ApiAdvisoryServicesDepartmentAdvisoryServicesDepartment
           localized: true;
         };
       }>;
-    awardssection: Schema.Attribute.Component<
-      'department.awardssection',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    awardtimelinepresent: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1061,23 +1027,6 @@ export interface ApiAgriculturalEconomicsDepartmentAgriculturalEconomicsDepartme
           localized: true;
         };
       }>;
-    awardssection: Schema.Attribute.Component<
-      'department.awardssection',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    awardtimelinepresent: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1504,23 +1453,6 @@ export interface ApiBiochemistryAndPhysiologyDepartmentBiochemistryAndPhysiology
           localized: true;
         };
       }>;
-    awardssection: Schema.Attribute.Component<
-      'department.awardssection',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    awardtimelinepresent: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1708,23 +1640,6 @@ export interface ApiBiometrySectionDepartmentBiometrySectionDepartment
           localized: true;
         };
       }>;
-    awardssection: Schema.Attribute.Component<
-      'department.awardssection',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    awardtimelinepresent: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -3601,23 +3516,6 @@ export interface ApiGeneticsAndPlantBreedingDepartmentGeneticsAndPlantBreedingDe
           localized: true;
         };
       }>;
-    awardssection: Schema.Attribute.Component<
-      'department.awardssection',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    awardtimelinepresent: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -4885,23 +4783,6 @@ export interface ApiPlantPathologyAndMicrobiologyDepartmentPlantPathologyAndMicr
           localized: true;
         };
       }>;
-    awardssection: Schema.Attribute.Component<
-      'department.awardssection',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    awardtimelinepresent: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -5089,23 +4970,6 @@ export interface ApiPlantScienceDepartmentPlantScienceDepartment
           localized: true;
         };
       }>;
-    awardssection: Schema.Attribute.Component<
-      'department.awardssection',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    awardtimelinepresent: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -5414,23 +5278,6 @@ export interface ApiPolymerChemistryDepartmentPolymerChemistryDepartment
           localized: true;
         };
       }>;
-    awardssection: Schema.Attribute.Component<
-      'department.awardssection',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    awardtimelinepresent: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -5796,23 +5643,6 @@ export interface ApiRawRubberAndChemicalAnalysisDepartmentRawRubberAndChemicalAn
           localized: true;
         };
       }>;
-    awardssection: Schema.Attribute.Component<
-      'department.awardssection',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    awardtimelinepresent: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -6000,23 +5830,6 @@ export interface ApiRawRubberProcessDevelopmentAndChemicalEngineeringDepartmentR
           localized: true;
         };
       }>;
-    awardssection: Schema.Attribute.Component<
-      'department.awardssection',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    awardtimelinepresent: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -6980,23 +6793,6 @@ export interface ApiRubberTechnologyAndDevelopmentDepartmentRubberTechnologyAndD
           localized: true;
         };
       }>;
-    awardssection: Schema.Attribute.Component<
-      'department.awardssection',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    awardtimelinepresent: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -7486,23 +7282,6 @@ export interface ApiSoilsAndPlantNutritionDepartmentSoilsAndPlantNutritionDepart
           localized: true;
         };
       }>;
-    awardssection: Schema.Attribute.Component<
-      'department.awardssection',
-      false
-    > &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    awardtimelinepresent: Schema.Attribute.Boolean &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

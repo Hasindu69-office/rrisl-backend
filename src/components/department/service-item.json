@@ -18,10 +18,6 @@
     "description": {
       "type": "text"
     },
-    "url": {
-      "type": "string",
-      "maxLength": 500
-    },
     "images": {
       "type": "media",
       "multiple": true,

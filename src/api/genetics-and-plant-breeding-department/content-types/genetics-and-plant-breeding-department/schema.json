@@ -183,37 +183,6 @@
       "repeatable": false,
       "required": false
     },
-    "awardtimelinepresent": {
-      "type": "boolean",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true,
-      "default": true
-    },
-    "awardssection": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "awardtimelinepresent"
-            },
-            true
-          ]
-        }
-      },
-      "component": "department.awardssection",
-      "repeatable": false,
-      "required": false
-    },
     "publicationspresent": {
       "type": "boolean",
       "pluginOptions": {

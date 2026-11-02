@@ -11,23 +11,23 @@ const GROUPS = [
     sortorder: 1,
     items: [
       {
-        title: 'Establishment of seed garden with clones RRISL 201, RRIC 100 and RRIC 102',
-        sortorder: 1,
-      },
-      {
-        title: 'Base budding technique to propagate bud-wood nursery rapidly',
-        sortorder: 2,
-      },
-      {
         title: 'Planting guava as an intercrop with rubber',
         description:
           'Guava can be grown from the start of rubber planting with the spacing of 2.5 m x 7.75 m as a single row in 4m distance. Harvest can be obtained after the 2nd year of planting',
-        sortorder: 3,
+        sortorder: 1,
       },
       {
         title: 'Planting cardamom as an intercrop with rubber',
         description:
           'Cardamom can be grown with rubber planting rows in the mature stage of 6-8 years. Spacing of rubber should be 2.5m x 7.75 m and 3.5 m x 5.5 m and cardamom spacing would be 2 m can be grown as single row.',
+        sortorder: 2,
+      },
+      {
+        title: 'Establishment of seed garden with clones RRISL 201, RRIC 100 and RRIC 102',
+        sortorder: 3,
+      },
+      {
+        title: 'Base budding technique to propagate bud-wood nursery rapidly',
         sortorder: 4,
       },
     ],
@@ -62,11 +62,6 @@ function assertPublishedResult(department) {
   }
 
   const section = department?.recommendationsection;
-
-  if (section?.includegroups !== true) {
-    throw new Error('Recommendations verification failed: includegroups is not enabled.');
-  }
-
   const groups = section?.recommendationgroups || [];
 
   if (groups.length !== GROUPS.length) {
@@ -81,10 +76,37 @@ function assertPublishedResult(department) {
     throw new Error('Recommendations verification failed: Interim Recommendations group missing.');
   }
 
-  if ((interim?.items || []).length !== GROUPS[0].items.length) {
+  const items = interim?.items || [];
+
+  if (items.length !== GROUPS[0].items.length) {
     throw new Error(
-      `Recommendations verification failed: expected ${GROUPS[0].items.length} items, found ${interim?.items?.length || 0}.`
+      `Recommendations verification failed: expected ${GROUPS[0].items.length} items, found ${items.length}.`
     );
+  }
+
+  for (const expected of GROUPS[0].items) {
+    const actual = items.find((item) => item?.sortorder === expected.sortorder);
+
+    if (!actual) {
+      throw new Error(
+        `Recommendations verification failed: missing item with sortorder ${expected.sortorder}.`
+      );
+    }
+
+    if (actual.title?.trim() !== expected.title) {
+      throw new Error(
+        `Recommendations verification failed: unexpected title for sortorder ${expected.sortorder}.`
+      );
+    }
+
+    const expectedDescription = expected.description?.trim() || null;
+    const actualDescription = actual.description?.trim() || null;
+
+    if (expectedDescription !== actualDescription) {
+      throw new Error(
+        `Recommendations verification failed: unexpected description for sortorder ${expected.sortorder}.`
+      );
+    }
   }
 }
 
@@ -114,7 +136,6 @@ async function main() {
             hightlightedtext: 'Recommendations',
             alignment: 'left',
           },
-          includegroups: true,
           recommendationgroups: GROUPS.map((group) => ({
             title: group.title,
             sortorder: group.sortorder,
@@ -124,12 +145,6 @@ async function main() {
               sortorder: item.sortorder,
             })),
           })),
-          applyimagecard: false,
-          imagecard: [],
-          includepoints: false,
-          points: [],
-          includetable: false,
-          tablecards: [],
         },
       },
     });

@@ -16,7 +16,7 @@
     "update-plant-science-services": "node scripts/update-plant-science-services.js",
     "update-plant-science-research-highlights": "node scripts/update-plant-science-research-highlights.js",
     "update-plant-science-current-research-projects": "node scripts/update-plant-science-current-research-projects.js",
-    "update-plant-science-awards-achievements": "node scripts/update-plant-science-awards-achievements.js",
+    "update-plant-science-achievements": "node scripts/update-plant-science-achievements.js",
     "update-plant-science-recommendations": "node scripts/update-plant-science-recommendations.js",
     "update-plant-science-publications": "node scripts/update-plant-science-publications.js",
     "upgrade": "npx @strapi/upgrade latest",
