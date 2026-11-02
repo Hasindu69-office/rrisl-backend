@@ -17,12 +17,6 @@
       "repeatable": true,
       "required": false
     },
-    "categorylinks": {
-      "type": "component",
-      "component": "department.service-category-link",
-      "repeatable": true,
-      "required": false
-    },
     "servicegroups": {
       "type": "component",
       "component": "department.service-group",

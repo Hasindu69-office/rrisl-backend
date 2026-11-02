@@ -5,18 +5,14 @@
   },
   "options": {},
   "attributes": {
-    "sectionheader": {
-      "type": "component",
-      "component": "shared.section-header",
-      "repeatable": false,
-      "required": true
-    },
-    "outlinetext": {
+    "sectiontitle": {
       "type": "string",
-      "default": "Achievements",
+      "default": "Our Achievements",
+      "minLength": 3,
+      "maxLength": 100,
       "required": true
     },
-    "sectionicon": {
+    "rightimage": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -24,9 +20,9 @@
         "images"
       ]
     },
-    "achievements": {
+    "categories": {
       "type": "component",
-      "component": "shared.achivementcard",
+      "component": "shared.publicationcards",
       "repeatable": true,
       "required": true
     }

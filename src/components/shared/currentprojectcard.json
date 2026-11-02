@@ -14,25 +14,9 @@
     "description": {
       "type": "text"
     },
-    "objectives": {
-      "type": "text"
-    },
-    "site": {
+    "researchteam": {
       "type": "string",
-      "maxLength": 255
-    },
-    "startdate": {
-      "type": "date"
-    },
-    "enddate": {
-      "type": "date"
-    },
-    "principalinvestigator": {
-      "type": "string",
-      "maxLength": 255
-    },
-    "coinvestigators": {
-      "type": "text"
+      "maxLength": 500
     },
     "image": {
       "type": "media",
