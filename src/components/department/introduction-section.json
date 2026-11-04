@@ -31,6 +31,27 @@
       "minLength": 3,
       "maxLength": 255
     },
+    "includethumbnail": {
+      "type": "boolean",
+      "default": false
+    },
+    "videothumbnail": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "includethumbnail"
+            },
+            true
+          ]
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
     "url": {
       "type": "string",
       "minLength": 3,

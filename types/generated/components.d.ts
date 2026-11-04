@@ -397,6 +397,8 @@ export interface DepartmentIntroductionSection extends Struct.ComponentSchema {
   };
   attributes: {
     closingparagraph: Schema.Attribute.Text;
+    includethumbnail: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     paragraph: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -417,6 +419,7 @@ export interface DepartmentIntroductionSection extends Struct.ComponentSchema {
         maxLength: 255;
         minLength: 3;
       }>;
+    videothumbnail: Schema.Attribute.Media<'images'>;
     videotitle: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 255;
