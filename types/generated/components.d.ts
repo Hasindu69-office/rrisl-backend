@@ -396,7 +396,9 @@ export interface DepartmentIntroductionSection extends Struct.ComponentSchema {
     displayName: 'introductionsection';
   };
   attributes: {
+    backgroundimage: Schema.Attribute.Media<'images'>;
     closingparagraph: Schema.Attribute.Text;
+    featureimage: Schema.Attribute.Media<'images'>;
     includethumbnail: Schema.Attribute.Boolean &
       Schema.Attribute.DefaultTo<false>;
     paragraph: Schema.Attribute.Text &
