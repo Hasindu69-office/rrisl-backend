@@ -19,6 +19,18 @@
     "closingparagraph": {
       "type": "text"
     },
+    "backgroundimage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "featureimage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
     "points": {
       "type": "component",
       "component": "shared.points",
