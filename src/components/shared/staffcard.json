@@ -18,9 +18,8 @@
       "required": true
     },
     "education": {
-      "type": "string",
+      "type": "text",
       "minLength": 3,
-      "maxLength": 255,
       "required": true
     },
     "email": {

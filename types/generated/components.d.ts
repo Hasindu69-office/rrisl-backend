@@ -2435,10 +2435,9 @@ export interface SharedStaffcard extends Struct.ComponentSchema {
         maxLength: 255;
         minLength: 3;
       }>;
-    education: Schema.Attribute.String &
+    education: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 255;
         minLength: 3;
       }>;
     email: Schema.Attribute.Component<'shared.emails', true> &
