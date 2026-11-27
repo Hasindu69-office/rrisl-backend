@@ -1997,7 +1997,7 @@ export interface SharedCurrentprojectcard extends Struct.ComponentSchema {
     includeinhomepage: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
-    researchteam: Schema.Attribute.String &
+    researchteam: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 500;
       }>;
