@@ -2328,7 +2328,7 @@ export interface SharedResearchhighlightcard extends Struct.ComponentSchema {
         minLength: 10;
       }>;
     image: Schema.Attribute.Media<'images'>;
-    researchteam: Schema.Attribute.String &
+    researchteam: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 500;
       }>;
