@@ -15,7 +15,7 @@
       "type": "text"
     },
     "researchteam": {
-      "type": "string",
+      "type": "text",
       "maxLength": 500
     },
     "image": {
